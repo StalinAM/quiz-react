@@ -1,10 +1,18 @@
 import { create } from 'zustand'
-import { questionsData } from '../data/questions'
+import { questions } from '../data/questions'
 
 export const useQuizStore = create((set) => ({
-  questions: questionsData,
+  questions: [],
   currentQuestionIndex: 0,
   score: 0,
+  quizType: null,
+  setQuizType: (type) =>
+    set({
+      quizType: type,
+      questions: questions.filter((q) => q.type === type),
+      currentQuestionIndex: 0,
+      score: 0
+    }),
   setAnswer: (selected) =>
     set((state) => {
       const isCorrect =
@@ -14,5 +22,5 @@ export const useQuizStore = create((set) => ({
         currentQuestionIndex: state.currentQuestionIndex + 1
       }
     }),
-  resetQuiz: () => set({ currentQuestionIndex: 0, score: 0 })
+  resetQuiz: () => set({ currentQuestionIndex: 0, score: 0, quizType: null })
 }))
