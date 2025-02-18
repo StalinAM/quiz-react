@@ -9,7 +9,8 @@ export const useQuizStore = create((set) => ({
   setQuizType: (type) =>
     set({
       quizType: type,
-      questions: questions.filter((q) => q.type === type),
+      questions:
+        type === 'all' ? questions : questions.filter((q) => q.type === type),
       currentQuestionIndex: 0,
       score: 0
     }),
