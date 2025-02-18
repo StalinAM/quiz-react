@@ -3,22 +3,22 @@ export function QuizTypeSelector({ onSelect }) {
     <div className='grid md:grid-cols-2 gap-6'>
       <button
         onClick={() => onSelect('multiple')}
-        className='quiz-card group hover:scale-105'
+        className='border rounded-2xl py-4 cursor-pointer transition-transform duration-300 ease-in-out group hover:scale-105'
       >
         <h3 className='text-xl font-semibold mb-3'>Seleccion multiple</h3>
-        <p className='text-muted-foreground'>
-          Select the correct answer from multiple options
-        </p>
       </button>
 
       <button
         onClick={() => onSelect('complete')}
-        className='quiz-card group hover:scale-105'
+        className='border rounded-2xl py-4 cursor-pointer transition-transform duration-300 ease-in-out group hover:scale-105'
       >
-        <h3 className='text-xl font-semibold mb-3'>Fill in the Blank</h3>
-        <p className='text-muted-foreground'>
-          Type in your answer to complete the sentence
-        </p>
+        <h3 className='text-xl font-semibold mb-3'>Completar</h3>
+      </button>
+      <button
+        onClick={() => onSelect('all')}
+        className='border rounded-2xl py-4 cursor-pointer transition-transform duration-300 ease-in-out group hover:scale-105'
+      >
+        <h3 className='text-xl font-semibold mb-3'>Ver todas las preguntas</h3>
       </button>
     </div>
   )
