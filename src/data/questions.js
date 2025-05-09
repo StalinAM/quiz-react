@@ -90,6 +90,325 @@ export const questions = [
   {
     type: 'multiple',
     question:
+      '¿Cuál es la definición de Inteligencia Artificial (IA) según el documento?',
+    options: [
+      'Una tecnología que solo se aplica en la robótica avanzada.',
+      'Una subdisciplina del campo de la informática que busca la creación de máquinas que puedan imitar comportamientos inteligentes.',
+      'Un software capaz de superar la inteligencia humana en todas las tareas.',
+      'El estudio exclusivo de las redes neuronales.'
+    ],
+    answer:
+      'Una subdisciplina del campo de la informática que busca la creación de máquinas que puedan imitar comportamientos inteligentes.'
+  },
+  {
+    type: 'multiple',
+    question:
+      "¿Verdadero o Falso: El término 'Inteligencia Artificial' fue acuñado por Alan Turing en 1950?",
+    options: ['Verdadero', 'Falso'],
+    answer: 'Falso'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué evento marcó el inicio del renacimiento moderno de la IA en los años 2000?',
+    options: [
+      'La victoria de Deep Blue sobre Kasparov.',
+      'La creación de los primeros asistentes virtuales.',
+      'Avances en el aprendizaje automático y el surgimiento de big data.',
+      'El desarrollo de los coches autónomos.'
+    ],
+    answer: 'Avances en el aprendizaje automático y el surgimiento de big data.'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué es el **Aprendizaje Automático (Machine Learning)**?',
+    options: [
+      'Un tipo de IA donde las máquinas se programan explícitamente para cada tarea.',
+      'Una rama de la IA que permite a los sistemas mejorar su rendimiento en tareas específicas a través de la experiencia y el análisis de datos, sin programación explícita.',
+      'Un sinónimo exacto de Inteligencia Artificial.',
+      'Una técnica utilizada únicamente para el procesamiento de imágenes.'
+    ],
+    answer:
+      'Una rama de la IA que permite a los sistemas mejorar su rendimiento en tareas específicas a través de la experiencia y el análisis de datos, sin programación explícita.'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Verdadero o Falso: El aprendizaje profundo (Deep Learning) es un subcampo del Machine Learning que utiliza redes neuronales con muchas capas?',
+    options: ['Verdadero', 'Falso'],
+    answer: 'Verdadero'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué característica define principalmente al **Big Data**?',
+    options: [
+      'Datos perfectamente estructurados y de pequeño volumen.',
+      'Grandes volúmenes de datos que pueden ser estructurados, semiestructurados o no estructurados, generados a alta velocidad.',
+      'Datos que solo provienen de redes sociales.',
+      'Información que se procesa exclusivamente en tiempo real.'
+    ],
+    answer:
+      'Grandes volúmenes de datos que pueden ser estructurados, semiestructurados o no estructurados, generados a alta velocidad.'
+  },
+  {
+    type: 'multiple',
+    question:
+      "De las siguientes 'V' del Big Data, ¿cuál se refiere a la velocidad a la que se generan y procesan los datos?",
+    options: ['Volumen', 'Variedad', 'Velocidad', 'Veracidad'],
+    answer: 'Velocidad'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Verdadero o Falso: Los datos no estructurados, como los videos y las imágenes, son fáciles de analizar directamente por las máquinas sin procesamiento previo?',
+    options: ['Verdadero', 'Falso'],
+    answer: 'Falso'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Cuál es una característica principal de los **datos estructurados**?',
+    options: [
+      'No tienen un formato predefinido.',
+      'Se almacenan en formatos como JSON o XML.',
+      'Tienen un formato predefinido y se organizan en tablas con filas y columnas.',
+      'Son principalmente archivos de audio y video.'
+    ],
+    answer:
+      'Tienen un formato predefinido y se organizan en tablas con filas y columnas.'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué tipo de aprendizaje automático utiliza datos etiquetados para entrenar al modelo?',
+    options: [
+      'Aprendizaje no supervisado',
+      'Aprendizaje supervisado',
+      'Aprendizaje por refuerzo',
+      'Aprendizaje semi-supervisado'
+    ],
+    answer: 'Aprendizaje supervisado'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Verdadero o Falso: El aprendizaje no supervisado busca encontrar patrones y estructuras ocultas en datos no etiquetados?',
+    options: ['Verdadero', 'Falso'],
+    answer: 'Verdadero'
+  },
+  {
+    type: 'multiple',
+    question: 'En el **aprendizaje por refuerzo**, ¿cómo aprende el agente?',
+    options: [
+      'A través de datos etiquetados por un supervisor.',
+      'Encontrando clústeres en los datos.',
+      'Mediante la interacción con un entorno, recibiendo recompensas o castigos por sus acciones.',
+      'Analizando únicamente datos históricos sin etiquetas.'
+    ],
+    answer:
+      'Mediante la interacción con un entorno, recibiendo recompensas o castigos por sus acciones.'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Cuál de los siguientes es un ejemplo de una tarea de **regresión** en el aprendizaje supervisado?',
+    options: [
+      'Clasificar si un correo es spam o no.',
+      'Predecir el precio de una casa basado en sus características.',
+      'Agrupar clientes con comportamientos de compra similares.',
+      'Detectar anomalías en transacciones financieras.'
+    ],
+    answer: 'Predecir el precio de una casa basado en sus características.'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Verdadero o Falso: El **sobreajuste (overfitting)** ocurre cuando un modelo aprende demasiado bien los datos de entrenamiento, incluyendo el ruido, y generaliza mal a datos nuevos?',
+    options: ['Verdadero', 'Falso'],
+    answer: 'Verdadero'
+  },
+  {
+    type: 'multiple',
+    question: '¿Cuál es el propósito principal de un **Data Lake**?',
+    options: [
+      'Almacenar únicamente datos estructurados para análisis BI tradicional.',
+      'Servir como un repositorio centralizado que permite almacenar todos los datos estructurados y no estructurados a cualquier escala.',
+      'Procesar transacciones en tiempo real para aplicaciones bancarias.',
+      'Ejecutar algoritmos de aprendizaje profundo exclusivamente.'
+    ],
+    answer:
+      'Servir como un repositorio centralizado que permite almacenar todos los datos estructurados y no estructurados a cualquier escala.'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué tecnología se menciona en el documento como fundamental para el procesamiento distribuido de grandes conjuntos de datos?',
+    options: ['SQL', 'Python', 'Apache Hadoop y Apache Spark', 'Excel'],
+    answer: 'Apache Hadoop y Apache Spark'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Verdadero o Falso: **Amazon SageMaker** es una herramienta que solo sirve para etiquetar datos?',
+    options: ['Verdadero', 'Falso'],
+    answer: 'Falso'
+  },
+  {
+    type: 'multiple',
+    question:
+      'Según las conclusiones de la unidad, ¿el desarrollo de machine learning es similar al desarrollo de software tradicional?',
+    options: [
+      'Sí, son procesos idénticos.',
+      'No, el desarrollo de machine learning es diferente al desarrollo tradicional.',
+      'Solo es diferente si se usa aprendizaje profundo.',
+      'La diferencia es mínima y no relevante.'
+    ],
+    answer:
+      'No, el desarrollo de machine learning es diferente al desarrollo tradicional.'
+  },
+  {
+    type: 'multiple',
+    question:
+      'En el **Proceso de Machine Learning**, ¿cuál es uno de los primeros pasos cruciales después de definir el problema?',
+    options: [
+      'Desplegar el modelo inmediatamente.',
+      'Recopilar y preparar los datos.',
+      'Seleccionar el hardware más potente.',
+      'Escribir el informe final del proyecto.'
+    ],
+    answer: 'Recopilar y preparar los datos.'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Verdadero o Falso: La **evaluación del modelo** es un paso que se realiza solo una vez al final del proceso de machine learning?',
+    options: ['Verdadero', 'Falso'],
+    answer: 'Falso'
+  },
+  {
+    type: 'multiple',
+    question:
+      "¿Cuál de las 'V' del Big Data se refiere a la incertidumbre o confiabilidad de los datos?",
+    options: ['Volumen', 'Variedad', 'Velocidad', 'Veracidad'],
+    answer: 'Veracidad'
+  },
+  {
+    type: 'multiple',
+    question: 'Un ejemplo de **datos semiestructurados** es:',
+    options: [
+      'Una tabla en una base de datos relacional.',
+      'Un archivo de video.',
+      'Un archivo JSON o XML.',
+      'Un texto plano sin formato.'
+    ],
+    answer: 'Un archivo JSON o XML.'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Verdadero o Falso: El **aprendizaje profundo (Deep Learning)** se basa en la estructura y función del cerebro humano, utilizando redes neuronales artificiales?',
+    options: ['Verdadero', 'Falso'],
+    answer: 'Verdadero'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué tipo de problema de aprendizaje supervisado busca asignar una categoría a una entrada de datos?',
+    options: [
+      'Regresión',
+      'Clustering',
+      'Clasificación',
+      'Reducción de dimensionalidad'
+    ],
+    answer: 'Clasificación'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Cuál es el objetivo del **aprendizaje no supervisado** tipo clustering?',
+    options: [
+      'Predecir un valor continuo.',
+      'Agrupar datos similares en clústeres sin etiquetas previas.',
+      'Aprender a través de recompensas y castigos.',
+      'Clasificar datos en categorías predefinidas.'
+    ],
+    answer: 'Agrupar datos similares en clústeres sin etiquetas previas.'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Verdadero o Falso: Las **redes neuronales artificiales (RNA)** están compuestas por capas de nodos interconectados, donde cada nodo realiza un cálculo simple?',
+    options: ['Verdadero', 'Falso'],
+    answer: 'Verdadero'
+  },
+  {
+    type: 'multiple',
+    question: "El término **'invierno de la IA'** se refiere a:",
+    options: [
+      'Un período de auge y financiación masiva en la investigación de IA.',
+      'Un período de reducción de la financiación y el interés en la investigación de IA.',
+      'La temporada en que se celebran las principales conferencias de IA.',
+      'El desarrollo de IA para operar en condiciones de frío extremo.'
+    ],
+    answer:
+      'Un período de reducción de la financiación y el interés en la investigación de IA.'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Cuál de estas tecnologías NO es directamente un sistema de almacenamiento o procesamiento de Big Data mencionado como ejemplo en el texto?',
+    options: ['Hadoop', 'Spark', 'Bases de datos NoSQL', 'Microsoft Excel'],
+    answer: 'Microsoft Excel'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué es **Business Intelligence (BI)** según el contexto del documento?',
+    options: [
+      'Un sinónimo de Inteligencia Artificial.',
+      'Un conjunto de técnicas y herramientas para la adquisición, transformación y análisis de datos para la toma de decisiones empresariales.',
+      'El proceso de entrenamiento de modelos de machine learning.',
+      'Una metodología para el desarrollo de software ágil.'
+    ],
+    answer:
+      'Un conjunto de técnicas y herramientas para la adquisición, transformación y análisis de datos para la toma de decisiones empresariales.'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Verdadero o Falso: El **Proceso de Machine Learning** es un ciclo iterativo que incluye pasos como la recopilación de datos, entrenamiento del modelo, evaluación y despliegue?',
+    options: ['Verdadero', 'Falso'],
+    answer: 'Verdadero'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Una de las principales ventajas del **aprendizaje automático** es su capacidad para?',
+    options: [
+      'Funcionar sin necesidad de datos.',
+      'Resolver problemas que son demasiado complejos para ser programados explícitamente.',
+      'Garantizar siempre un 100% de precisión en sus predicciones.',
+      'Reemplazar completamente la necesidad de intervención humana.'
+    ],
+    answer:
+      'Resolver problemas que son demasiado complejos para ser programados explícitamente.'
+  },
+  {
+    type: 'multiple',
+    question:
+      "¿Qué papel juega la **'Variedad'** en las características del Big Data?",
+    options: [
+      'Se refiere a la cantidad total de datos generados.',
+      'Describe los diferentes tipos de datos (estructurados, no estructurados, semiestructurados).',
+      'Indica la velocidad con la que los datos se crean y actualizan.',
+      'Mide la calidad y fiabilidad de los datos.'
+    ],
+    answer:
+      'Describe los diferentes tipos de datos (estructurados, no estructurados, semiestructurados).'
+  },
+  {
+    type: 'multiple',
+    question:
       'En el contexto del Machine Learning, ¿qué se utiliza para entrenar un modelo?',
     options: [
       'Datos de entrada',
