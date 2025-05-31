@@ -20,6 +20,14 @@ export function QuizTypeSelector({ onSelect }) {
       >
         <h3 className='text-xl font-semibold mb-3'>Ver todas las preguntas</h3>
       </button>
+      <button
+        onClick={() => onSelect('multiple-select')}
+        className='border rounded-2xl py-4 cursor-pointer transition-transform duration-300 ease-in-out group hover:scale-105'
+      >
+        <h3 className='text-xl font-semibold mb-3'>
+          Selección múltiple (varias respuestas)
+        </h3>
+      </button>
     </div>
   )
 }

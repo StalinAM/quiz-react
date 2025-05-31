@@ -4,6 +4,7 @@ import { MultipleChoice } from './components/MultipleChoice'
 import { CompleteChoice } from './components/CompleteChoice'
 import { AllChoice } from './components/AllChoice'
 import { QuizTypeSelector } from './components/QuizTypeSelector'
+import { MultipleSelectChoice } from './components/MultipleSelectChoice'
 
 function App() {
   const { quizType, setQuizType, questions } = useQuizStore()
@@ -29,17 +30,18 @@ function App() {
                 onComplete={handleQuizComplete}
                 questions={questions}
               />
+            ) : quizType === 'multiple-select' ? (
+              <MultipleSelectChoice
+                onComplete={handleQuizComplete}
+                questions={questions}
+              />
+            ) : quizType === 'complete' ? (
+              <CompleteChoice
+                onComplete={handleQuizComplete}
+                questions={questions}
+              />
             ) : (
-              <>
-                {quizType === 'complete' ? (
-                  <CompleteChoice
-                    onComplete={handleQuizComplete}
-                    questions={questions}
-                  />
-                ) : (
-                  <AllChoice questions={questions} />
-                )}
-              </>
+              <AllChoice questions={questions} />
             )}
           </div>
         )}
