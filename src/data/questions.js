@@ -1313,6 +1313,7 @@ const completeQuestions = [
 ]
 export const questions = [
   ...quuestionsUnit1,
+  ...questionsUnit1y2,
   {
     type: 'multiple',
     question:
