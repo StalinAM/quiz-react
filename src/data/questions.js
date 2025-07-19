@@ -524,6 +524,30 @@ const questionsUnit1y2 = [
     {
       type: 'multiple',
       question:
+        "En un dataset de pacientes, la columna 'presión arterial' tiene valores faltantes aleatorios debido a fallas técnicas en el dispositivo de medición. ¿Qué tipo de valor faltante es?",
+      options: [
+        'MAR (Missing at Random)',
+        'NMAR (Missing Not at Random)',
+        'MCAR (Missing Completely at Random)',
+        'Ninguna de las anteriores'
+      ],
+      answer: 'MCAR (Missing Completely at Random)'
+    },
+    {
+      type: 'multiple',
+      question:
+        'En un estudio de rendimiento académico, las calificaciones de matemáticas faltan más en estudiantes con bajo desempeño en lenguaje. ¿Qué tipo de valor faltante es?',
+      options: [
+        'MAR (Missing at Random)',
+        'NMAR (Missing Not at Random)',
+        'MCAR (Missing Completely at Random)',
+        'Ninguna de las anteriores'
+      ],
+      answer: 'MAR (Missing at Random)'
+    },
+    {
+      type: 'multiple',
+      question:
         'En un dataset de ventas, los clientes que no responden a una encuesta de satisfacción son mayormente los que recibieron productos defectuosos. ¿Qué tipo de faltante es?',
       options: [
         'MAR (Missing at Random)',
@@ -532,6 +556,18 @@ const questionsUnit1y2 = [
         'Ninguna de las anteriores'
       ],
       answer: 'NMAR (Missing Not at Random)'
+    },
+    {
+      type: 'multiple',
+      question:
+        '¿Cuál es el propósito principal del test de chi-cuadrado en aprendizaje automatico?',
+      options: [
+        'Comparar la media de dos muestras independientes.',
+        'Evaluar la asociación entre dos variables categóricas.',
+        'Determinar la relación lineal entre dos variables continuas.',
+        'Calcular la varianza de una población.'
+      ],
+      answer: 'Evaluar la asociación entre dos variables categóricas.'
     },
     {
       type: 'multiple',
@@ -622,6 +658,31 @@ const questionsUnit1y2 = [
       ],
       answer:
         'Los datos faltantes se distribuyen aleatoriamente en el conjunto de datos.'
+    },
+    {
+      type: 'multiple',
+      question:
+        '¿Cuál de las siguientes afirmaciones describe mejor el concepto de MAR?',
+      options: [
+        'Los datos faltantes se distribuyen aleatoriamente en el conjunto de datos.',
+        'La probabilidad de que falten los datos está relacionada con alguna característica observada en el conjunto de datos.',
+        'La probabilidad de que falten los datos está relacionada con alguna característica no observada en el conjunto de datos.',
+        'No hay patrón discernible en la ausencia de datos en el conjunto de datos.'
+      ],
+      answer:
+        'La probabilidad de que falten los datos está relacionada con alguna característica observada en el conjunto de datos.'
+    },
+    {
+      type: 'multiple',
+      question: '¿Qué significa NMAR en el contexto de datos faltantes?',
+      options: [
+        'La probabilidad de que falten los datos está relacionada con alguna característica observada en el conjunto de datos.',
+        'La probabilidad de que falten los datos está relacionada con alguna característica no observada en el conjunto de datos.',
+        'Los datos faltantes se distribuyen aleatoriamente en el conjunto de datos.',
+        'No hay patrón discernible en la ausencia de datos en el conjunto de datos.'
+      ],
+      answer:
+        'La probabilidad de que falten los datos está relacionada con alguna característica no observada en el conjunto de datos.'
     },
     {
       type: 'multiple',
@@ -748,6 +809,17 @@ const questionsUnit1y2 = [
     {
       type: 'multiple',
       question:
+        "En un dataset de estudiantes, la columna 'Nivel Educativo' tiene valores ordinales: 'Primaria', 'Secundaria','Universidad'. ¿Qué codificación preservaría la relación de orden?",
+      options: [
+        'One-Hot Encoding',
+        'Frequency Encoding',
+        'Label Encoding ordinal'
+      ],
+      answer: 'Label Encoding ordinal'
+    },
+    {
+      type: 'multiple',
+      question:
         "Tienes un dataset de películas con la columna 'Género' (valores: 'Acción', 'Comedia', 'Drama'). ¿Qué codificación aplicarías para esta variable?",
       options: [
         'Codificación ordinal',
@@ -791,6 +863,77 @@ const questionsUnit1y2 = [
       ],
       answer:
         'La eliminación de registros completos que contienen al menos (N) atributos con valores ausentes'
+    },
+    {
+      type: 'multiple',
+      question:
+        '¿Qué describe mejor el concepto de "Pair wise Deletion" en el manejo de valores ausentes?',
+      options: [
+        'La eliminación de atributos (columnas) que contienen valores ausentes en un conjunto de datos.',
+        'La eliminación de registros completos que contienen al menos un valor ausente en un conjunto de datos.',
+        'La eliminación selectiva de registros para cada par de variables utilizando solo los registros que tienen datos disponibles para ese par de variables.'
+      ],
+      answer:
+        'La eliminación selectiva de registros para cada par de variables utilizando solo los registros que tienen datos disponibles para ese par de variables.'
+    },
+    {
+      type: 'multiple',
+      question:
+        '¿Por qué es importante la normalización de datos antes de entrenar un modelo?',
+      options: [
+        'Para aumentar el tamaño del conjunto de datos',
+        'Para eliminar datos duplicados',
+        'Para asegurar que todas las características tengan una escala similar',
+        'Para reducir el tiempo de entrenamiento'
+      ],
+      answer:
+        'Para asegurar que todas las características tengan una escala similar'
+    },
+    {
+      type: 'multiple',
+      question: '¿Qué técnica es útil para reducir la dimensionalidad?',
+      options: [
+        'PCA',
+        'Imputación por la mediana',
+        'Imputación por la moda',
+        'todas'
+      ],
+      answer: 'PCA'
+    },
+    {
+      type: 'multiple',
+      question: '¿Cuál es el propósito principal de la limpieza de datos?',
+      options: [
+        'Añadir más datos al dataset',
+        'Eliminar valores nulos o faltantes y corregir datos erróneos',
+        'Dividir los datos en conjuntos de entrenamiento y prueba',
+        'Aplicar algoritmos de aprendizaje automático'
+      ],
+      answer: 'Eliminar valores nulos o faltantes y corregir datos erróneos'
+    },
+    {
+      type: 'multiple',
+      question:
+        '¿Cuál es una estrategia alternativa a la eliminación de valores ausentes?',
+      options: [
+        'Imputación de valores ausentes',
+        'Aumento del tamaño del conjunto de datos.',
+        'Utilización de técnicas de reducción de la dimensionalidad.'
+      ],
+      answer: 'Imputación de valores ausentes'
+    },
+    {
+      type: 'multiple',
+      question:
+        'Si una columna tiene un 60% de valores faltantes, ¿qué enfoque podría ser razonable para tratarlos?',
+      options: [
+        'Imputación simple',
+        'Listwise Deletion',
+        'Pairwise Deletion',
+        'Column Deletion',
+        'Imputación multiple'
+      ],
+      answer: 'Column Deletion'
     }
   ]
 ]
