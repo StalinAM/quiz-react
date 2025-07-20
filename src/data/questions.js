@@ -1309,9 +1309,608 @@ const completeQuestions = [
       'Es un dato binario que indica si el pasajero sobrevivió (1) o no (0).'
   }
 ]
+const questionsU3 = [
+  {
+    type: 'multiple',
+    question: '¿Qué proporciones son habituales en la validación hold-out? 3',
+    options: ['50% y 50%', '90% y 10%', '70% y 30%', '60% y 40%'],
+    answer: '70% y 30%'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué parámetro en train_test_split garantiza que la división sea reproducible?',
+    options: ['shuffle', 'seed', 'random_state', 'validation_ratio'],
+    answer: 'random_state'
+  },
+  {
+    type: 'multiple',
+    question: '¿Cuál es el inconveniente principal de la validación hold-out?',
+    options: [
+      'Su complejidad computacional',
+      'Su falta de aleatoriedad',
+      'Su falta de representatividad',
+      'Su lentitud'
+    ],
+    answer: 'Su falta de representatividad'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué clase de sklearn permite realizar validación cruzada tipo k-fold?',
+    options: ['CrossValidator', 'StratifiedSplit', 'KFold', 'KSplitter'],
+    answer: 'KFold'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué función de distancia se usa tradicionalmente en k-NN?',
+    options: ['Manhattan', 'Hamming', 'Euclidiana', 'Mahalanobis'],
+    answer: 'Euclidiana'
+  },
+  {
+    type: 'multiple',
+    question: '¿Cuál es una debilidad del algoritmo k-NN?',
+    options: [
+      'Fase de entrenamiento lenta',
+      'No requiere procesamiento de datos',
+      'No genera un modelo',
+      'Siempre funciona bien con datos ruidosos'
+    ],
+    answer: 'No genera un modelo'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Por qué el algoritmo k-NN se considera un algoritmo de aprendizaje perezoso?',
+    options: [
+      'Porque entrena lento',
+      'Porque no entrena un modelo',
+      'Porque generaliza bien',
+      'Porque clasifica instantáneamente'
+    ],
+    answer: 'Porque no entrena un modelo'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué representa el valor de accuracy?',
+    options: [
+      'La proporción de VP sobre VP+FN',
+      'La proporción de predicciones correctas sobre el total',
+      'La proporción de FP sobre VP+FP',
+      'La proporción de VN sobre VP+FP'
+    ],
+    answer: 'La proporción de predicciones correctas sobre el total'
+  },
+  {
+    type: 'multiple',
+    question: '¿En qué caso la precisión (precision) es más crítica?',
+    options: [
+      'Cuando hay muchos verdaderos negativos',
+      'Cuando los falsos positivos son costosos',
+      'Cuando la clase positiva es mayoritaria',
+      'Cuando la matriz de confusión es cuadrada'
+    ],
+    answer: 'Cuando los falsos positivos son costosos'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué enfoque utiliza el árbol de decisión para dividir los datos?',
+    options: [
+      'Agrupamiento supervisado',
+      'Regla de Bayes',
+      'Partición recursiva',
+      'Eliminación iterativa'
+    ],
+    answer: 'Partición recursiva'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué representa un nodo hoja en un árbol de decisión?',
+    options: [
+      'Un atributo intermedio',
+      'El punto donde termina la decisión',
+      'El error acumulado',
+      'Una combinación de múltiples clases'
+    ],
+    answer: 'El punto donde termina la decisión'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué técnica utiliza Random Forest para crear diversidad entre árboles?',
+    options: ['Normalización', 'Regularización', 'Bagging', 'Clustering'],
+    answer: 'Bagging'
+  },
+  {
+    type: 'multiple',
+    question: '¿Cuál es una ventaja de Random Forest?',
+    options: [
+      'Es fácilmente interpretable',
+      'Tiene bajo costo computacional',
+      'Reduce el sobreajuste',
+      'Usa solo un árbol'
+    ],
+    answer: 'Reduce el sobreajuste'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué suposición hace el modelo Naive Bayes sobre las características?',
+    options: [
+      'Que son correlacionadas',
+      'Que tienen distribución exponencial',
+      'Que son independientes entre sí',
+      'Que son numéricas y positivas'
+    ],
+    answer: 'Que son independientes entre sí'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué problema evita el estimador de Laplace?',
+    options: [
+      'Normalización excesiva',
+      'Duplicación de clases',
+      'Probabilidades nulas',
+      'Redundancia en variables'
+    ],
+    answer: 'Probabilidades nulas'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué predice el algoritmo k-NN en tareas de regresión?',
+    options: [
+      'Una clase categórica',
+      'Una distancia promedio',
+      'Un valor continuo',
+      'Un vector de probabilidades'
+    ],
+    answer: 'Un valor continuo'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué método puede usarse para calcular la predicción en regresión k-NN?',
+    options: [
+      'Regla de Bayes',
+      'Promedio o mediana de los vecinos',
+      'Desviación estándar',
+      'Árbol de decisión'
+    ],
+    answer: 'Promedio o mediana de los vecinos'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué representa la variable “y” en la ecuación y = a + bx?',
+    options: [
+      'La variable independiente',
+      'El coeficiente de ajuste',
+      'El valor predicho o dependiente',
+      'El error de predicción'
+    ],
+    answer: 'El valor predicho o dependiente'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué método se utiliza para determinar los coeficientes en la regresión lineal?',
+    options: [
+      'Método de Monte Carlo',
+      'Estimación de máxima verosimilitud',
+      'Mínimos cuadrados ordinarios (OLS)',
+      'Promedio ponderado'
+    ],
+    answer: 'Mínimos cuadrados ordinarios (OLS)'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué representa la ecuación Y = Xβ + ϵ?',
+    options: [
+      'El modelo de árbol de decisión',
+      'La probabilidad de éxito',
+      'La regresión lineal múltiple en notación matricial',
+      'La normalización de características'
+    ],
+    answer: 'La regresión lineal múltiple en notación matricial'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué variable mide los gastos reclamados por los beneficiarios en el dataset de seguros?',
+    options: ['premium', 'claims', 'expenses', 'coverage'],
+    answer: 'expenses'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué patrón muestra la distribución de la variable expenses?',
+    options: [
+      'Distribución normal',
+      'Distribución uniforme',
+      'Distribución sesgada a la derecha',
+      'Distribución bimodal'
+    ],
+    answer: 'Distribución sesgada a la derecha'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Cuál es la diferencia principal entre la regresión logística y la regresión lineal?',
+    options: [
+      'La logística predice valores continuos',
+      'La logística modela la probabilidad de pertenencia a una clase',
+      'La lineal es más adecuada para clasificación',
+      'La logística requiere normalización'
+    ],
+    answer: 'La logística modela la probabilidad de pertenencia a una clase'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué representa P(A|B) en el teorema de Bayes?',
+    options: [
+      'La probabilidad marginal',
+      'La probabilidad conjunta',
+      'La probabilidad de A dado que ocurrió B',
+      'La probabilidad independiente'
+    ],
+    answer: 'La probabilidad de A dado que ocurrió B'
+  },
+  {
+    type: 'multiple',
+    question: '¿Por qué se llama “Naive” el algoritmo Naive Bayes?',
+    options: [
+      'Porque no usa probabilidades',
+      'Porque asume independencia entre características',
+      'Porque no funciona con datos categóricos',
+      'Porque entrena sin datos'
+    ],
+    answer: 'Porque asume independencia entre características'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué técnica se usa para transformar atributos categóricos en Naive Bayes?',
+    options: [
+      'PCA',
+      'SVM',
+      'Codificación one-hot u ordinal',
+      'Normalización Z-score'
+    ],
+    answer: 'Codificación one-hot u ordinal'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué problema puede presentar la técnica Z-score en Naive Bayes?',
+    options: [
+      'Duplicación de clases',
+      'Crea valores negativos',
+      'Disminuye la varianza',
+      'Hace lento el entrenamiento'
+    ],
+    answer: 'Crea valores negativos'
+  }
+]
+const questionsU4 = [
+  {
+    type: 'multiple',
+    question: '¿Cuál es el objetivo del aprendizaje no supervisado? 4',
+    options: [
+      'Predecir una variable de salida',
+      'Clasificar ejemplos con etiquetas',
+      'Describir los datos y descubrir patrones',
+      'Reducir el tiempo de entrenamiento'
+    ],
+    answer: 'Describir los datos y descubrir patrones'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué no existe en el aprendizaje no supervisado?',
+    options: [
+      'Datos numéricos',
+      'Patrones ocultos',
+      'Una variable a predecir',
+      'Agrupamientos'
+    ],
+    answer: 'Una variable a predecir'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué indica un valor alto de disimilitud?',
+    options: [
+      'Que los objetos son muy similares',
+      'Que los objetos son idénticos',
+      'Que los objetos son muy diferentes',
+      'Que no se puede comparar'
+    ],
+    answer: 'Que los objetos son muy diferentes'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué medida mide la distancia en línea recta entre dos puntos?',
+    options: ['Manhattan', 'Mahalanobis', 'Chebyshev', 'Euclidiana'],
+    answer: 'Euclidiana'
+  },
+  {
+    type: 'multiple',
+    question: '¿Cuál es una limitación de la distancia euclidiana?',
+    options: [
+      'Es sensible a la densidad',
+      'Solo funciona con variables categóricas',
+      'Es sensible a la escala de las características',
+      'No puede usarse con datos correlacionados'
+    ],
+    answer: 'Es sensible a la escala de las características'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué distancia es útil cuando las variables no tienen relación aparente?',
+    options: ['Manhattan', 'Euclidiana', 'Chebyshev', 'Mahalanobis'],
+    answer: 'Manhattan'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué mide la distancia de Chebyshev?',
+    options: [
+      'La suma de las diferencias',
+      'El promedio de diferencias',
+      'La máxima diferencia absoluta',
+      'El número de coincidencias'
+    ],
+    answer: 'La máxima diferencia absoluta'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué mide la covarianza?',
+    options: [
+      'La disimilitud entre vectores',
+      'La diferencia entre centros',
+      'Cómo varían conjuntamente dos variables',
+      'La suma de cuadrados entre puntos'
+    ],
+    answer: 'Cómo varían conjuntamente dos variables'
+  },
+  {
+    type: 'multiple',
+    question: '¿Cuál es una desventaja de la covarianza?',
+    options: [
+      'Es muy precisa',
+      'Solo sirve para valores binarios',
+      'No está acotada, por lo que es difícil de interpretar',
+      'No se puede usar en matrices'
+    ],
+    answer: 'No está acotada, por lo que es difícil de interpretar'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué rango tiene el coeficiente de correlación de Pearson?',
+    options: ['[0, 1]', '[−1, 1]', '[0, ∞]', '[−1, 0]'],
+    answer: '[−1, 1]'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué característica especial tiene la distancia de Mahalanobis?',
+    options: [
+      'Ignora la varianza',
+      'Solo compara vectores binarios',
+      'Ajusta la distancia según la forma de los datos',
+      'No requiere matriz de covarianza'
+    ],
+    answer: 'Ajusta la distancia según la forma de los datos'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué necesita la distancia de Mahalanobis para su cálculo?',
+    options: [
+      'Desviación estándar y moda',
+      'Centroide y desviación',
+      'Vector de medias y matriz de covarianza',
+      'Longitud del vector y rango'
+    ],
+    answer: 'Vector de medias y matriz de covarianza'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué representa la matriz de distancias?',
+    options: [
+      'Las distancias de un punto con su centro',
+      'Las distancias entre todos los puntos entre sí',
+      'El promedio de las distancias a los centroides',
+      'Solo distancias euclidianas'
+    ],
+    answer: 'Las distancias entre todos los puntos entre sí'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué mide la similitud coseno?',
+    options: [
+      'La suma de las diferencias absolutas',
+      'El ángulo entre vectores',
+      'La magnitud de los vectores',
+      'La distancia euclidiana'
+    ],
+    answer: 'El ángulo entre vectores'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué tipo de datos son ideales para la similitud coseno?',
+    options: [
+      'Binarios',
+      'Numéricos discretos',
+      'Datos con alta dimensionalidad',
+      'Datos geográficos'
+    ],
+    answer: 'Datos con alta dimensionalidad'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué datos se recomienda para aplicar la distancia de Jaccard?',
+    options: [
+      'Continuos',
+      'Binarios o categóricos',
+      'Normalizados',
+      'Numéricos correlacionados'
+    ],
+    answer: 'Binarios o categóricos'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Cuál es el método de clustering basado en particiones más conocido y utilizado?',
+    options: [
+      'DBSCAN',
+      'Hierarchical Clustering',
+      'K-means',
+      'Gaussian Mixture'
+    ],
+    answer: 'K-means'
+  },
+  {
+    type: 'multiple',
+    question: '¿Cuál es el primer paso del algoritmo K-means?',
+    options: [
+      'Calcular la matriz de distancias',
+      'Seleccionar k centroides iniciales',
+      'Normalizar los datos',
+      'Determinar la disimilitud'
+    ],
+    answer: 'Seleccionar k centroides iniciales'
+  },
+  {
+    type: 'multiple',
+    question:
+      '¿Qué medida de distancia usa exclusivamente el algoritmo K-means estándar en scikit-learn?',
+    options: ['Manhattan', 'Coseno', 'Euclidiana (norma L2)', 'Mahalanobis'],
+    answer: 'Euclidiana (norma L2)'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué desventaja tiene K-means?',
+    options: [
+      'No requiere definición previa de k',
+      'Es insensible a la escala de los datos',
+      'Es sensible a outliers',
+      'Funciona bien con clústeres no esféricos'
+    ],
+    answer: 'Es sensible a outliers'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué criterio de detención se puede usar en K-means?',
+    options: [
+      'El número total de atributos',
+      'El tiempo de ejecución',
+      'La suma de distancias alcanza un valor mínimo',
+      'La correlación entre puntos'
+    ],
+    answer: 'La suma de distancias alcanza un valor mínimo'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué caracteriza a la evaluación extrínseca en clustering?',
+    options: [
+      'Evalúa sin usar etiquetas verdaderas',
+      'Compara resultados con una partición de referencia',
+      'Usa distancias promedio',
+      'Solo considera cohesión interna'
+    ],
+    answer: 'Compara resultados con una partición de referencia'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué mide el coeficiente de silueta?',
+    options: [
+      'La distancia media entre puntos y el centro global',
+      'La relación entre etiquetas verdaderas y predichas',
+      'Qué tan similar es un punto a su clúster respecto a otros',
+      'El número de clústeres'
+    ],
+    answer: 'Qué tan similar es un punto a su clúster respecto a otros'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué valor indica un buen agrupamiento según la silueta?',
+    options: [
+      'Un valor cercano a −1',
+      'Un valor igual a 0',
+      'Un valor cercano a 1',
+      'Un valor mayor a 10'
+    ],
+    answer: 'Un valor cercano a 1'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué mide el índice de Calinski-Harabasz?',
+    options: [
+      'La densidad del dataset',
+      'La diferencia entre medias de clústeres',
+      'La dispersión dentro y entre clústeres',
+      'La cantidad de centroides óptimos'
+    ],
+    answer: 'La dispersión dentro y entre clústeres'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué mide la inercia (WCSS)?',
+    options: [
+      'La dispersión entre clústeres',
+      'La similitud coseno',
+      'La distancia máxima entre centroides',
+      'La compactación de los clústeres'
+    ],
+    answer: 'La compactación de los clústeres'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué indica una WCSS baja?',
+    options: [
+      'Clústeres dispersos',
+      'Clústeres compactos',
+      'Muchos outliers',
+      'Clústeres no esféricos'
+    ],
+    answer: 'Clústeres compactos'
+  },
+  {
+    type: 'multiple',
+    question: '¿Cuál es el propósito del Método del Codo?',
+    options: [
+      'Detectar outliers',
+      'Encontrar el valor óptimo de WCSS',
+      'Determinar el número óptimo de clústeres',
+      'Maximizar la silueta'
+    ],
+    answer: 'Determinar el número óptimo de clústeres'
+  },
+  {
+    type: 'multiple',
+    question: '¿Qué representa el "codo" en el gráfico del Método del Codo?',
+    options: [
+      'El valor máximo de WCSS',
+      'El valor mínimo de distancia Mahalanobis',
+      'El punto donde agregar más clústeres no mejora significativamente',
+      'El número de variables correlacionadas'
+    ],
+    answer: 'El punto donde agregar más clústeres no mejora significativamente'
+  },
+  {
+    type: 'multiple',
+    question: '¿Cuál es una desventaja del Método del Codo?',
+    options: [
+      'Requiere etiquetas verdaderas',
+      'No puede visualizarse',
+      'Es subjetivo si el codo no es claro',
+      'Solo funciona con datos categóricos'
+    ],
+    answer: 'Es subjetivo si el codo no es claro'
+  }
+]
+
 export const questions = [
   ...quuestionsUnit1,
   ...questionsUnit1y2,
+  ...questionsU3,
+  ...questionsU4,
   {
     type: 'multiple',
     question:
