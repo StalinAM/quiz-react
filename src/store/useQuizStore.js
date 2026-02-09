@@ -12,15 +12,25 @@ export const useQuizStore = create((set) => ({
   currentQuestionIndex: 0,
   score: 0,
   quizType: null,
-  setQuizType: (unidad) =>
-    set({
-      quizType: unidad,
-      questions:
-        unidad === 'all'
-          ? Object.values(questions).flat()
-          : questions[unidad] || [],
-      currentQuestionIndex: 0,
-      score: 0
+  setQuizType: (tipo) =>
+    set((state) => {
+      let filteredQuestions = []
+      if (tipo === 'all') {
+        filteredQuestions = Object.values(questions).flat()
+      } else if (Object.keys(questions).includes(tipo)) {
+        filteredQuestions = questions[tipo] || []
+      } else {
+        // Filtrar por tipo
+        filteredQuestions = Object.values(questions)
+          .flat()
+          .filter((q) => q.type === tipo)
+      }
+      return {
+        quizType: tipo,
+        questions: filteredQuestions,
+        currentQuestionIndex: 0,
+        score: 0
+      }
     }),
   setAnswer: (selected) =>
     set((state) => {

@@ -43,28 +43,56 @@ export function QuizAllTypes({ questions, onComplete }) {
     return ''
   }
 
+  const handleNext = () => {
+    setFeedback('')
+    setShowCorrect(false)
+    setLastCorrect(null)
+    setAnswered(false)
+    // Elimina la respuesta de la siguiente pregunta
+    setAnswers((prev) => {
+      const newAnswers = { ...prev }
+      delete newAnswers[current + 1]
+      return newAnswers
+    })
+    if (current + 1 < questions.length) {
+      setCurrent(current + 1)
+    } else {
+      setFinished(true)
+      if (onComplete) onComplete(score)
+    }
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     if (answered) return
     let isCorrect = false
     const userAnswer = answers[current]
+    // Solo valida si hay respuesta
     if (q.type === 'single-choice') {
+      if (typeof userAnswer === 'undefined') return
       isCorrect = userAnswer === q.answer
     } else if (q.type === 'multiple-select') {
+      if (!Array.isArray(userAnswer) || userAnswer.length === 0) return
+      const userArr = Array.from(new Set(userAnswer)).sort()
+      const correctArr = Array.isArray(q.answers)
+        ? Array.from(new Set(q.answers)).sort()
+        : []
       isCorrect =
-        Array.isArray(userAnswer) &&
-        Array.isArray(q.answers) &&
-        userAnswer.length === q.answers.length &&
-        userAnswer.every((a) => q.answers.includes(a))
+        userArr.length === correctArr.length &&
+        userArr.every((a, i) => a === correctArr[i])
     } else if (q.type === 'true-false') {
+      if (typeof userAnswer === 'undefined') return
       isCorrect = userAnswer === q.answer
     } else if (q.type === 'complete' || q.type === 'open-text') {
+      if (!userAnswer || userAnswer.trim() === '') return
       isCorrect =
         typeof userAnswer === 'string' &&
         userAnswer.trim().toLowerCase() === q.answer.trim().toLowerCase()
     } else if (q.type === 'dropdown') {
+      if (typeof userAnswer === 'undefined') return
       isCorrect = userAnswer === q.answer
     } else if (q.type === 'matching') {
+      if (!userAnswer || Object.values(userAnswer).length === 0) return
       isCorrect = q.pairs.every(
         (pair, idx) => userAnswer && userAnswer[idx] === pair.answer
       )
@@ -79,19 +107,6 @@ export function QuizAllTypes({ questions, onComplete }) {
     setFeedback(isCorrect ? '¡Correcto!' : 'Incorrecto')
     setScore((prev) => prev + (isCorrect ? 1 : 0))
     setAnswered(true)
-  }
-
-  const handleNext = () => {
-    setFeedback('')
-    setShowCorrect(false)
-    setLastCorrect(null)
-    setAnswered(false)
-    if (current + 1 < questions.length) {
-      setCurrent(current + 1)
-    } else {
-      setFinished(true)
-      if (onComplete) onComplete(score)
-    }
   }
 
   if (finished) {
@@ -231,9 +246,10 @@ export function QuizAllTypes({ questions, onComplete }) {
                   <option value='' disabled>
                     Selecciona...
                   </option>
-                  {pair.options.map((opt, i) => (
-                    <option key={i} value={opt}>
-                      {opt}
+                  {/* Genera opciones a partir de todas las respuestas posibles */}
+                  {q.pairs.map((p, i) => (
+                    <option key={i} value={p.answer}>
+                      {p.answer}
                     </option>
                   ))}
                 </select>
