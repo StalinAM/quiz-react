@@ -1,3173 +1,1888 @@
-const quuestionsUnit1 = [
-  // Prueba unidad 1
-  {
-    type: 'multiple',
-    question: '¿Qué tipos de datos se almacenan en un Data Warehouse?',
-    options: [
-      'Estructurados',
-      'Estructurados y Semi estructurados',
-      'Semi estructurados',
-      'Estructurados, Semi estructurados y no Estructurados'
-    ],
-    answer: 'Estructurados'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es una característica clave de los datos no estructurados?',
-    options: [
-      'Están organizados en filas y columnas',
-      'Están siempre almacenados en bases de datos',
-      'ninguna de las anteriores',
-      'No tienen una estructura predefinida'
-    ],
-    answer: 'No tienen una estructura predefinida'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es una diferencia clave entre el aprendizaje supervisado y el no supervisado?',
-    options: [
-      'El aprendizaje supervisado no requiere datos etiquetados, mientras que el no supervisado sí.',
-      'Ambos requieren datos etiquetados.',
-      'Ambos puedes trabajar con datos no etiquetados.',
-      'El aprendizaje supervisado requiere datos etiquetados, mientras que el no supervisado no.'
-    ],
-    answer:
-      'El aprendizaje supervisado requiere datos etiquetados, mientras que el no supervisado no.'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué es el aprendizaje automático?',
-    options: [
-      'Una subdisciplina de la inteligencia artificial que se enfoca en desarrollar algoritmos que permiten a las máquinas o al software tener comportamietnos inteligentes.',
-      'Un tipo de hardware especializado para procesamiento de datos.',
-      'Es el estudio científico de algoritmos y modelos estadísticos para realizar una tarea utilizado algoritmos especializados.',
-      'Es una rama de la Inteligencia Artificial que permite a los sistemas mejorar su rendimiento en tareas específicas a través de la experiencia y el análisis de datos, sin la necesidad de ser explícitamente programados para ello.'
-    ],
-    answer:
-      'Es una rama de la Inteligencia Artificial que permite a los sistemas mejorar su rendimiento en tareas específicas a través de la experiencia y el análisis de datos, sin la necesidad de ser explícitamente programados para ello.'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué tipo de datos incluye archivos JSON y XML?',
-    options: [
-      'Datos estructurados',
-      'Datos no estructurados',
-      'todas las anteriores',
-      'Datos semiestructurados'
-    ],
-    answer: 'Datos semiestructurados'
-  },
-  {
-    type: 'multiple',
-    question:
-      "¿Cuál de las siguientes es una de las características de Big Data conocida como las 5V's?",
-    options: ['Visibilidad', 'Vulnerabilidad', 'Virtualización', 'Volumen'],
-    answer: 'Volumen'
-  },
-  {
-    type: 'multiple',
-    question: 'La Variedad en Big Data se refiere a:',
-    options: [
-      'La diferencia en la velocidad a la que se generan los datos.',
-      'El gran tamaño de los archivos individuales.',
-      'La cantidad de servidores necesarios para almacenar los datos.',
-      'Los diversos formatos y fuentes de datos (estructurados, no estructurados y semiestructurados).'
-    ],
-    answer:
-      'Los diversos formatos y fuentes de datos (estructurados, no estructurados y semiestructurados).'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tecnología es comúnmente usada para implementar un Data Lake?',
-    options: [
-      'Bases de datos relacionales como Oracle.',
-      'Herramientas de streaming como Apache Kafka.',
-      'Sistemas de memorización en caché como Redis.',
-      'Apache Hadoop (HDFS) o soluciones en la nube como AWS S3.'
-    ],
-    answer: 'Apache Hadoop (HDFS) o soluciones en la nube como AWS S3.'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tecnologías fueron desarrolladas específicamente para manejar almacenamiento y procesamiento escalable en Big Data?',
-    options: [
-      'MySQL y Oracle Database.',
-      'Excel y Access.',
-      'Blockchain y Redes Neuronales.',
-      'HDFS (Hadoop Distributed File System) y bases de datos NoSQL.'
-    ],
-    answer: 'HDFS (Hadoop Distributed File System) y bases de datos NoSQL.'
-  },
-  {
-    type: 'multiple',
-    question:
-      'Un hospital quiere identificar pacientes con alto riesgo de diabetes usando datos médicos. ¿Qué tipo de modelo aplicarías?',
-    options: ['Regresión lineal', 'Clasificación multiclase', 'las dos'],
-    answer: 'Clasificación multiclase'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál de los siguientes es un ejemplo de dato estructurado?',
-    options: [
-      'Un video de YouTube',
-      'Un correo electrónico en formato RAW',
-      'Una publicación en redes sociales con imágenes',
-      'Una tabla de MySQL con registros de ventas'
-    ],
-    answer: 'Una tabla de MySQL con registros de ventas'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué caracteriza al aprendizaje no supervisado en machine learning?',
-    options: [
-      'El modelo requiere datos etiquetados para entrenarse.',
-      'Se usa exclusivamente para predecir valores numéricos continuos.',
-      'Un humano supervisa cada paso del proceso de aprendizaje.',
-      'El modelo identifica patrones o estructuras en datos sin etiquetas predefinidas.'
-    ],
-    answer:
-      'El modelo identifica patrones o estructuras en datos sin etiquetas predefinidas.'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de los siguientes es un ejemplo de aplicación del aprendizaje automático en la vida cotidiana?',
-    options: [
-      'Creación de gráficos en 3D',
-      'Diseño de chips de computadora',
-      'Escritura de artículos científicos',
-      'Sistemas de recomendación en plataformas de streaming'
-    ],
-    answer: 'Sistemas de recomendación en plataformas de streaming'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de las siguientes opciones describe CORRECTAMENTE las "5 V\'s del Big Data" ?',
-    options: [
-      'Volumen, Velocidad, Variedad, Veracidad y Valor',
-      'Volumen, Visibilidad, Variabilidad, Veracidad y Viralidad',
-      'Volumen, Virtualización, Variedad, Veracidad y Vigencia',
-      'Volumen, Velocidad, Validación, Variedad y Vulnerabilidad'
-    ],
-    answer: 'Volumen, Velocidad, Variedad, Veracidad y Valor'
-  },
-  {
-    type: 'multiple',
-    question: 'La "V" de Valor en Big Data se refiere principalmente a:',
-    options: [
-      'El costo monetario de almacenar grandes volúmenes de datos',
-      'La cantidad de servidores necesarios para procesar datos',
-      'La velocidad a la que los datos pierden relevancia',
-      'La capacidad de extraer información útil y accionable para la toma de decisiones'
-    ],
-    answer:
-      'La capacidad de extraer información útil y accionable para la toma de decisiones'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál de los siguientes es un ejemplo de datos estructurados?',
-    options: [
-      'Texto de un libro',
-      'Imagen',
-      'Archivo de audio',
-      'Base de datos SQL'
-    ],
-    answer: 'Base de datos SQL'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de las siguientes opciones describe mejor el concepto de Big Data?',
-    options: [
-      'Datos pequeños y manejables que se pueden analizar con hojas de cálculo',
-      'Grandes volúmenes de datos complejos que requieren tecnologías avanzadas para su procesamiento y análisis',
-      'ADatos generados únicamente por dispositivos IoT (Internet de las Cosas)',
-      'Información almacenada en bases de datos relacionales.'
-    ],
-    answer:
-      'Grandes volúmenes de datos complejos que requieren tecnologías avanzadas para su procesamiento y análisis'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es una ventaja clave de un Data Lake frente a un Data Warehouse tradicional?',
-    options: [
-      'Flexibilidad para almacenar datos sin necesidad de esquemas predefinidos.',
-      'Mayor velocidad para procesar transacciones en tiempo real (OLTP).',
-      'Elimina automáticamente los datos duplicados.',
-      'Solo trabaja con herramientas de BI tradicionales (ej: Tableau).'
-    ],
-    answer:
-      'Flexibilidad para almacenar datos sin necesidad de esquemas predefinidos.'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué tipo de datos puede almacenar un Data Lake?',
-    options: [
-      'Solo datos estructurados en tablas.',
-      'Exclusivamente texto plano (como logs).',
-      'Únicamente datos en tiempo real.',
-      'Datos estructurados, semiestructurados y no estructurados (ej: CSV, JSON, imágenes, videos).'
-    ],
-    answer:
-      'Datos estructurados, semiestructurados y no estructurados (ej: CSV, JSON, imágenes, videos).'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de estas fuentes genera principalmente datos no estructurados?',
-    options: [
-      'Un registro de transacciones bancarias',
-      'Un stream de tweets con texto, emojis y multimedia',
-      'Una base de datos de clientes en PostgreSQL',
-      'Un archivo CSV con temperaturas históricas'
-    ],
-    answer: 'Un stream de tweets con texto, emojis y multimedia'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de estas tecnologías es comúnmente asociada a un Data Warehouse?',
-    options: [
-      'Apache Kafka (procesamiento de streams).',
-      'MongoDB (base de datos NoSQL).',
-      'ninguna',
-      'ETL para cargar datos'
-    ],
-    answer: 'ETL para cargar datos'
-  },
-  {
-    type: 'multiple',
-    question:
-      'Una empresa de retail desea predecir las ventas mensuales (en dólares) de un producto usando datos históricos. ¿Qué enfoque debe usarse?',
-    options: ['Clasificación', 'Detección de anomalías.', 'todos', 'Regresión'],
-    answer: 'Regresión'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué se necesita sí o sí para entrenar un modelo de aprendizaje supervisado?',
-    options: [
-      'Un conjunto grande de datos no estructurados (ej: videos).',
-      'Eliminar todas las variables numéricas del dataset.',
-      'todas las anteriores',
-      'Un dataset con ejemplos de entrada y sus etiquetas correctas asociadas.'
-    ],
-    answer:
-      'Un dataset con ejemplos de entrada y sus etiquetas correctas asociadas.'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tipo de dato predomina en fuentes como sensores IoT o imágenes médicas?',
-    options: [
-      'Solo datos estructurados',
-      'Exclusivamente texto plano',
-      'Datos en formato CSV',
-      'Datos no estructurados'
-    ],
-    answer: 'Datos no estructurados'
-  },
-  {
-    type: 'multiple',
-    question:
-      'Un banco quiere predecir si un cliente pagará o no un préstamo basándose en su historial crediticio. ¿Qué tipo de modelo de aprendizaje supervisado es más adecuado?',
-    options: [
-      'Clasificación (ej: modelo que devuelva "Sí" o "No").',
-      'Regresión (ej: modelo que prediga el monto exacto del préstamo).',
-      'Clustering (agrupamiento no supervisado).',
-      'todos'
-    ],
-    answer: 'Clasificación (ej: modelo que devuelva "Sí" o "No").'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tecnologías y fuentes contribuyen a la generación de grandes volúmenes de datos (Big Data) ?',
-    options: [
-      'Redes sociales, sensores IoT y dispositivos móviles.',
-      'Plataformas de comercio electrónico y sistemas de seguimiento.',
-      'Streaming de datos y tecnologías de digitalización.',
-      'Todas las anteriores.'
-    ],
-    answer: 'Todas las anteriores.'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de estos es un ejemplo típico de problema de aprendizaje supervisado?',
-    options: [
-      'Segmentar clientes en grupos basados en su comportamiento (sin etiquetas previas).',
-      'Analizar textos para extraer temas principales no definidos.',
-      'Generar imágenes nuevas con inteligencia artificial.',
-      'Predecir el precio de una casa usando datos históricos de ventas (con precios conocidos).'
-    ],
-    answer:
-      'Predecir el precio de una casa usando datos históricos de ventas (con precios conocidos).'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es el objetivo principal de un Data Warehouse?',
-    options: [
-      'Procesar transacciones en tiempo real (ej: compras en línea).',
-      'Reemplazar por completo las bases de datos operacionales.',
-      'Eliminar datos no estructurados como imágenes o videos.',
-      'Almacenar datos históricos integrados para análisis y reporting.'
-    ],
-    answer: 'Almacenar datos históricos integrados para análisis y reporting.'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tipo de aprendizaje automático implica que el modelo aprende mediante recompensas y penalizaciones?',
-    options: [
-      'Aprendizaje Supervisado',
-      'Aprendizaje No Supervisado',
-      'Aprendizaje por Refuerzo',
-      'Aprendizaje Semi-supervisado'
-    ],
-    answer: 'Aprendizaje por Refuerzo'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué tipo de datos incluye Big Data?',
-    options: [
-      'Solo datos estructurados',
-      'Solo datos no estructurados',
-      'Datos estructurados, no estructurados y semiestructurados',
-      'Solo datos semiestructurados'
-    ],
-    answer: 'Datos estructurados, no estructurados y semiestructurados'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de estos es un ejemplo típico de aprendizaje no supervisado?',
-    options: [
-      'Predecir si un correo es spam usando ejemplos etiquetados.',
-      'Agrupar noticias en temas similares sin categorías predefinidas',
-      'Clasificar imágenes de perros y gatos con etiquetas.',
-      'Calcular la probabilidad de que un paciente tenga diabetes usando datos históricos.'
-    ],
-    answer: 'Agrupar noticias en temas similares sin categorías predefinidas'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué es una instancia en un conjunto de datos estructurados?',
-    options: [
-      'Una columna en una tabla',
-      'Una fila en una tabla',
-      'Un archivo de texto',
-      'todas las anteriores'
-    ],
-    answer: 'Una fila en una tabla'
-  },
-  {
-    type: 'multiple-select',
-    question:
-      '¿Cuáles son algunas tecnologías clave para el almacenamiento y procesamiento de Big Data?',
-    options: [
-      'Sistemas distribuidos y cloud computing.',
-      'Hadoop y Spark',
-      'Bases de datos relacionales tradicionales',
-      'archivos de texto y excel'
-    ],
-    answer: ['Sistemas distribuidos y cloud computing.', 'Hadoop y Spark']
-  },
-  {
-    type: 'complete',
-    question:
-      '¿Qué concepto refleja la diferencia entre programar a una máquina para realizar un movimiento específico y programarla para que aprenda a moverse por sí misma?',
-    answer: 'aprendizaje automático'
-  },
-  {
-    type: 'complete',
-    question:
-      'Explique que es la vision artificial y porque es parte de la inteligencia artificial',
-    answer:
-      'La vision artificial es una parte de la inteligencia artificial porque imita un comportamiento "inteligente" como lo es identificar cosas en las imagenes.'
-  },
-  {
-    type: 'complete',
-    question:
-      'Explique que es el procesamiento del lenguaje natural y porque es parte de la inteligencia artificial',
-    answer:
-      'El Procesamiento del Lenguaje Natural (PLN) es una rama de la inteligencia artificial que permite a las máquinas entender, interpretar y generar lenguaje humano, facilitando la comunicación entre personas y computadoras.'
-  },
-  {
-    type: 'complete',
-    question:
-      'Mencione dos esquemas en los que los datos en un data warehouse están estructurados y organizados',
-    answer: 'copo de nieve, estrella'
-  },
-  {
-    type: 'complete',
-    question: 'describa para que sirve Hadoop Distributed File System (HDFS)',
-    answer:
-      'Es un tipo de almacenamiento distribuido que permite el procesamiento y almacenamiento de grandes volúmenes de datos. Al ser distribuidos se alojan en clústeres, lo cual permite el escalamiento horizontal y la flexibilidad de los datos. '
-  },
-  {
-    type: 'complete',
-    question:
-      'Describa tres de los eventos mas importantes de la historia de la IA durante su renacimiento moderno: años 2000- actualidad',
-    answer:
-      '2000 = Desarrollo del machine learning 2010 = Surgimiento del deep learning Actualidad = ChatGPT'
-  },
-  {
-    type: 'complete',
-    question:
-      'Explique que es la robotica y porque es es parte de la inteligencia artificial',
-    answer:
-      'La robotica es una parte de la iteligencia artificial porque imita comportamientos "inteligentes" como lo son el reaccionar ante el entorno, hacer movimientos con sentido, etc.'
-  },
-  {
-    type: 'complete',
-    question:
-      'Describa que es el almacenamiento en la nube en el contexto del Big Data',
-    answer:
-      'Es un tipo de almacenamiento que no requiere inversión en equipos físicos, ya que toda la información se guarda, se procesa se almacena , analiza en la nube y los servicios que estas empresas ofrecen por almacenar los datos en clústures distibuidos, un ejemplo de estas plataformas es Amazon S3, Google Cloud entre otras.'
-  },
-  {
-    type: 'complete',
-    question:
-      'Describa tres de los eventos mas importantes de la historia de la IA durante sus primeros pasos: años 1956 - 1970',
-    answer:
-      '1956 = Se acuñó el término inteligencia artificial en una conferencia, y se tomó formalidad al estudio. 1950 - 1960 = Inician las investigaciones y profundización del aprendizaje autónomo. 1970 = Invierno de la inteligencia artificial por falta de interés y recursos para el procesamiento de los datos.'
-  },
-  {
-    type: 'complete',
-    question: 'Describa que son la redes neuronales profundas',
-    answer:
-      'Son modelos de aprendizaje basados en capas que simulan una neurona real del cerebro humano, pero no siguen la lógica de esta como tal, teóricamente se pueden agregar cuantas capas sean necesarios para el entrenamiento'
-  },
-  {
-    type: 'complete',
-    question:
-      'Escriba dos caracteristica de un sistema de almacenamiento masivo como Data Lake (lago de datos)',
-    answer: 'Flexibilidad, Escalabilidad'
-  },
-  {
-    type: 'complete',
-    question: 'Describa como se genera el BigData',
-    answer:
-      'El BigData se genera de la necesidad de recopilar, almacenar, gestionar y analizar grandes volumenes de datos que se generan a gran velocidad hoy en día con la digitalizacion. Para poder sacar informacion valiosa de los datos y poder tomar decisiones informadas.'
-  },
-  {
-    type: 'complete',
-    question:
-      'Escriba dos tecnologías clave para manejar la Velocidad del Big Data',
-    answer: 'Apache Kafka, Apache Flink'
-  },
-  {
-    type: 'complete',
-    question: 'Defina que es inteligencia artificial',
-    answer:
-      'La Inteligencia Artificial es el campo en el cual se investiga y desarrolla máquinas capaces de imitar el comportamiento humano sin necesidad de programarlas explicitamente.'
-  }
-]
-const questionsUnit1y2 = [
-  {
-    type: 'multiple',
-    question: 'Los datos semiestructurados se caracterizan por:',
-    options: [
-      'No tener ningún formato predefinido',
-      'Usar etiquetas o metadatos para organizar la información (ej: JSON, XML)',
-      'Requerir siempre bases de datos relacionales',
-      'Ser exclusivamente numéricos'
-    ],
-    answer:
-      'Usar etiquetas o metadatos para organizar la información (ej: JSON, XML)'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tipo de variable se obtiene al convertir datos categóricos mediante la codificación one-hot?',
-    options: [
-      'Variable continua',
-      'Variable binaria',
-      'Variable discreta',
-      'Variable cuantitativa'
-    ],
-    answer: 'Variable binaria'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué sucede con los registros que contienen valores ausentes durante la eliminación de valores ausentes?',
-    options: [
-      'Se reemplazan por el valor medio de la variable.',
-      'Se imputan utilizando algoritmos de aprendizaje automático.',
-      'Se ponderan según el número de valores ausentes.',
-      'Se eliminan por completo del conjunto de datos.'
-    ],
-    answer: 'Se eliminan por completo del conjunto de datos.'
-  },
-  {
-    type: 'multiple',
-    question:
-      "Si los valores faltantes en 'horas de ejercicio semanal' no dependen de ninguna variable observable ni de sí mismos, ¿qué tipo de faltante es?",
-    options: [
-      'MAR (Missing at Random)',
-      'NMAR (Missing Not at Random)',
-      'MCAR (Missing Completely at Random)',
-      'Ninguna de las anteriores'
-    ],
-    answer: 'MCAR (Missing Completely at Random)'
-  },
-  {
-    type: 'multiple',
-    question:
-      "En un dataset de pacientes, la columna 'presión arterial' tiene valores faltantes aleatorios debido a fallas técnicas en el dispositivo de medición. ¿Qué tipo de valor faltante es?",
-    options: [
-      'MAR (Missing at Random)',
-      'NMAR (Missing Not at Random)',
-      'MCAR (Missing Completely at Random)',
-      'Ninguna de las anteriores'
-    ],
-    answer: 'MCAR (Missing Completely at Random)'
-  },
-  {
-    type: 'multiple',
-    question:
-      'En un estudio de rendimiento académico, las calificaciones de matemáticas faltan más en estudiantes con bajo desempeño en lenguaje. ¿Qué tipo de valor faltante es?',
-    options: [
-      'MAR (Missing at Random)',
-      'NMAR (Missing Not at Random)',
-      'MCAR (Missing Completely at Random)',
-      'Ninguna de las anteriores'
-    ],
-    answer: 'MAR (Missing at Random)'
-  },
-  {
-    type: 'multiple',
-    question:
-      'En un dataset de ventas, los clientes que no responden a una encuesta de satisfacción son mayormente los que recibieron productos defectuosos. ¿Qué tipo de faltante es?',
-    options: [
-      'MAR (Missing at Random)',
-      'NMAR (Missing Not at Random)',
-      'MCAR (Missing Completely at Random)',
-      'Ninguna de las anteriores'
-    ],
-    answer: 'NMAR (Missing Not at Random)'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es el propósito principal del test de chi-cuadrado en aprendizaje automatico?',
-    options: [
-      'Comparar la media de dos muestras independientes.',
-      'Evaluar la asociación entre dos variables categóricas.',
-      'Determinar la relación lineal entre dos variables continuas.',
-      'Calcular la varianza de una población.'
-    ],
-    answer: 'Evaluar la asociación entre dos variables categóricas.'
-  },
-  {
-    type: 'multiple',
-    question:
-      'En una encuesta de ingresos, las personas con salarios altos tienden a no reportar su ingreso. ¿Qué tipo de valor faltante es?',
-    options: [
-      'MAR (Missing at Random)',
-      'NMAR (Missing Not at Random)',
-      'MCAR (Missing Completely at Random)',
-      'Ninguna de las anteriores'
-    ],
-    answer: 'NMAR (Missing Not at Random)'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es un ejemplo de un conjunto de datos que sigue un patrón MAR (Missing At Random)?',
-    options: [
-      'Un estudio de salud en el que los datos sobre la ingesta de alcohol están ausentes para personas que no participaron en la encuesta.',
-      'Los datos sobre la edad faltan aleatoriamente para todas las observaciones.',
-      'Un estudio de rendimiento académico en el que los datos sobre las calificaciones están ausentes para los estudiantes que no asistieron a ciertas clases.'
-    ],
-    answer:
-      'Un estudio de rendimiento académico en el que los datos sobre las calificaciones están ausentes para los estudiantes que no asistieron a ciertas clases.'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es una ventaja clave de un Data Lake frente a un Data Warehouse tradicional?',
-    options: [
-      'Mayor velocidad para procesar transacciones en tiempo real (OLTP).',
-      'Elimina automáticamente los datos duplicados.',
-      'Solo trabaja con herramientas de BI tradicionales (ej: Tableau).',
-      'Flexibilidad para almacenar datos sin necesidad de esquemas predefinidos.'
-    ],
-    answer:
-      'Flexibilidad para almacenar datos sin necesidad de esquemas predefinidos.'
-  },
-  {
-    type: 'multiple',
-    question:
-      "Un hospital quiere identificar pacientes con alto riesgo de diabetes usando datos médicos. La salida debe ser 'Riesgo Alto', 'Medio' o 'Bajo'. ¿Qué tipo de modelo aplicarías?",
-    options: ['Regresión lineal', 'Clasificación multiclase', 'las dos'],
-    answer: 'Clasificación multiclase'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué técnica es adecuada para manejar datos MCAR?',
-    options: [
-      'Imputación por la media',
-      'Imputación por la moda',
-      'Listwise deletion',
-      'Pairwise Deletion'
-    ],
-    answer: 'Listwise deletion'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es el principal objetivo de los métodos de eliminación de valores ausentes en el procesamiento de datos?',
-    options: [
-      'Conservar todos los datos disponibles.',
-      'Reducir la dimensionalidad del conjunto de datos.',
-      'Imputar valores para completar los datos faltantes.',
-      'Eliminar los registros con valores ausentes.'
-    ],
-    answer: 'Eliminar los registros con valores ausentes.'
-  },
-  {
-    type: 'multiple',
-    question:
-      'Debido al gran volumen de datos en Big Data, ¿cuáles de las siguientes tecnologías fueron desarrolladas específicamente para manejar su almacenamiento y procesamiento escalable?',
-    options: [
-      'MySQL y Oracle Database.',
-      'Excel y Access.',
-      'Blockchain y Redes Neuronales.',
-      'HDFS (Hadoop Distributed File System) y bases de datos NoSQL.'
-    ],
-    answer: 'HDFS (Hadoop Distributed File System) y bases de datos NoSQL.'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué significa MCAR en el contexto de datos faltantes?',
-    options: [
-      'La probabilidad de que falten los datos está relacionada con alguna característica observada en el conjunto de datos.',
-      'La probabilidad de que falten los datos está relacionada con alguna característica no observada en el conjunto de datos.',
-      'Los datos faltantes se distribuyen aleatoriamente en el conjunto de datos.'
-    ],
-    answer:
-      'Los datos faltantes se distribuyen aleatoriamente en el conjunto de datos.'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de las siguientes afirmaciones describe mejor el concepto de MAR?',
-    options: [
-      'Los datos faltantes se distribuyen aleatoriamente en el conjunto de datos.',
-      'La probabilidad de que falten los datos está relacionada con alguna característica observada en el conjunto de datos.',
-      'La probabilidad de que falten los datos está relacionada con alguna característica no observada en el conjunto de datos.',
-      'No hay patrón discernible en la ausencia de datos en el conjunto de datos.'
-    ],
-    answer:
-      'La probabilidad de que falten los datos está relacionada con alguna característica observada en el conjunto de datos.'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué significa NMAR en el contexto de datos faltantes?',
-    options: [
-      'La probabilidad de que falten los datos está relacionada con alguna característica observada en el conjunto de datos.',
-      'La probabilidad de que falten los datos está relacionada con alguna característica no observada en el conjunto de datos.',
-      'Los datos faltantes se distribuyen aleatoriamente en el conjunto de datos.',
-      'No hay patrón discernible en la ausencia de datos en el conjunto de datos.'
-    ],
-    answer:
-      'La probabilidad de que falten los datos está relacionada con alguna característica no observada en el conjunto de datos.'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es el problema de no escalar características antes de aplicar un modelo de ML?',
-    options: [
-      'Sobreajuste (overfitting) del modelo',
-      'Pérdida de valores faltantes',
-      'Corrupción de variables categóricas',
-      'Las características con mayores magnitudes dominarán en los resultados'
-    ],
-    answer:
-      'Las características con mayores magnitudes dominarán en los resultados'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿En qué etapa del análisis de datos se suele aplicar la eliminación de valores ausentes?',
-    options: [
-      'Después de la exploración inicial de los datos.',
-      'Durante la validación del modelo.',
-      'Antes de cualquier análisis estadístico.'
-    ],
-    answer: 'Antes de cualquier análisis estadístico.'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tecnología es comúnmente usada para implementar un Data Lake?',
-    options: [
-      'Bases de datos relacionales como Oracle.',
-      'Herramientas de streaming como Apache Kafka.',
-      'Sistemas de memorización en caché como Redis.',
-      'Apache Hadoop (HDFS) o soluciones en la nube como AWS S3.'
-    ],
-    answer: 'Apache Hadoop (HDFS) o soluciones en la nube como AWS S3.'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué medida de tendencia central es más sensible a los valores extremos en un conjunto de datos?',
-    options: ['Mediana', 'Moda', 'Varianza', 'Media'],
-    answer: 'Media'
-  },
-  {
-    type: 'multiple',
-    question:
-      "Para datos MAR en una columna de 'edad', ¿qué técnica es apropiada?",
-    options: [
-      'Imputación por la media',
-      'Listwise deletion',
-      'Imputación por la moda',
-      'Ignorar los faltantes',
-      'Pairwise Deletion'
-    ],
-    answer: 'Pairwise Deletion'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de las siguientes técnicas se utiliza para manejar datos faltantes en un dataset?',
-    options: [
-      'One-Hot Encoding',
-      'Normalización Min-Max',
-      'PCA (Análisis de Componentes Principales)',
-      'Imputación con la media'
-    ],
-    answer: 'Imputación con la media'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es el propósito de dividir los datos en conjuntos de entrenamiento, validación y prueba?',
-    options: [
-      'Para aumentar la cantidad de datos disponibles',
-      'Para mejorar la velocidad del algoritmo',
-      'Para eliminar datos irrelevantes',
-      'Para evaluar el rendimiento del modelo y prevenir el sobreajuste'
-    ],
-    answer: 'Para evaluar el rendimiento del modelo y prevenir el sobreajuste'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué tipo de datos son adecuados para un test de chi-cuadrado?',
-    options: [
-      'Datos continuos.',
-      'Datos de intervalo.',
-      'Todos los tipos de datos.',
-      'Datos categóricos.'
-    ],
-    answer: 'Datos categóricos.'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de las siguientes afirmaciones describe mejor la moda de un conjunto de datos?',
-    options: [
-      'Es el valor medio de los datos.',
-      'Es el rango de valores de los datos.',
-      'Es la dispersión de los datos alrededor de la media.',
-      'Es el valor que ocurre con mayor frecuencia en los datos.'
-    ],
-    answer: 'Es el valor que ocurre con mayor frecuencia en los datos.'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de las siguientes medidas se utiliza comúnmente para representar el valor típico de un conjunto de datos?',
-    options: ['Desviación estándar', 'Rango', 'Varianza', 'Mediana'],
-    answer: 'Mediana'
-  },
-  {
-    type: 'multiple',
-    question:
-      "Tienes una variable categórica 'Ciudad' con 100 valores únicos (ej.: 'Madrid', 'Barcelona', ...). ¿Qué técnica reduciría la dimensionalidad y evitaría el problema de alta cardinalidad?",
-    options: [
-      'One-Hot Encoding',
-      'Codificación ordinal',
-      'Codificación de frecuencia'
-    ],
-    answer: 'Codificación de frecuencia'
-  },
-  {
-    type: 'multiple',
-    question:
-      "En un dataset de estudiantes, la columna 'Nivel Educativo' tiene valores ordinales: 'Primaria', 'Secundaria','Universidad'. ¿Qué codificación preservaría la relación de orden?",
-    options: [
-      'One-Hot Encoding',
-      'Frequency Encoding',
-      'Label Encoding ordinal'
-    ],
-    answer: 'Label Encoding ordinal'
-  },
-  {
-    type: 'multiple',
-    question:
-      "Tienes un dataset de películas con la columna 'Género' (valores: 'Acción', 'Comedia', 'Drama'). ¿Qué codificación aplicarías para esta variable?",
-    options: [
-      'Codificación ordinal',
-      'Codificación de frecuencia',
-      'Ninguna de las anteriores',
-      'One-Hot Encoding'
-    ],
-    answer: 'One-Hot Encoding'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cómo se calcula la media de un conjunto de datos?',
-    options: [
-      'Sumando todos los valores y dividiendo por el número de valores.',
-      'Seleccionando el valor que ocurre con mayor frecuencia.',
-      'Ordenando los valores y seleccionando el valor central.',
-      'alculando la diferencia entre el valor máximo y el valor mínimo.'
-    ],
-    answer: 'Sumando todos los valores y dividiendo por el número de valores.'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué método es adecuado para manejar variables categóricas ordinales?',
-    options: [
-      'Eliminarlas del dataset',
-      'Label Encoding (asignando valores numéricos según el orden)',
-      'One-Hot Encoding sin considerar el orden',
-      'Normalización Z-score'
-    ],
-    answer: 'Label Encoding (asignando valores numéricos según el orden)'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué describe mejor el concepto de "List Wise Deletion" en el manejo de valores ausentes?',
-    options: [
-      'La eliminación de atributos que contienen valores ausentes en un conjunto de datos.',
-      'La eliminación de registros completos que contienen al menos (N) atributos con valores ausentes',
-      'La imputación de valores para completar los datos faltantes en un conjunto de datos.'
-    ],
-    answer:
-      'La eliminación de registros completos que contienen al menos (N) atributos con valores ausentes'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué describe mejor el concepto de "Pair wise Deletion" en el manejo de valores ausentes?',
-    options: [
-      'La eliminación de atributos (columnas) que contienen valores ausentes en un conjunto de datos.',
-      'La eliminación de registros completos que contienen al menos un valor ausente en un conjunto de datos.',
-      'La eliminación selectiva de registros para cada par de variables utilizando solo los registros que tienen datos disponibles para ese par de variables.'
-    ],
-    answer:
-      'La eliminación selectiva de registros para cada par de variables utilizando solo los registros que tienen datos disponibles para ese par de variables.'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Por qué es importante la normalización de datos antes de entrenar un modelo?',
-    options: [
-      'Para aumentar el tamaño del conjunto de datos',
-      'Para eliminar datos duplicados',
-      'Para asegurar que todas las características tengan una escala similar',
-      'Para reducir el tiempo de entrenamiento'
-    ],
-    answer:
-      'Para asegurar que todas las características tengan una escala similar'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué técnica es útil para reducir la dimensionalidad?',
-    options: [
-      'PCA',
-      'Imputación por la mediana',
-      'Imputación por la moda',
-      'todas'
-    ],
-    answer: 'PCA'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es el propósito principal de la limpieza de datos?',
-    options: [
-      'Añadir más datos al dataset',
-      'Eliminar valores nulos o faltantes y corregir datos erróneos',
-      'Dividir los datos en conjuntos de entrenamiento y prueba',
-      'Aplicar algoritmos de aprendizaje automático'
-    ],
-    answer: 'Eliminar valores nulos o faltantes y corregir datos erróneos'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es una estrategia alternativa a la eliminación de valores ausentes?',
-    options: [
-      'Imputación de valores ausentes',
-      'Aumento del tamaño del conjunto de datos.',
-      'Utilización de técnicas de reducción de la dimensionalidad.'
-    ],
-    answer: 'Imputación de valores ausentes'
-  },
-  {
-    type: 'multiple',
-    question:
-      'Si una columna tiene un 60% de valores faltantes, ¿qué enfoque podría ser razonable para tratarlos?',
-    options: [
-      'Imputación simple',
-      'Listwise Deletion',
-      'Pairwise Deletion',
-      'Column Deletion',
-      'Imputación multiple'
-    ],
-    answer: 'Column Deletion'
-  }
-]
+export const questions = {
+  Unidad_1: [
+    {
+      type: 'complete',
+      question: 'Blockchain es un ejemplo de criptografía de clave:',
+      answer: 'Asimétrica'
+    },
+    {
+      type: 'true-false',
+      question:
+        '¿Es la Criptografía la solución a todos los problemas de seguridad?',
+      answer: 'Falso'
+    },
+    {
+      type: 'complete',
+      question: 'La Firma Electrónica es un ejemplo de criptografía de clave:',
+      answer: 'Asimétrica'
+    },
+    {
+      type: 'complete',
+      question:
+        'La Criptografía ______ es aquella en la que se emite una única clave entre emisor y receptor.',
+      answer: 'Simétrica'
+    },
+    {
+      type: 'multiple-select',
+      question:
+        '¿Cuáles de los siguientes son Algoritmos de cifrado simétrico?',
+      options: ['ECDSA', 'Blowfish', 'DSA', 'ElGamal', 'Serpent', 'FEAL'],
+      answers: ['Blowfish', 'Serpent', 'FEAL']
+    },
+    {
+      type: 'complete',
+      question:
+        'A la criptografía ______ se la conoce como Criptografía de clave pública.',
+      answer: 'Asimétrica'
+    },
+    {
+      type: 'single-choice',
+      question:
+        'Si se cifra el mensaje ESTO ES UNA PRUEBA con 3 filas, el criptograma será:',
+      options: [
+        'ETEUA REASO SNPUB',
+        'ESRSU UTNEO ABEPA',
+        'EOUPE SENRB TSAUA',
+        'Ninguna de las respuestas es correcta',
+        'EEAES SPBTU RAONU'
+      ],
+      answer: 'EOUPE SENRB TSAUA'
+    },
+    {
+      type: 'single-choice',
+      question: 'En el cifrado por filas:',
+      options: [
+        'Ninguna de las respuestas es correcta',
+        'Se escribe el texto en claro por columnas y se lee al revés',
+        'Se escribe el texto en claro por columnas y se lee por filas',
+        'Se escribe el texto en claro por filas y se lee por columnas',
+        'Se escribe el texto en claro por filas y se lee en saltos de dos'
+      ],
+      answer: 'Se escribe el texto en claro por columnas y se lee por filas'
+    },
+    {
+      type: 'single-choice',
+      question: 'Es un área que se dedica al estudio de ocultar datos:',
+      options: [
+        'Criptoanálisis',
+        'Todas las respuestas son correctas',
+        'Criptología',
+        'Esteganografía',
+        'Criptografía'
+      ],
+      answer: 'Esteganografía'
+    },
+    {
+      type: 'single-choice',
+      question: '¿Cuál algoritmo tiene una clave de 32 bits?',
+      options: [
+        'Advanced Encryption Standard',
+        'Triple Data Encryption Standard',
+        'Ninguna de las opciones es correcta',
+        'Data Encryption Standard'
+      ],
+      answer: 'Ninguna de las opciones es correcta'
+    },
+    {
+      type: 'multiple-select',
+      question: '¿Cuáles son Algoritmos de cifrado asimétrico?',
+      options: [
+        'Digital Signature Algorithm',
+        'Taher ElGamal',
+        'Data Encryption Algorithm',
+        'Software-Optimized Encryption Algorithm',
+        'Advanced Encryption Standard',
+        'Diffie Hellman'
+      ],
+      answers: [
+        'Digital Signature Algorithm',
+        'Taher ElGamal',
+        'Diffie Hellman'
+      ]
+    },
+    {
+      type: 'complete',
+      question: '¿Cuál es el mensaje del criptograma NMHGKQTBK con clave UCE?',
+      answer: 'HOLAMUNDO'
+    },
+    {
+      type: 'single-choice',
+      question:
+        'Un cifrado en el que unidades de texto plano se sustituyen en diferentes series formando una tabla se conoce como:',
+      options: [
+        'Cifrado por Sustitución',
+        'Cifrado de Vigenère',
+        'Ninguna',
+        'Cifrado por Transposición',
+        'Cifrado por Libro'
+      ],
+      answer: 'Cifrado de Vigenère'
+    },
+    {
+      type: 'true-false',
+      question: 'Las Funciones Hash siempre tienen salida de longitud fija.',
+      answer: 'Falso'
+    },
+    {
+      type: 'single-choice',
+      question: '¿Cuál algoritmo tiene clave de 56 bits?',
+      options: [
+        'Ninguna',
+        'Triple DES',
+        'Data Encryption Standard',
+        'Advanced Encryption Standard'
+      ],
+      answer: 'Data Encryption Standard'
+    },
+    {
+      type: 'single-choice',
+      question:
+        'Un cifrado donde unidades de texto plano se reemplazan siguiendo un esquema definido se conoce como:',
+      options: ['Transposición', 'Vigenère', 'Sustitución', 'Ninguna', 'Libro'],
+      answer: 'Sustitución'
+    },
+    {
+      type: 'complete',
+      question: '¿Qué significan las siglas SHA?',
+      answer: 'Secure Hash Algorithm'
+    },
+    {
+      type: 'complete',
+      question: '¿Qué significan las siglas SSL?',
+      answer: 'Secure Sockets Layer'
+    },
+    {
+      type: 'complete',
+      question:
+        'Un cifrado donde unidades de texto plano se cambian de posición se conoce como cifrado por:',
+      answer: 'Transposición'
+    },
+    {
+      type: 'complete',
+      question:
+        'Rama de la criptografía que estudia técnicas para romper códigos cifrados:',
+      answer: 'Criptoanálisis'
+    },
+    {
+      type: 'matching',
+      question:
+        'Técnica de cifrado que agrupa datos en grupos de longitud fija / Técnica de cifrado que agrupa datos en grupos de 1 bit o 1 byte',
+      pairs: [
+        {
+          left: 'Técnica de cifrado que agrupa datos en grupos de longitud fija',
+          answer: 'Block Cipher'
+        },
+        {
+          left: 'Técnica de cifrado que agrupa datos en grupos de 1 bit o 1 byte',
+          answer: 'Stream Cipher'
+        }
+      ]
+    },
+    {
+      type: 'open-text',
+      question:
+        'En la Criptografía ______ el método de protección de la clave es fácilmente vulnerable, mientras que en la Criptografía ______ las claves tienen un código de encriptación que hace difícil romperlas.',
+      answer: 'Simétrica / Asimétrica'
+    },
+    {
+      type: 'matching',
+      question: 'Asocie cada uno de los conceptos con su definición:',
+      pairs: [
+        {
+          left: 'Criptografía',
+          answer: 'Estudia técnicas y métodos para proteger la información'
+        },
+        {
+          left: 'Esteganoanálisis',
+          answer:
+            'Estudia técnicas para detectar mensajes ocultos con esteganografía'
+        },
+        {
+          left: 'Criptoanálisis',
+          answer:
+            'Estudia técnicas para descifrar un mensaje protegido con criptografía, explotando vulnerabilidades existentes en la protección de la información'
+        },
+        {
+          left: 'Esteganografía',
+          answer: 'Estudia técnicas para ocultar la existencia de un mensaje'
+        }
+      ]
+    },
+    {
+      type: 'matching',
+      question:
+        'Empareje correctamente las características con el tipo de criptografía:',
+      pairs: [
+        {
+          left: 'Usa cifrado complejo y es resistente a ataques de fuerza bruta',
+          answer: 'Criptografía Asimétrica'
+        },
+        {
+          left: 'Es actualmente débil frente a ataques cibernéticos',
+          answer: 'Criptografía Simétrica'
+        },
+        {
+          left: 'Es más lenta y requiere más capacidad de cómputo',
+          answer: 'Criptografía Asimétrica'
+        },
+        {
+          left: 'Es más rápida y utiliza menos recursos computacionales',
+          answer: 'Criptografía Simétrica'
+        },
+        {
+          left: 'Es más fácil de implementar',
+          answer: 'Criptografía Simétrica'
+        }
+      ]
+    },
+    {
+      type: 'single-choice',
+      question: 'Es un área que se dedica al estudio de la escritura secreta',
+      options: [
+        'Criptografía',
+        'Esteganografía',
+        'Todas las respuestas son correctas',
+        'Criptoanálisis',
+        'Criptología'
+      ],
+      answer: 'Criptología'
+    },
+    {
+      type: 'single-choice',
+      question: 'En el cifrado por columnas:',
+      options: [
+        'Se escribe el texto en claro por columnas y se lee al revés',
+        'Ninguna de las respuestas es correcta',
+        'Se escribe el texto en claro por filas y se lee por columnas',
+        'Se escribe el texto en claro por columnas y se lee por filas',
+        'Se escribe el texto en claro por filas y se lee en saltos de dos'
+      ],
+      answer: 'Se escribe el texto en claro por filas y se lee por columnas'
+    },
+    {
+      type: 'complete',
+      question:
+        'Kerberos es un protocolo que se basa en criptografía de clave: ______',
+      answer: 'Simétrica'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Cuál de los siguientes algoritmos tiene una clave con longitud de 32 bits?',
+      options: [
+        'Triple Data Encryption Standard',
+        'Ninguna de las opciones es correcta',
+        'Data Encryption Standard',
+        'Advanced Encryption Standard'
+      ],
+      answer: 'Ninguna de las opciones es correcta'
+    }
+  ],
 
-const completeQuestions = [
-  {
-    type: 'complete',
-    question:
-      '¿Qué es la desviación estándar y qué indica en un conjunto de datos?',
-    answer:
-      'La desviación estándar mide cuánto se alejan los datos de la media. Una desviación estándar alta indica mayor dispersión, mientras que una baja indica que los datos están más concentrados alrededor de la media.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué representa un boxplot y para qué se utiliza?',
-    answer:
-      'El boxplot muestra la mediana, cuartiles y posibles outliers de un conjunto de datos. Es útil para observar la distribución y detectar valores atípicos.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué diferencia hay entre media y mediana?',
-    answer:
-      'La media es el promedio aritmético de los valores. La mediana es el valor central. La mediana no se ve afectada por outliers, mientras que la media sí.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué información aporta una matriz de correlación?',
-    answer:
-      'Muestra la fuerza y dirección de las relaciones lineales entre variables numéricas, con valores entre -1 y 1.'
-  },
-  {
-    type: 'complete',
-    question: '¿Por qué la moda es útil en variables categóricas?',
-    answer:
-      'Porque indica el valor más frecuente, lo cual es útil para comprender la distribución de datos no numéricos.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es el rango intercuartílico (IQR) y por qué es importante?',
-    answer:
-      'Es la diferencia entre el tercer y primer cuartil. Mide la dispersión del 50% central de los datos y es menos sensible a outliers que el rango total.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué limitación tiene la matriz de correlación?',
-    answer:
-      'Solo muestra relaciones lineales. No detecta relaciones no lineales, por lo que puede subestimar asociaciones complejas.'
-  },
-  {
-    type: 'complete',
-    question:
-      '¿Qué es un gráfico de densidad y en qué se diferencia de un histograma?',
-    answer:
-      'Es una curva suavizada que muestra la distribución de una variable continua. A diferencia del histograma, no tiene barras y permite ver probabilidades.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué representan los percentiles en un dataset?',
-    answer:
-      'Dividen los datos en 100 partes iguales. Ayudan a conocer la posición relativa de un valor dentro del conjunto de datos.'
-  },
-  {
-    type: 'complete',
-    question: '¿Por qué es importante analizar estadísticas multivariables?',
-    answer:
-      'Porque permite identificar relaciones entre atributos que pueden afectar el rendimiento del modelo, como multicolinealidad.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué significa que un valor faltante sea MCAR?',
-    answer:
-      'Significa que los valores faltantes no dependen de ninguna variable observada ni del valor en sí mismo. La ausencia ocurre completamente al azar.'
-  },
-  {
-    type: 'complete',
-    question: '¿Cuál es la diferencia entre listwise y pairwise deletion?',
-    answer:
-      'Listwise elimina filas completas con valores faltantes, mientras que pairwise solo excluye valores faltantes en los cálculos específicos de cada par de variables.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es la imputación simple y cuándo es útil?',
-    answer:
-      'Es un método para rellenar valores faltantes con un valor único como la media, mediana o moda. Es útil cuando los datos faltantes son pocos y aleatorios (MCAR).'
-  },
-  {
-    type: 'complete',
-    question:
-      '¿Por qué eliminar columnas con muchos valores faltantes puede ser útil?',
-    answer:
-      'Porque simplifica el análisis, reduce el ruido y mejora la interpretabilidad, especialmente si la columna es irrelevante o tiene más del 30-50% de faltantes.'
-  },
-  {
-    type: 'complete',
-    question:
-      '¿Cuál es el peligro de imputar datos sin considerar su patrón de ausencia?',
-    answer:
-      'Puede introducir sesgo y reducir la variabilidad, afectando la validez del análisis o del modelo predictivo.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué representa un patrón NMAR en datos faltantes?',
-    answer:
-      'Significa que la ausencia de un valor depende del propio valor faltante o de variables directamente relacionadas, lo que puede sesgar el análisis si no se trata adecuadamente.'
-  },
-  {
-    type: 'complete',
-    question:
-      '¿Qué impacto tiene la imputación por la media en datos sesgados?',
-    answer:
-      'Puede distorsionar la distribución, ya que la media se ve afectada por valores extremos y no representa adecuadamente la tendencia central en distribuciones sesgadas.'
-  },
-  {
-    type: 'complete',
-    question:
-      '¿Qué herramientas visuales ayudan a identificar valores faltantes?',
-    answer:
-      'Los mapas de calor (heatmaps) son útiles para visualizar patrones de ausencia de datos y su relación con otras variables.'
-  },
-  {
-    type: 'complete',
-    question: '¿Cuál es la ventaja de usar la mediana en la imputación?',
-    answer:
-      'Es menos sensible a los valores atípicos que la media, por lo que da una mejor representación central en datos con distribución sesgada.'
-  },
-  {
-    type: 'complete',
-    question:
-      '¿Qué tipo de imputación es más recomendable para variables categóricas?',
-    answer:
-      'Imputación por la moda, ya que representa el valor más frecuente dentro de la variable.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es la imputación múltiple y por qué es útil?',
-    answer:
-      'Es una técnica que estima múltiples valores posibles para cada dato faltante, reduciendo el sesgo e incorporando la incertidumbre en el análisis.'
-  },
-  {
-    type: 'complete',
-    question: '¿Cómo funciona el IterativeImputer?',
-    answer:
-      'Usa modelos predictivos para estimar iterativamente los valores faltantes basándose en otras columnas, mejorando la precisión con cada iteración.'
-  },
-  {
-    type: 'complete',
-    question:
-      '¿Qué es un outlier y por qué puede ser problemático en modelos de ML?',
-    answer:
-      'Es un valor atípico alejado de la mayoría de los datos, puede distorsionar el ajuste del modelo y afectar la precisión de las predicciones.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué mide el rango intercuartílico (IQR)?',
-    answer:
-      'La dispersión del 50% central de los datos. Se usa para detectar outliers al identificar valores que caen fuera de Q1 - 1.5IQR y Q3 + 1.5IQR.'
-  },
-  {
-    type: 'complete',
-    question: '¿Cómo identifica outliers el método de envolvente elíptica?',
-    answer:
-      'Estima una distribución elíptica de los datos y marca como outliers aquellos que se alejan significativamente del centro de esa elipse.'
-  },
-  {
-    type: 'complete',
-    question:
-      '¿Por qué la codificación ordinal no debe usarse con variables nominales?',
-    answer:
-      'Porque asigna un orden numérico que el modelo puede interpretar erróneamente como jerárquico, introduciendo sesgos.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es la codificación one-hot y cuándo se usa?',
-    answer:
-      'Convierte categorías en columnas binarias. Se usa en variables nominales sin orden para evitar relaciones falsas entre categorías.'
-  },
-  {
-    type: 'complete',
-    question: '¿Cuál es el riesgo de imputar por media en datos sesgados?',
-    answer:
-      'Puede distorsionar la distribución original del atributo y ocultar patrones importantes, especialmente si hay outliers.'
-  },
-  {
-    type: 'complete',
-    question:
-      '¿Qué representa un valor de decision_function muy negativo en EllipticEnvelope?',
-    answer:
-      'Que ese punto tiene alta probabilidad de ser un outlier según el modelo elíptico.'
-  },
-  {
-    type: 'complete',
-    question:
-      '¿Por qué es importante transformar variables categóricas antes de usarlas en modelos ML?',
-    answer:
-      'Porque los modelos requieren variables numéricas y una codificación incorrecta puede generar resultados inválidos.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es la normalización en aprendizaje automático?',
-    answer:
-      'Es el proceso de ajustar los valores de los atributos a una escala común, normalmente entre 0 y 1.'
-  },
-  {
-    type: 'complete',
-    question: '¿Cuál es el objetivo de la estandarización con Z-score?',
-    answer:
-      'Hacer que los atributos tengan una media de 0 y una desviación estándar de 1.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es la ingeniería de características?',
-    answer:
-      'Es la técnica de crear o transformar atributos para mejorar el rendimiento de los modelos de ML.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es VarianceThreshold y para qué se usa?',
-    answer:
-      'Es una técnica que elimina atributos con baja varianza por considerarse poco informativos.'
-  },
-  {
-    type: 'complete',
-    question: '¿En qué consiste el test de Chi-cuadrado?',
-    answer:
-      'Evalúa la dependencia entre variables categóricas y la variable objetivo mediante el uso de p-valores.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es el PCA y cuál es su función?',
-    answer:
-      'Es una técnica para reducir la dimensionalidad transformando las variables en componentes principales.'
-  },
-  {
-    type: 'complete',
-    question:
-      '¿Cuándo se recomienda aplicar normalización en vez de estandarización?',
-    answer:
-      'Cuando los datos tienen escalas muy dispares o no siguen una distribución normal.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es la codificación One Hot Encoder?',
-    answer:
-      'Es una técnica que transforma variables categóricas en variables binarias para cada categoría.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué representa el p-valor en el test de Chi-cuadrado?',
-    answer:
-      'La probabilidad de que la relación observada entre variables ocurra por azar.'
-  },
-  {
-    type: 'complete',
-    question: '¿Por qué eliminar atributos con alta cardinalidad?',
-    answer:
-      'Porque pueden introducir ruido o complejidad innecesaria al modelo sin aportar valor predictivo.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es PCA (Análisis de Componentes Principales)?',
-    answer:
-      'Es una técnica estadística para reducir la dimensionalidad de un conjunto de datos, transformándolos en componentes principales que conservan la mayor varianza posible.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es la matriz de covarianza en PCA?',
-    answer:
-      'Es una matriz cuadrada que describe la relación entre las variables del dataset, incluyendo varianzas en la diagonal y covarianzas fuera de ella.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué representan los valores propios en PCA?',
-    answer:
-      'Indican cuánta varianza de los datos originales está explicada por cada componente principal.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es la estratificación en la división de datos?',
-    answer:
-      'Es la técnica que asegura que la proporción de clases se mantenga en cada subconjunto de datos (train/val/test).'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es el sobreajuste (overfitting)?',
-    answer:
-      'Es cuando un modelo aprende en exceso los datos de entrenamiento, incluyendo el ruido, y falla al generalizar.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es el subajuste (underfitting)?',
-    answer:
-      'Es cuando un modelo es demasiado simple y no logra aprender patrones significativos de los datos.'
-  },
-  {
-    type: 'complete',
-    question: '¿Por qué es importante la validación del modelo?',
-    answer:
-      'Para detectar sobreajuste y ajustar hiperparámetros antes de evaluar el modelo en datos de prueba.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué papel juega el conjunto de prueba?',
-    answer:
-      'Sirve para evaluar de manera imparcial el rendimiento final del modelo en datos nunca vistos.'
-  },
-  {
-    type: 'complete',
-    question: '¿Cuál es el primer paso antes de aplicar PCA?',
-    answer:
-      'Estandarizar los datos para que tengan media 0 y desviación estándar 1.'
-  },
-  {
-    type: 'complete',
-    question: '¿Por qué reducir la dimensionalidad en ML?',
-    answer:
-      'Para disminuir la complejidad del modelo, reducir el riesgo de sobreajuste y mejorar el tiempo de entrenamiento.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es la formulación del problema en ML?',
-    answer:
-      'Es traducir una necesidad empresarial en un problema que pueda ser abordado con machine learning.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué significa clasificación binaria en ML?',
-    answer:
-      'Es un tipo de aprendizaje supervisado donde la salida puede tomar uno de dos valores posibles (por ejemplo: sí/no, 1/0).'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es la ingeniería de características?',
-    answer:
-      'Es el proceso de transformar, combinar o crear atributos que mejoren la capacidad predictiva de un modelo.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué son datos nominales?',
-    answer:
-      'Son datos categóricos sin un orden específico, como colores o nombres.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué son datos ordinales?',
-    answer:
-      'Son datos categóricos con un orden, pero sin diferencia cuantificable entre categorías (como bajo, medio, alto).'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es la exploración de datos?',
-    answer:
-      'Es el análisis inicial para entender la estructura, calidad y patrones de los datos antes de procesarlos.'
-  },
-  {
-    type: 'complete',
-    question: '¿Por qué es importante tener datos representativos?',
-    answer:
-      'Porque el modelo necesita aprender de una muestra que refleje adecuadamente los escenarios reales.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es la estadística descriptiva?',
-    answer:
-      'Es un conjunto de técnicas para resumir, describir y visualizar datos de forma numérica y gráfica.'
-  },
-  {
-    type: 'complete',
-    question: '¿Qué es un DataFrame?',
-    answer:
-      'Es una estructura de datos tabular de la biblioteca Pandas que permite manipular conjuntos de datos fácilmente.'
-  },
-  {
-    type: 'complete',
-    question: "¿Qué tipo de dato es la columna 'Survived' en Titanic?",
-    answer:
-      'Es un dato binario que indica si el pasajero sobrevivió (1) o no (0).'
-  }
-]
-const questionsU3 = [
-  {
-    type: 'multiple',
-    question: '¿Qué proporciones son habituales en la validación hold-out? 3',
-    options: ['50% y 50%', '90% y 10%', '70% y 30%', '60% y 40%'],
-    answer: '70% y 30%'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué parámetro en train_test_split garantiza que la división sea reproducible?',
-    options: ['shuffle', 'seed', 'random_state', 'validation_ratio'],
-    answer: 'random_state'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es el inconveniente principal de la validación hold-out?',
-    options: [
-      'Su complejidad computacional',
-      'Su falta de aleatoriedad',
-      'Su falta de representatividad',
-      'Su lentitud'
-    ],
-    answer: 'Su falta de representatividad'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué clase de sklearn permite realizar validación cruzada tipo k-fold?',
-    options: ['CrossValidator', 'StratifiedSplit', 'KFold', 'KSplitter'],
-    answer: 'KFold'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué función de distancia se usa tradicionalmente en k-NN?',
-    options: ['Manhattan', 'Hamming', 'Euclidiana', 'Mahalanobis'],
-    answer: 'Euclidiana'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es una debilidad del algoritmo k-NN?',
-    options: [
-      'Fase de entrenamiento lenta',
-      'No requiere procesamiento de datos',
-      'No genera un modelo',
-      'Siempre funciona bien con datos ruidosos'
-    ],
-    answer: 'No genera un modelo'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Por qué el algoritmo k-NN se considera un algoritmo de aprendizaje perezoso?',
-    options: [
-      'Porque entrena lento',
-      'Porque no entrena un modelo',
-      'Porque generaliza bien',
-      'Porque clasifica instantáneamente'
-    ],
-    answer: 'Porque no entrena un modelo'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué representa el valor de accuracy?',
-    options: [
-      'La proporción de VP sobre VP+FN',
-      'La proporción de predicciones correctas sobre el total',
-      'La proporción de FP sobre VP+FP',
-      'La proporción de VN sobre VP+FP'
-    ],
-    answer: 'La proporción de predicciones correctas sobre el total'
-  },
-  {
-    type: 'multiple',
-    question: '¿En qué caso la precisión (precision) es más crítica?',
-    options: [
-      'Cuando hay muchos verdaderos negativos',
-      'Cuando los falsos positivos son costosos',
-      'Cuando la clase positiva es mayoritaria',
-      'Cuando la matriz de confusión es cuadrada'
-    ],
-    answer: 'Cuando los falsos positivos son costosos'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué enfoque utiliza el árbol de decisión para dividir los datos?',
-    options: [
-      'Agrupamiento supervisado',
-      'Regla de Bayes',
-      'Partición recursiva',
-      'Eliminación iterativa'
-    ],
-    answer: 'Partición recursiva'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué representa un nodo hoja en un árbol de decisión?',
-    options: [
-      'Un atributo intermedio',
-      'El punto donde termina la decisión',
-      'El error acumulado',
-      'Una combinación de múltiples clases'
-    ],
-    answer: 'El punto donde termina la decisión'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué técnica utiliza Random Forest para crear diversidad entre árboles?',
-    options: ['Normalización', 'Regularización', 'Bagging', 'Clustering'],
-    answer: 'Bagging'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es una ventaja de Random Forest?',
-    options: [
-      'Es fácilmente interpretable',
-      'Tiene bajo costo computacional',
-      'Reduce el sobreajuste',
-      'Usa solo un árbol'
-    ],
-    answer: 'Reduce el sobreajuste'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué suposición hace el modelo Naive Bayes sobre las características?',
-    options: [
-      'Que son correlacionadas',
-      'Que tienen distribución exponencial',
-      'Que son independientes entre sí',
-      'Que son numéricas y positivas'
-    ],
-    answer: 'Que son independientes entre sí'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué problema evita el estimador de Laplace?',
-    options: [
-      'Normalización excesiva',
-      'Duplicación de clases',
-      'Probabilidades nulas',
-      'Redundancia en variables'
-    ],
-    answer: 'Probabilidades nulas'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué predice el algoritmo k-NN en tareas de regresión?',
-    options: [
-      'Una clase categórica',
-      'Una distancia promedio',
-      'Un valor continuo',
-      'Un vector de probabilidades'
-    ],
-    answer: 'Un valor continuo'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué método puede usarse para calcular la predicción en regresión k-NN?',
-    options: [
-      'Regla de Bayes',
-      'Promedio o mediana de los vecinos',
-      'Desviación estándar',
-      'Árbol de decisión'
-    ],
-    answer: 'Promedio o mediana de los vecinos'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué representa la variable “y” en la ecuación y = a + bx?',
-    options: [
-      'La variable independiente',
-      'El coeficiente de ajuste',
-      'El valor predicho o dependiente',
-      'El error de predicción'
-    ],
-    answer: 'El valor predicho o dependiente'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué método se utiliza para determinar los coeficientes en la regresión lineal?',
-    options: [
-      'Método de Monte Carlo',
-      'Estimación de máxima verosimilitud',
-      'Mínimos cuadrados ordinarios (OLS)',
-      'Promedio ponderado'
-    ],
-    answer: 'Mínimos cuadrados ordinarios (OLS)'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué representa la ecuación Y = Xβ + ϵ?',
-    options: [
-      'El modelo de árbol de decisión',
-      'La probabilidad de éxito',
-      'La regresión lineal múltiple en notación matricial',
-      'La normalización de características'
-    ],
-    answer: 'La regresión lineal múltiple en notación matricial'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué variable mide los gastos reclamados por los beneficiarios en el dataset de seguros?',
-    options: ['premium', 'claims', 'expenses', 'coverage'],
-    answer: 'expenses'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué patrón muestra la distribución de la variable expenses?',
-    options: [
-      'Distribución normal',
-      'Distribución uniforme',
-      'Distribución sesgada a la derecha',
-      'Distribución bimodal'
-    ],
-    answer: 'Distribución sesgada a la derecha'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es la diferencia principal entre la regresión logística y la regresión lineal?',
-    options: [
-      'La logística predice valores continuos',
-      'La logística modela la probabilidad de pertenencia a una clase',
-      'La lineal es más adecuada para clasificación',
-      'La logística requiere normalización'
-    ],
-    answer: 'La logística modela la probabilidad de pertenencia a una clase'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué representa P(A|B) en el teorema de Bayes?',
-    options: [
-      'La probabilidad marginal',
-      'La probabilidad conjunta',
-      'La probabilidad de A dado que ocurrió B',
-      'La probabilidad independiente'
-    ],
-    answer: 'La probabilidad de A dado que ocurrió B'
-  },
-  {
-    type: 'multiple',
-    question: '¿Por qué se llama “Naive” el algoritmo Naive Bayes?',
-    options: [
-      'Porque no usa probabilidades',
-      'Porque asume independencia entre características',
-      'Porque no funciona con datos categóricos',
-      'Porque entrena sin datos'
-    ],
-    answer: 'Porque asume independencia entre características'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué técnica se usa para transformar atributos categóricos en Naive Bayes?',
-    options: [
-      'PCA',
-      'SVM',
-      'Codificación one-hot u ordinal',
-      'Normalización Z-score'
-    ],
-    answer: 'Codificación one-hot u ordinal'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué problema puede presentar la técnica Z-score en Naive Bayes?',
-    options: [
-      'Duplicación de clases',
-      'Crea valores negativos',
-      'Disminuye la varianza',
-      'Hace lento el entrenamiento'
-    ],
-    answer: 'Crea valores negativos'
-  }
-]
-const questionsU4 = [
-  {
-    type: 'multiple',
-    question: '¿Cuál es el objetivo del aprendizaje no supervisado? 4',
-    options: [
-      'Predecir una variable de salida',
-      'Clasificar ejemplos con etiquetas',
-      'Describir los datos y descubrir patrones',
-      'Reducir el tiempo de entrenamiento'
-    ],
-    answer: 'Describir los datos y descubrir patrones'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué no existe en el aprendizaje no supervisado?',
-    options: [
-      'Datos numéricos',
-      'Patrones ocultos',
-      'Una variable a predecir',
-      'Agrupamientos'
-    ],
-    answer: 'Una variable a predecir'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué indica un valor alto de disimilitud?',
-    options: [
-      'Que los objetos son muy similares',
-      'Que los objetos son idénticos',
-      'Que los objetos son muy diferentes',
-      'Que no se puede comparar'
-    ],
-    answer: 'Que los objetos son muy diferentes'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué medida mide la distancia en línea recta entre dos puntos?',
-    options: ['Manhattan', 'Mahalanobis', 'Chebyshev', 'Euclidiana'],
-    answer: 'Euclidiana'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es una limitación de la distancia euclidiana?',
-    options: [
-      'Es sensible a la densidad',
-      'Solo funciona con variables categóricas',
-      'Es sensible a la escala de las características',
-      'No puede usarse con datos correlacionados'
-    ],
-    answer: 'Es sensible a la escala de las características'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué distancia es útil cuando las variables no tienen relación aparente?',
-    options: ['Manhattan', 'Euclidiana', 'Chebyshev', 'Mahalanobis'],
-    answer: 'Manhattan'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué mide la distancia de Chebyshev?',
-    options: [
-      'La suma de las diferencias',
-      'El promedio de diferencias',
-      'La máxima diferencia absoluta',
-      'El número de coincidencias'
-    ],
-    answer: 'La máxima diferencia absoluta'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué mide la covarianza?',
-    options: [
-      'La disimilitud entre vectores',
-      'La diferencia entre centros',
-      'Cómo varían conjuntamente dos variables',
-      'La suma de cuadrados entre puntos'
-    ],
-    answer: 'Cómo varían conjuntamente dos variables'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es una desventaja de la covarianza?',
-    options: [
-      'Es muy precisa',
-      'Solo sirve para valores binarios',
-      'No está acotada, por lo que es difícil de interpretar',
-      'No se puede usar en matrices'
-    ],
-    answer: 'No está acotada, por lo que es difícil de interpretar'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué rango tiene el coeficiente de correlación de Pearson?',
-    options: ['[0, 1]', '[−1, 1]', '[0, ∞]', '[−1, 0]'],
-    answer: '[−1, 1]'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué característica especial tiene la distancia de Mahalanobis?',
-    options: [
-      'Ignora la varianza',
-      'Solo compara vectores binarios',
-      'Ajusta la distancia según la forma de los datos',
-      'No requiere matriz de covarianza'
-    ],
-    answer: 'Ajusta la distancia según la forma de los datos'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué necesita la distancia de Mahalanobis para su cálculo?',
-    options: [
-      'Desviación estándar y moda',
-      'Centroide y desviación',
-      'Vector de medias y matriz de covarianza',
-      'Longitud del vector y rango'
-    ],
-    answer: 'Vector de medias y matriz de covarianza'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué representa la matriz de distancias?',
-    options: [
-      'Las distancias de un punto con su centro',
-      'Las distancias entre todos los puntos entre sí',
-      'El promedio de las distancias a los centroides',
-      'Solo distancias euclidianas'
-    ],
-    answer: 'Las distancias entre todos los puntos entre sí'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué mide la similitud coseno?',
-    options: [
-      'La suma de las diferencias absolutas',
-      'El ángulo entre vectores',
-      'La magnitud de los vectores',
-      'La distancia euclidiana'
-    ],
-    answer: 'El ángulo entre vectores'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué tipo de datos son ideales para la similitud coseno?',
-    options: [
-      'Binarios',
-      'Numéricos discretos',
-      'Datos con alta dimensionalidad',
-      'Datos geográficos'
-    ],
-    answer: 'Datos con alta dimensionalidad'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué datos se recomienda para aplicar la distancia de Jaccard?',
-    options: [
-      'Continuos',
-      'Binarios o categóricos',
-      'Normalizados',
-      'Numéricos correlacionados'
-    ],
-    answer: 'Binarios o categóricos'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es el método de clustering basado en particiones más conocido y utilizado?',
-    options: [
-      'DBSCAN',
-      'Hierarchical Clustering',
-      'K-means',
-      'Gaussian Mixture'
-    ],
-    answer: 'K-means'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es el primer paso del algoritmo K-means?',
-    options: [
-      'Calcular la matriz de distancias',
-      'Seleccionar k centroides iniciales',
-      'Normalizar los datos',
-      'Determinar la disimilitud'
-    ],
-    answer: 'Seleccionar k centroides iniciales'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué medida de distancia usa exclusivamente el algoritmo K-means estándar en scikit-learn?',
-    options: ['Manhattan', 'Coseno', 'Euclidiana (norma L2)', 'Mahalanobis'],
-    answer: 'Euclidiana (norma L2)'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué desventaja tiene K-means?',
-    options: [
-      'No requiere definición previa de k',
-      'Es insensible a la escala de los datos',
-      'Es sensible a outliers',
-      'Funciona bien con clústeres no esféricos'
-    ],
-    answer: 'Es sensible a outliers'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué criterio de detención se puede usar en K-means?',
-    options: [
-      'El número total de atributos',
-      'El tiempo de ejecución',
-      'La suma de distancias alcanza un valor mínimo',
-      'La correlación entre puntos'
-    ],
-    answer: 'La suma de distancias alcanza un valor mínimo'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué caracteriza a la evaluación extrínseca en clustering?',
-    options: [
-      'Evalúa sin usar etiquetas verdaderas',
-      'Compara resultados con una partición de referencia',
-      'Usa distancias promedio',
-      'Solo considera cohesión interna'
-    ],
-    answer: 'Compara resultados con una partición de referencia'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué mide el coeficiente de silueta?',
-    options: [
-      'La distancia media entre puntos y el centro global',
-      'La relación entre etiquetas verdaderas y predichas',
-      'Qué tan similar es un punto a su clúster respecto a otros',
-      'El número de clústeres'
-    ],
-    answer: 'Qué tan similar es un punto a su clúster respecto a otros'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué valor indica un buen agrupamiento según la silueta?',
-    options: [
-      'Un valor cercano a −1',
-      'Un valor igual a 0',
-      'Un valor cercano a 1',
-      'Un valor mayor a 10'
-    ],
-    answer: 'Un valor cercano a 1'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué mide el índice de Calinski-Harabasz?',
-    options: [
-      'La densidad del dataset',
-      'La diferencia entre medias de clústeres',
-      'La dispersión dentro y entre clústeres',
-      'La cantidad de centroides óptimos'
-    ],
-    answer: 'La dispersión dentro y entre clústeres'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué mide la inercia (WCSS)?',
-    options: [
-      'La dispersión entre clústeres',
-      'La similitud coseno',
-      'La distancia máxima entre centroides',
-      'La compactación de los clústeres'
-    ],
-    answer: 'La compactación de los clústeres'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué indica una WCSS baja?',
-    options: [
-      'Clústeres dispersos',
-      'Clústeres compactos',
-      'Muchos outliers',
-      'Clústeres no esféricos'
-    ],
-    answer: 'Clústeres compactos'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es el propósito del Método del Codo?',
-    options: [
-      'Detectar outliers',
-      'Encontrar el valor óptimo de WCSS',
-      'Determinar el número óptimo de clústeres',
-      'Maximizar la silueta'
-    ],
-    answer: 'Determinar el número óptimo de clústeres'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué representa el "codo" en el gráfico del Método del Codo?',
-    options: [
-      'El valor máximo de WCSS',
-      'El valor mínimo de distancia Mahalanobis',
-      'El punto donde agregar más clústeres no mejora significativamente',
-      'El número de variables correlacionadas'
-    ],
-    answer: 'El punto donde agregar más clústeres no mejora significativamente'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es una desventaja del Método del Codo?',
-    options: [
-      'Requiere etiquetas verdaderas',
-      'No puede visualizarse',
-      'Es subjetivo si el codo no es claro',
-      'Solo funciona con datos categóricos'
-    ],
-    answer: 'Es subjetivo si el codo no es claro'
-  }
-]
+  Unidad_2: [
+    {
+      type: 'open-text',
+      question: '¿A qué hacen referencia las siglas SHA?',
+      answer: 'Secure Hash Algorithm'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Cuál de los siguientes protocolos es históricamente el más utilizado para las comunicaciones en Internet?',
+      options: [
+        'SSH',
+        'TCP/IP',
+        'Ninguna de las respuestas es correcta',
+        'HTTPS',
+        'HTTP'
+      ],
+      answer: 'TCP/IP'
+    },
+    {
+      type: 'open-text',
+      question: '¿Qué significan las siglas TLS?',
+      answer: 'Transport Layer Security'
+    },
+    {
+      type: 'open-text',
+      question:
+        '¿Qué significan las siglas PLP en protección de redes inalámbricas?',
+      answer: 'Packet Layer Protocol'
+    },
+    {
+      type: 'open-text',
+      question: '¿Qué significan las siglas DES?',
+      answer: 'Data Encryption Standard'
+    },
+    {
+      type: 'single-choice',
+      question: '¿En qué capa del modelo OSI se encuentra IPsec?',
+      options: ['Enlace', 'Transporte', 'Sesión', 'Red', 'Aplicación'],
+      answer: 'Red'
+    },
+    {
+      type: 'single-choice',
+      question: '¿En qué capa del modelo OSI se encuentra SSL?',
+      options: ['Enlace', 'Aplicación', 'Red', 'Sesión', 'Transporte'],
+      answer: 'Transporte'
+    },
+    {
+      type: 'open-text',
+      question: '¿Qué significan las siglas EAP?',
+      answer: 'Extensible Authentication Protocol'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Uno de los objetivos de los algoritmos criptográficos es proporcionar:',
+      answer: 'Autenticación'
+    },
+    {
+      type: 'true-false',
+      question: 'AES es un ejemplo de algoritmo simétrico.',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'single-choice',
+      question: '¿En qué capa del modelo OSI se encuentra EAP?',
+      options: ['Enlace', 'Aplicación', 'Sesión', 'Transporte', 'Red'],
+      answer: 'Enlace'
+    },
+    {
+      type: 'true-false',
+      question:
+        'Los protocolos criptográficos garantizan la seguridad total de los datos en Internet.',
+      answer: 'Falso'
+    },
+    {
+      type: 'true-false',
+      question: 'Diffie-Hellman es un ejemplo de algoritmo asimétrico.',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'open-text',
+      question:
+        'A los algoritmos asimétricos también se los conoce como algoritmos de clave:',
+      answer: 'Pública'
+    },
+    {
+      type: 'single-choice',
+      question: '¿En qué capa del modelo OSI se encuentra TLS?',
+      options: ['Red', 'Transporte', 'Enlace', 'Sesión', 'Aplicación'],
+      answer: 'Transporte'
+    },
+    {
+      type: 'open-text',
+      question:
+        'A los algoritmos ______ también se los conoce como algoritmos de clave privada.',
+      answer: 'Simétricos'
+    },
+    {
+      type: 'true-false',
+      question: 'MD5 es un ejemplo de función hash.',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'true-false',
+      question:
+        'Los protocolos criptográficos impiden a usuarios no autorizados acceder a datos en una red.',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'single-choice',
+      question: '¿En qué capa del modelo OSI se encuentra AKA?',
+      options: ['Sesión', 'Transporte', 'Aplicación', 'Enlace', 'Red'],
+      answer: 'Enlace'
+    },
+    {
+      type: 'open-text',
+      question: '¿A qué apellidos hacen referencia las siglas RSA?',
+      answer: 'Rivest Shamir Adleman'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿En cuál de las siguientes capas del modelo OSI se encuentra el Protocolo AKA?',
+      options: ['Red', 'Sesión', 'Transporte', 'Aplicación', 'Enlace'],
+      answer: 'Enlace'
+    }
+  ],
 
-export const questions = [
-  ...quuestionsUnit1,
-  ...questionsUnit1y2,
-  ...questionsU3,
-  ...questionsU4,
-  {
-    type: 'multiple',
-    question:
-      '¿Qué medida de dispersión representa la diferencia entre el valor máximo y el mínimo?',
-    options: ['Varianza', 'Rango', 'Mediana', 'IQR'],
-    answer: 'Rango'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál de las siguientes no es una medida de tendencia central?',
-    options: ['Media', 'Mediana', 'Varianza', 'Moda'],
-    answer: 'Varianza'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué función en Python se usa comúnmente para obtener estadísticas básicas de un DataFrame?',
-    options: ['stats()', 'mean()', 'info()', 'describe()'],
-    answer: 'describe()'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué medida es más resistente a los valores atípicos?',
-    options: ['Media', 'Mediana', 'Varianza', 'Rango'],
-    answer: 'Mediana'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué gráfico se recomienda para observar la distribución de una variable continua?',
-    options: [
-      'Diagrama de barras',
-      'Diagrama de pastel',
-      'Histograma',
-      'Diagrama de caja y bigotes'
-    ],
-    answer: 'Histograma'
-  },
-  {
-    type: 'multiple',
-    question: 'El coeficiente de variación se utiliza principalmente para:',
-    options: [
-      'Determinar la moda',
-      'Ver si los datos son normales',
-      'Ver correlaciones',
-      'Comparar variabilidad entre variables con diferentes escalas'
-    ],
-    answer: 'Comparar variabilidad entre variables con diferentes escalas'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es el propósito principal de un gráfico de dispersión?',
-    options: [
-      'Observar relaciones entre dos variables numéricas',
-      'Identificar la moda',
-      'Mostrar datos categóricos',
-      'Mostrar valores faltantes'
-    ],
-    answer: 'Observar relaciones entre dos variables numéricas'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué valor representa el percentil 75?',
-    options: ['Q1', 'Media', 'Q3', 'Mediana'],
-    answer: 'Q3'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué mide la varianza?',
-    options: [
-      'Tendencia central',
-      'Dispersión respecto a la media',
-      'Frecuencia absoluta',
-      'Relación entre variables'
-    ],
-    answer: 'Dispersión respecto a la media'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué representa un IQR alto?',
-    options: [
-      'Que no hay valores atípicos',
-      'Que los datos están muy dispersos en el 50% central',
-      'Que todos los datos están cerca de la media',
-      'Que la media es cero'
-    ],
-    answer: 'Que los datos están muy dispersos en el 50% central'
-  },
-  {
-    type: 'multiple',
-    question: 'Los datos semiestructurados se caracterizan por:',
-    options: [
-      'No tener ningún formato predefinido',
-      'Usar etiquetas o metadatos para organizar la información (ej: JSON, XML)',
-      'Requerir siempre bases de datos relacionales',
-      'Ser exclusivamente numéricos'
-    ],
-    answer:
-      'Usar etiquetas o metadatos para organizar la información (ej: JSON, XML)'
-  },
-  {
-    type: 'multiple',
-    question: 'Una matriz de correlación no detecta bien:',
-    options: [
-      'Correlaciones positivas',
-      'Correlaciones negativas',
-      'Relaciones no lineales',
-      'Variables redundantes'
-    ],
-    answer: 'Relaciones no lineales'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de las siguientes es una representación visual de una matriz de correlación?',
-    options: ['Diagrama de barras', 'Boxplot', 'Histograma', 'Mapa de calor'],
-    answer: 'Mapa de calor'
-  },
-  {
-    type: 'multiple',
-    question: 'Un histograma sirve para:',
-    options: [
-      'Comparar dos atributos categóricos',
-      'Mostrar la distribución de una variable continua',
-      'Visualizar relaciones lineales',
-      'Visualizar outliers'
-    ],
-    answer: 'Mostrar la distribución de una variable continua'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál de las siguientes no es una medida de dispersión?',
-    options: ['Desviación estándar', 'Varianza', 'Rango', 'Moda'],
-    answer: 'Moda'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de las siguientes técnicas es adecuada para visualizar outliers?',
-    options: [
-      'Histograma',
-      'Gráfico de líneas',
-      'Boxplot',
-      'Diagrama de pastel'
-    ],
-    answer: 'Boxplot'
-  },
-  {
-    type: 'multiple',
-    question: 'Si la desviación estándar es baja, significa que:',
-    options: [
-      'Hay muchos outliers',
-      'Los datos están cerca de la media',
-      'Los datos son categóricos',
-      'Hay datos perdidos'
-    ],
-    answer: 'Los datos están cerca de la media'
-  },
-  {
-    type: 'multiple',
-    question:
-      'En la relación entre tarifa y supervivencia del Titanic, ¿por qué la correlación no refleja completamente la relación?',
-    options: [
-      'Porque la muestra es muy pequeña',
-      'Porque todos los sobrevivientes pagaron igual',
-      'Porque la relación no es perfectamente lineal',
-      'Porque no hay relación'
-    ],
-    answer: 'Porque la relación no es perfectamente lineal'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué mide una frecuencia relativa?',
-    options: [
-      'El número absoluto de repeticiones',
-      'El valor máximo de una categoría',
-      'La proporción respecto al total de observaciones',
-      'El promedio de frecuencias'
-    ],
-    answer: 'La proporción respecto al total de observaciones'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál sería una herramienta adecuada para analizar la relación entre edad, tarifa y supervivencia?',
-    options: ['Histograma', 'Boxplot', 'Gráfico de dispersión', 'Media y moda'],
-    answer: 'Gráfico de dispersión'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué describe mejor un conjunto de datos multimodal?',
-    options: [
-      'Tiene más de una media',
-      'Tiene alta desviación estándar',
-      'Tiene valores negativos',
-      'Tiene más de una moda'
-    ],
-    answer: 'Tiene más de una moda'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es el objetivo principal de la limpieza de datos en machine learning?',
-    options: [
-      'Reducir el tamaño del dataset',
-      'Mejorar la calidad y precisión de los modelos',
-      'Eliminar columnas irrelevantes',
-      'Crear modelos más complejos'
-    ],
-    answer: 'Mejorar la calidad y precisión de los modelos'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tipo de valor faltante no depende de ninguna variable observada?',
-    options: ['MAR', 'MCAR', 'NMAR', 'Outlier'],
-    answer: 'MCAR'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de las siguientes estrategias no es una técnica válida para tratar valores faltantes?',
-    options: [
-      'Eliminación de columnas',
-      'Imputación con la mediana',
-      'Recolección manual de datos',
-      'Agrupamiento jerárquico'
-    ],
-    answer: 'Agrupamiento jerárquico'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tipo de ausencia ocurre cuando los valores faltantes dependen de la variable misma?',
-    options: ['MAR', 'MCAR', 'NMAR', 'Outlier'],
-    answer: 'NMAR'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿En qué situación es apropiado usar la eliminación por lista completa (listwise deletion)?',
-    options: [
-      'Cuando hay muchos valores faltantes',
-      'Cuando los datos son NMAR',
-      'Cuando los datos son MCAR y el porcentaje de valores faltantes es bajo',
-      'Cuando se usa aprendizaje no supervisado'
-    ],
-    answer:
-      'Cuando los datos son MCAR y el porcentaje de valores faltantes es bajo'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué ventaja tiene la eliminación por pares (pairwise deletion)?',
-    options: [
-      'Siempre es más precisa',
-      'Es mejor que cualquier imputación',
-      'Aprovecha más datos al usar subconjuntos para cada análisis',
-      'Funciona solo con datos categóricos'
-    ],
-    answer: 'Aprovecha más datos al usar subconjuntos para cada análisis'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es una desventaja de la eliminación por lista completa?',
-    options: [
-      'Es difícil de implementar',
-      'No permite usar visualizaciones',
-      'Puede reducir significativamente el tamaño del dataset',
-      'Introduce outliers'
-    ],
-    answer: 'Puede reducir significativamente el tamaño del dataset'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué método elimina directamente variables con alto porcentaje de valores faltantes?',
-    options: [
-      'Listwise deletion',
-      'Column deletion',
-      'Pairwise deletion',
-      'Imputación por moda'
-    ],
-    answer: 'Column deletion'
-  },
-  {
-    type: 'multiple',
-    question: 'La imputación por la media es preferible cuando:',
-    options: [
-      'La distribución no está sesgada',
-      'Hay múltiples modas',
-      'Los datos son categóricos',
-      'Hay alta correlación'
-    ],
-    answer: 'La distribución no está sesgada'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué medida de tendencia central es más adecuada para datos con outliers?',
-    options: ['Media', 'Mediana', 'Moda', 'Rango'],
-    answer: 'Mediana'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tipo de imputación es más adecuada para variables categóricas?',
-    options: ['Media', 'Mediana', 'Moda', 'Rango'],
-    answer: 'Moda'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es una desventaja común de la imputación simple?',
-    options: [
-      'Aumenta la varianza',
-      'Reduce la variabilidad del dataset',
-      'No se puede aplicar en Python',
-      'Es muy costosa computacionalmente'
-    ],
-    answer: 'Reduce la variabilidad del dataset'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué representa un patrón MAR?',
-    options: [
-      'Valores faltantes sin causa conocida',
-      'Valores faltantes relacionados con otras variables observadas',
-      'Valores que no dependen de ninguna variable',
-      'Valores creados artificialmente'
-    ],
-    answer: 'Valores faltantes relacionados con otras variables observadas'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tipo de gráfico es útil para detectar patrones visuales en valores faltantes?',
-    options: [
-      'Diagrama de barras',
-      'Boxplot',
-      'Histograma',
-      'Mapa de calor (heatmap)'
-    ],
-    answer: 'Mapa de calor (heatmap)'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál de estas afirmaciones es falsa?',
-    options: [
-      'Listwise deletion elimina filas completas',
-      'Pairwise deletion calcula con pares de variables',
-      'Column deletion conserva las columnas con muchos faltantes',
-      'Imputación simple puede introducir sesgo'
-    ],
-    answer: 'Column deletion conserva las columnas con muchos faltantes'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tipo de valores faltantes presenta la variable "embarked" según el análisis del Titanic?',
-    options: ['NMAR', 'MAR', 'MCAR', 'No se puede determinar'],
-    answer: 'MAR'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de los siguientes métodos no permite conservar la estructura general del dataset?',
-    options: [
-      'Pairwise deletion',
-      'Imputación simple',
-      'Column deletion',
-      'Imputación por la moda'
-    ],
-    answer: 'Column deletion'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué técnica puede reducir el "ruido" en el análisis?',
-    options: [
-      'Listwise deletion',
-      'Imputación por media',
-      'Column deletion',
-      'Pairwise deletion'
-    ],
-    answer: 'Column deletion'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es la ventaja principal de la imputación simple?',
-    options: [
-      'Simplicidad y facilidad de implementación',
-      'Alta precisión',
-      'Reducción del sesgo',
-      'Preservación de correlaciones'
-    ],
-    answer: 'Simplicidad y facilidad de implementación'
-  },
-  {
-    type: 'multiple',
-    question:
-      'En un dataset donde una variable tiene más del 50% de valores faltantes irrelevantes, la acción recomendada es:',
-    options: [
-      'Imputar con la media',
-      'Imputar con valores aleatorios',
-      'Hacer normalización',
-      'Eliminar la columna'
-    ],
-    answer: 'Eliminar la columna'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué técnica genera varios valores posibles para cada dato faltante?',
-    options: [
-      'Imputación simple',
-      'Imputación múltiple',
-      'Eliminación por pares',
-      'Relleno por interpolación'
-    ],
-    answer: 'Imputación múltiple'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué ventaja tiene la imputación múltiple sobre la imputación simple?',
-    options: [
-      'Es más fácil de aplicar',
-      'Reduce el sesgo e incorpora incertidumbre',
-      'Usa solo la mediana',
-      'No requiere modelos predictivos'
-    ],
-    answer: 'Reduce el sesgo e incorpora incertidumbre'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué herramienta de Scikit-learn se usa para realizar imputación múltiple iterativa?',
-    options: [
-      'SimpleImputer',
-      'KNNImputer',
-      'IterativeImputer',
-      'MultipleFill'
-    ],
-    answer: 'IterativeImputer'
-  },
-  {
-    type: 'multiple',
-    question:
-      'En el proceso del IterativeImputer, ¿cuál es el modelo predeterminado que se utiliza?',
-    options: [
-      'LinearRegression',
-      'BayesianRidge',
-      'DecisionTree',
-      'GradientBoosting'
-    ],
-    answer: 'BayesianRidge'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es una causa común para la aparición de outliers?',
-    options: [
-      'Datos perfectamente limpios',
-      'Errores de medición o registros excepcionales',
-      'Falta de etiquetas',
-      'Normalización de datos'
-    ],
-    answer: 'Errores de medición o registros excepcionales'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué técnica consiste en limitar los valores extremos a ciertos percentiles?',
-    options: [
-      'Boxplot',
-      'Eliminación',
-      'Capping (winsorizing)',
-      'Imputación múltiple'
-    ],
-    answer: 'Capping (winsorizing)'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué gráfico permite identificar outliers de manera visual?',
-    options: [
-      'Mapa de calor',
-      'Histograma apilado',
-      'Boxplot',
-      'Diagrama de dispersión circular'
-    ],
-    answer: 'Boxplot'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué define un outlier según el método de cuartiles e IQR?',
-    options: [
-      'Media ± 3 * desviación estándar',
-      'Percentil 90',
-      'Fuera del rango Q1 - 1.5IQR a Q3 + 1.5IQR',
-      'Mínimo y máximo'
-    ],
-    answer: 'Fuera del rango Q1 - 1.5IQR a Q3 + 1.5IQR'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué suposición hace el algoritmo de envolvente elíptica?',
-    options: [
-      'Distribución uniforme',
-      'Distribución categórica',
-      'Distribución normal multivariada',
-      'Distribución binomial'
-    ],
-    answer: 'Distribución normal multivariada'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es una herramienta de Scikit-learn para detectar outliers multivariados?',
-    options: [
-      'IsolationForest',
-      'EllipticEnvelope',
-      'DBSCAN',
-      'PCAOutlierDetector'
-    ],
-    answer: 'EllipticEnvelope'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué devuelve el método decision_function en EllipticEnvelope?',
-    options: [
-      'Una puntuación de distancia respecto al límite de decisión',
-      'La media imputada',
-      'Una matriz de correlación',
-      'Una visualización de boxplot'
-    ],
-    answer: 'Una puntuación de distancia respecto al límite de decisión'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es una estrategia válida frente a los outliers?',
-    options: [
-      'Sustitución por 0',
-      'Eliminar columnas completas',
-      'Imputación por mediana',
-      'Agrupamiento jerárquico'
-    ],
-    answer: 'Imputación por mediana'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué ocurre si imputamos valores ausentes con la media cuando los datos están sesgados?',
-    options: [
-      'Mejora la precisión',
-      'Se vuelve MCAR',
-      'Se distorsiona la distribución',
-      'Nada, es indiferente'
-    ],
-    answer: 'Se distorsiona la distribución'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es una desventaja de la imputación simple mostrada con la variable "edad"?',
-    options: [
-      'Es costosa computacionalmente',
-      'Cambia la forma de la distribución',
-      'No funciona con variables numéricas',
-      'Elimina valores únicos'
-    ],
-    answer: 'Cambia la forma de la distribución'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué transformación convierte categorías en columnas binarias?',
-    options: [
-      'Codificación ordinal',
-      'One-hot encoding',
-      'Escalado robusto',
-      'Codificación inversa'
-    ],
-    answer: 'One-hot encoding'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es un riesgo de codificar variables nominales con números enteros?',
-    options: [
-      'Se pierde memoria',
-      'Mejora la precisión',
-      'El modelo puede asumir una relación ordinal falsa',
-      'Aumenta la varianza'
-    ],
-    answer: 'El modelo puede asumir una relación ordinal falsa'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuándo se recomienda codificación ordinal?',
-    options: [
-      'Para variables categóricas con un orden natural',
-      'Para variables numéricas',
-      'En todas las variables',
-      'Solo en variables binarias'
-    ],
-    answer: 'Para variables categóricas con un orden natural'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué técnica asigna un número basado en la frecuencia de aparición de una categoría?',
-    options: [
-      'Codificación ordinal',
-      'One-hot encoding',
-      'Codificación por frecuencia',
-      'Agrupamiento supervisado'
-    ],
-    answer: 'Codificación por frecuencia'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es la ventaja de la codificación one-hot frente a la ordinal para datos nominales?',
-    options: [
-      'Reduce dimensiones',
-      'Evita introducir un orden artificial',
-      'Es más precisa con números enteros',
-      'No necesita interpretación'
-    ],
-    answer: 'Evita introducir un orden artificial'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué transformación se recomienda si una variable nominal tiene muchas categorías?',
-    options: [
-      'Codificación por frecuencia',
-      'Normalización',
-      'One-hot encoding',
-      'Eliminación directa'
-    ],
-    answer: 'Codificación por frecuencia'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es el objetivo principal de la normalización de atributos en aprendizaje automático?',
-    options: [
-      'Reducir el número de columnas',
-      'Aumentar la varianza',
-      'Colocar los atributos en una escala común',
-      'Eliminar valores atípicos'
-    ],
-    answer: 'Colocar los atributos en una escala común'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué método se utiliza en Python para aplicar Min-Max Scaling?',
-    options: [
-      'OneHotEncoder',
-      'LabelEncoder',
-      'MinMaxScaler',
-      'VarianceScaler'
-    ],
-    answer: 'MinMaxScaler'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de las siguientes afirmaciones describe mejor la estandarización Z-Score?',
-    options: [
-      'Escala los datos entre 0 y 1',
-      'Genera una media de 0 y desviación estándar de 1',
-      'Utiliza codificación categórica',
-      'Agrupa los valores en intervalos'
-    ],
-    answer: 'Genera una media de 0 y desviación estándar de 1'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿En qué caso es más apropiado aplicar la normalización en lugar de la estandarización?',
-    options: [
-      'Cuando las variables tienen media cero',
-      'Cuando los datos son gaussianos',
-      'Cuando las variables tienen rangos muy dispares',
-      'Cuando no hay outliers'
-    ],
-    answer: 'Cuando las variables tienen rangos muy dispares'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué técnica transforma datos para tener media cero y desviación estándar uno?',
-    options: [
-      'Normalización',
-      'Estandarización',
-      'Discretización',
-      'Codificación ordinal'
-    ],
-    answer: 'Estandarización'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es una desventaja del test de Chi-cuadrado?',
-    options: [
-      'Funciona con datos continuos',
-      'No permite reducción de dimensionalidad',
-      'No captura relaciones no lineales',
-      'Requiere transformación de datos numéricos a categóricos'
-    ],
-    answer: 'No captura relaciones no lineales'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué técnica permite eliminar características con valores casi constantes?',
-    options: ['PCA', 'Chi-cuadrado', 'VarianceThreshold', 'MinMaxScaler'],
-    answer: 'VarianceThreshold'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es un ejemplo de extracción de características?',
-    options: [
-      'Eliminar columnas con baja varianza',
-      'Calcular la tarifa por persona a partir del total del pasaje',
-      'Seleccionar columnas por correlación',
-      'Codificar una variable categórica'
-    ],
-    answer: 'Calcular la tarifa por persona a partir del total del pasaje'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué técnica permite crear nuevas variables mediante la combinación de columnas?',
-    options: [
-      'Selección de atributos',
-      'Extracción de características',
-      'PCA',
-      'Estandarización'
-    ],
-    answer: 'Extracción de características'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué se recomienda cuando hay atributos numéricos con diferentes unidades?',
-    options: [
-      'Codificarlos como categóricos',
-      'Estandarizarlos',
-      'Eliminarlos',
-      'Aplicar Chi-cuadrado'
-    ],
-    answer: 'Estandarizarlos'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es el principal objetivo del PCA?',
-    options: [
-      'Estandarizar datos',
-      'Agrupar datos en categorías',
-      'Reducir la dimensionalidad manteniendo la mayor información posible',
-      'Eliminar outliers'
-    ],
-    answer:
-      'Reducir la dimensionalidad manteniendo la mayor información posible'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué atributo del dataset Titanic se menciona como difícil de interpretar y recomendable eliminar?',
-    options: ['Clase', 'Edad', 'Ticket', 'Tarifa'],
-    answer: 'Ticket'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué significa discretización?',
-    options: [
-      'Eliminar valores extremos',
-      'Convertir variables continuas en intervalos',
-      'Normalizar los datos',
-      'Agrupar variables categóricas'
-    ],
-    answer: 'Convertir variables continuas en intervalos'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tipo de codificación se aplica cuando una variable no es ordinal?',
-    options: [
-      'Codificación ordinal',
-      'One Hot Encoder',
-      'Label Encoder',
-      'Codificación numérica'
-    ],
-    answer: 'One Hot Encoder'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es el propósito de la ingeniería de características?',
-    options: [
-      'Seleccionar los mejores modelos',
-      'Mejorar el rendimiento del modelo con nuevas variables',
-      'Validar datos perdidos',
-      'Estandarizar los datos'
-    ],
-    answer: 'Mejorar el rendimiento del modelo con nuevas variables'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué problema puede causar la multicolinealidad?',
-    options: [
-      'Overfitting',
-      'Mejora del rendimiento',
-      'Inestabilidad en modelos',
-      'Reducción de dimensionalidad'
-    ],
-    answer: 'Inestabilidad en modelos'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué métrica se usa en Chi-cuadrado para evaluar relación entre atributos?',
-    options: ['Varianza', 'p-valor', 'Error cuadrático', 'Score F1'],
-    answer: 'p-valor'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué se debe hacer con variables únicas por registro como identificadores?',
-    options: ['Agruparlas', 'Eliminarlas', 'Codificarlas', 'Estandarizarlas'],
-    answer: 'Eliminarlas'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué método es útil para seleccionar atributos con alta relación con la variable objetivo?',
-    options: ['PCA', 'Chi-cuadrado', 'Normalización', 'One Hot Encoder'],
-    answer: 'Chi-cuadrado'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué describe mejor la técnica de binning?',
-    options: [
-      'Agrupar columnas',
-      'Categorizar valores numéricos en rangos',
-      'Codificar categorías',
-      'Reducir columnas redundantes'
-    ],
-    answer: 'Categorizar valores numéricos en rangos'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es uno de los requisitos previos para aplicar PCA?',
-    options: [
-      'Soporta datos faltantes',
-      'Requiere datos numéricos y sin valores faltantes',
-      'Funciona mejor con variables categóricas',
-      'Se aplica directamente a datos brutos'
-    ],
-    answer: 'Requiere datos numéricos y sin valores faltantes'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué representa cada valor propio en PCA?',
-    options: [
-      'Una media de los datos originales',
-      'La cantidad de varianza explicada por un componente',
-      'La media de cada componente',
-      'El ruido del conjunto de datos'
-    ],
-    answer: 'La cantidad de varianza explicada por un componente'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué herramienta de Python se utiliza para calcular valores y vectores propios?',
-    options: [
-      'pandas.eigen',
-      'numpy.linalg.eig',
-      'sklearn.pca.decompose',
-      'math.linear'
-    ],
-    answer: 'numpy.linalg.eig'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es el objetivo principal del PCA?',
-    options: [
-      'Incrementar la varianza de los datos',
-      'Reducir la dimensionalidad conservando la información',
-      'Aumentar el número de características',
-      'Separar datos en clústeres'
-    ],
-    answer: 'Reducir la dimensionalidad conservando la información'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué porcentaje de varianza se considera generalmente suficiente para no perder información en PCA?',
-    options: ['85%', '70%', '95%', '50%'],
-    answer: '95%'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué representa la matriz de covarianza en PCA?',
-    options: [
-      'La matriz de distancias',
-      'Las relaciones lineales entre atributos',
-      'Una transformación de Fourier',
-      'La matriz de decisión'
-    ],
-    answer: 'Las relaciones lineales entre atributos'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué sucede si no dividimos los datos para entrenamiento, validación y prueba?',
-    options: [
-      'El modelo mejora su precisión',
-      'Es imposible evaluar la capacidad de generalización',
-      'Los hiperparámetros se optimizan',
-      'Se reduce el sobreajuste'
-    ],
-    answer: 'Es imposible evaluar la capacidad de generalización'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué se debe evitar al dividir un dataset de series temporales?',
-    options: [
-      'Normalización',
-      'División aleatoria',
-      'Validación cruzada',
-      'Codificación ordinal'
-    ],
-    answer: 'División aleatoria'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué representa el conjunto de validación?',
-    options: [
-      'Datos para entrenar',
-      'Datos no vistos usados para ajustar hiperparámetros',
-      'Datos finales de producción',
-      'Datos ruidosos'
-    ],
-    answer: 'Datos no vistos usados para ajustar hiperparámetros'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué problema aparece cuando un modelo tiene un bajo desempeño en entrenamiento y validación?',
-    options: ['Sobreajuste', 'Subajuste', 'Ruido', 'Generalización'],
-    answer: 'Subajuste'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál de las siguientes afirmaciones es verdadera sobre el sobreajuste?',
-    options: [
-      'Se obtiene bajo error en entrenamiento y alto error en validación',
-      'Aumenta la capacidad de generalización',
-      'Se evita con modelos simples',
-      'Mejora la precisión del modelo'
-    ],
-    answer: 'Se obtiene bajo error en entrenamiento y alto error en validación'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué indica un modelo con subajuste?',
-    options: [
-      'Tiene muchos parámetros',
-      'No ha aprendido correctamente los patrones',
-      'Memoriza los datos',
-      'Tiene alta varianza'
-    ],
-    answer: 'No ha aprendido correctamente los patrones'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué conjunto de datos se menciona en el laboratorio para aplicar PCA?',
-    options: ['Titanic', 'RT-IoT2022', 'Breast Cancer Wisconsin', 'MNIST'],
-    answer: 'Breast Cancer Wisconsin'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué técnica debe aplicarse antes de usar PCA?',
-    options: [
-      'Min-Max scaling',
-      'Codificación ordinal',
-      'Estandarización de los datos',
-      'Codificación one hot'
-    ],
-    answer: 'Estandarización de los datos'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Por qué es importante mantener la estratificación en la división de datos?',
-    options: [
-      'Para reducir ruido',
-      'Para preservar la proporción de clases',
-      'Para aumentar la precisión',
-      'Para normalizar los datos'
-    ],
-    answer: 'Para preservar la proporción de clases'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es una buena proporción de división con muchos datos?',
-    options: ['60/20/20', '50/30/20', '80/10/10', '70/15/15'],
-    answer: '80/10/10'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué proceso incluye la matriz de covarianza y vectores propios?',
-    options: [
-      'Agrupamiento',
-      'PCA',
-      'Clasificación supervisada',
-      'Árboles de decisión'
-    ],
-    answer: 'PCA'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué caracteriza a los vectores propios en PCA?',
-    options: [
-      'Definen el rango de los datos',
-      'Definen los nuevos ejes del espacio transformado',
-      'Representan la media',
-      'Detectan valores atípicos'
-    ],
-    answer: 'Definen los nuevos ejes del espacio transformado'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es el rol del conjunto de prueba?',
-    options: [
-      'Ajustar el modelo',
-      'Optimizar la función de pérdida',
-      'Evaluar el rendimiento final del modelo',
-      'Preprocesar los datos'
-    ],
-    answer: 'Evaluar el rendimiento final del modelo'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué puede causar el sobreajuste?',
-    options: [
-      'Modelo lineal en datos lineales',
-      'Entrenamiento excesivo y demasiados parámetros',
-      'Dataset pequeño',
-      'Eliminación de columnas'
-    ],
-    answer: 'Entrenamiento excesivo y demasiados parámetros'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es el primer paso del flujo de trabajo en Machine Learning?',
-    options: [
-      'Procesamiento de datos',
-      'Recolección de datos',
-      'Formulación del problema',
-      'Entrenamiento del modelo'
-    ],
-    answer: 'Recolección de datos'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es el objetivo de la formulación del problema en ML?',
-    options: [
-      'Obtener métricas de precisión',
-      'Traducir una necesidad empresarial en un problema de ML',
-      'Elegir la métrica adecuada',
-      'Clasificar el tipo de datos'
-    ],
-    answer: 'Traducir una necesidad empresarial en un problema de ML'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tipo de problema es el de predecir si un pasajero del Titanic sobrevivió o no?',
-    options: [
-      'Clasificación multiclase',
-      'Regresión',
-      'Clustering',
-      'Clasificación binaria'
-    ],
-    answer: 'Clasificación binaria'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué se debe definir para que una solución de ML esté alineada con los objetivos del negocio?',
-    options: [
-      'Dataset base',
-      'Métrica de éxito empresarial cuantificable',
-      'Variable latente',
-      'Métrica F1'
-    ],
-    answer: 'Métrica de éxito empresarial cuantificable'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué tipo de problema es predecir niveles de CO2 en el aire?',
-    options: [
-      'Clasificación binaria',
-      'Regresión',
-      'Clustering',
-      'Clasificación ordinal'
-    ],
-    answer: 'Regresión'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué conjunto de datos fue usado para segmentar a la población del Ecuador?',
-    options: [
-      'Calidad del aire',
-      'Censo de población',
-      'Titanic',
-      'Diagnóstico de cáncer'
-    ],
-    answer: 'Censo de población'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué técnica se recomienda cuando los datos están dispersos en varios formatos y fuentes?',
-    options: [
-      'Estandarización',
-      'Tokenización',
-      'Armonización de datos',
-      'Evaluación de atributos'
-    ],
-    answer: 'Armonización de datos'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tipo de datos requieren valores positivos y negativos para predecir correctamente?',
-    options: [
-      'Continuos',
-      'Discretos',
-      'Etiquetados (como fraude/no fraude)',
-      'Categóricos'
-    ],
-    answer: 'Continuos'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué ocurre si los datos son ruidosos o irrelevantes?',
-    options: [
-      'Aumenta la precisión',
-      'El modelo no puede aprender correctamente',
-      'Mejora el recall',
-      'Mejora la regularización'
-    ],
-    answer: 'El modelo no puede aprender correctamente'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué implica la selección de características?',
-    options: [
-      'Generar atributos desde cero',
-      'Elegir los atributos más relevantes',
-      'Crear variables binarias',
-      'Aumentar el tamaño del dataset'
-    ],
-    answer: 'Elegir los atributos más relevantes'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál es el propósito de la ingeniería de características?',
-    options: [
-      'Transformar datos crudos en nuevas variables útiles',
-      'Guardar los datos en la nube',
-      'Calcular la varianza',
-      'Reducir la dimensionalidad'
-    ],
-    answer: 'Transformar datos crudos en nuevas variables útiles'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué biblioteca de Python permite cargar archivos CSV y convertirlos en tablas?',
-    options: ['Numpy', 'Matplotlib', 'Pandas', 'Seaborn'],
-    answer: 'Pandas'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué archivo es necesario para conectar Google Colab con Google Drive?',
-    options: [
-      'credentials.json',
-      'Autenticación con drive.mount',
-      'settings.py',
-      'token.json'
-    ],
-    answer: 'Autenticación con drive.mount'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Cuál es el formato más común de archivo de datos usado en el laboratorio?',
-    options: ['.json', '.xml', '.xlsx', '.csv'],
-    answer: '.csv'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué tipo de datos se usan para medir atributos como altura o peso?',
-    options: ['Discretos', 'Continuos', 'Categóricos', 'Binarios'],
-    answer: 'Continuos'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué tipo de datos categóricos tienen un orden inherente?',
-    options: ['Nominales', 'Binarios', 'Ordinales', 'Continuos'],
-    answer: 'Ordinales'
-  },
-  {
-    type: 'multiple',
-    question: '¿Cuál de los siguientes es un dato binario?',
-    options: ['Número de hijos', 'Color favorito', 'Verdadero o Falso', 'Edad'],
-    answer: 'Verdadero o Falso'
-  },
-  {
-    type: 'multiple',
-    question: '¿Qué paso sigue después de la evaluación de datos?',
-    options: [
-      'Entrenamiento',
-      'Formulación del problema',
-      'Ingeniería de características',
-      'Segmentación de datos'
-    ],
-    answer: 'Ingeniería de características'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué afirmación representa el principio “garbage in, garbage out”?',
-    options: [
-      'Si usamos menos datos, el modelo es más preciso',
-      'Si usamos datos discretos, la regresión mejora',
-      'Si los datos son malos, el modelo será malo',
-      'Si los datos son grandes, siempre funciona bien'
-    ],
-    answer: 'Si los datos son malos, el modelo será malo'
-  },
-  {
-    type: 'multiple',
-    question:
-      '¿Qué parte del dataset Titanic representa un atributo categórico?',
-    options: ['Fare', 'Age', 'Sex', 'PassengerId'],
-    answer: 'Sex'
-  },
-  ...completeQuestions
-]
+  Unidad_3: [
+    {
+      type: 'single-choice',
+      question:
+        'Después de hackear sin autorización los sistemas de cajeros automáticos y luego colaborar para corregir vulnerabilidades, ¿qué tipo de atacante es?',
+      options: [
+        'White Hat',
+        'Hacktivist',
+        'Script Kiddie',
+        'Gray Hat',
+        'Black Hat'
+      ],
+      answer: 'Gray Hat'
+    },
+    {
+      type: 'open-text',
+      question:
+        'La ............... es el conjunto de acciones que garantiza la modificación de los datos por parte de procesos y/o personas autorizadas.',
+      answer: 'Integridad'
+    },
+    {
+      type: 'single-choice',
+      question: '¿Cuál es el objetivo principal de la informática forense?',
+      options: [
+        'Diseñar sistemas operativos más eficientes',
+        'Optimizar el rendimiento de redes empresariales',
+        'Desarrollar aplicaciones para la protección de datos personales',
+        'Analizar, preservar y presentar evidencia digital para investigaciones legales',
+        'Recuperar datos eliminados accidentalmente'
+      ],
+      answer:
+        'Analizar, preservar y presentar evidencia digital para investigaciones legales'
+    },
+    {
+      type: 'single-choice',
+      question: '¿Cuál es el principal objetivo de un hacker ético?',
+      options: [
+        'Bloquear sistemas de manera preventiva',
+        'Robar datos de empresas competidoras',
+        'Desarrollar software malicioso para pruebas',
+        'Identificar y corregir vulnerabilidades en los sistemas'
+      ],
+      answer: 'Identificar y corregir vulnerabilidades en los sistemas'
+    },
+    {
+      type: 'single-choice',
+      question:
+        'Un atacante que roba información de tarjetas de crédito para venderla es:',
+      options: [
+        'Script Kiddie',
+        'Gray Hat',
+        'Hacktivist',
+        'Black Hat',
+        'White Hat'
+      ],
+      answer: 'Black Hat'
+    },
+    {
+      type: 'open-text',
+      question:
+        'El proceso que garantiza el acceso y uso del sistema por parte del usuario se conoce como:',
+      answer: 'Autorización'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Cuando un atacante sigue rápidamente a una persona autorizada para ingresar sin autorización a un lugar físico seguro, se llama:',
+      answer: 'Tailgating'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Qué debe hacer para asegurarse de que las personas con las que comparte equipos informáticos no tengan acceso a sus datos seguros?',
+      options: [
+        'Activar y configurar el Firewall',
+        'Proteger los datos con una contraseña',
+        'Ninguna de las respuestas es correcta',
+        'Instalar un Antivirus',
+        'Configurar la privacidad de su navegador'
+      ],
+      answer: 'Proteger los datos con una contraseña'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Por qué las amenazas internas pueden causar más daño que las externas?',
+      options: [
+        'Los usuarios internos tienen mejores conocimientos de hacking ético',
+        'Los usuarios internos pueden acceder sin autenticación',
+        'Ninguna de las respuestas es correcta',
+        'Acceden por Internet',
+        'Tienen acceso directo a la infraestructura tecnológica'
+      ],
+      answer: 'Tienen acceso directo a la infraestructura tecnológica'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Siglas del ataque que ocurre cuando un ciberdelincuente toma control de un dispositivo para interceptar información antes de enviarse:',
+      answer: 'MitM'
+    },
+    {
+      type: 'single-choice',
+      question: '¿Cuál es un ejemplo de cómo se puede ocultar malware?',
+      options: [
+        'Ninguna de las respuestas es correcta',
+        'Mejorar ranking de un sitio web',
+        'Un botnet transporta información personal',
+        'Enviar un correo con archivo adjunto que parece actualización de antivirus pero es spyware',
+        'Ataque contra sitio web público'
+      ],
+      answer:
+        'Enviar un correo con archivo adjunto que parece actualización de antivirus pero es spyware'
+    },
+    {
+      type: 'true-false',
+      question:
+        'Si combinamos técnicas de seguridad informática, seguridad de la información y ciberseguridad podemos asegurar que el ambiente tecnológico es completamente seguro.',
+      answer: 'Falso'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Qué tecnología evita que el malware supervise actividades y recopile información personal?',
+      options: [
+        'Firewall',
+        'Autenticación de dos factores',
+        'Todas las respuestas son correctas',
+        'Gestor de contraseñas',
+        'Antispyware'
+      ],
+      answer: 'Antispyware'
+    },
+    {
+      type: 'multiple-select',
+      question: '¿Cuáles métodos garantizan la confidencialidad? (Elija 3)',
+      options: [
+        'Autenticación de dos factores',
+        'Encriptación de datos',
+        'Control de versiones',
+        'Configuración de permisos',
+        'Usuario y contraseña',
+        'Respaldos'
+      ],
+      answers: [
+        'Autenticación de dos factores',
+        'Encriptación de datos',
+        'Usuario y contraseña'
+      ]
+    },
+    {
+      type: 'open-text',
+      question:
+        'Software que despliega anuncios falsos y recopila información del usuario:',
+      answer: 'Adware'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Código malicioso que se replica aprovechando vulnerabilidades de red:',
+      answer: 'Worm'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Malware que secuestra un sistema hasta que se realiza un pago:',
+      answer: 'Ransomware'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Práctica de ingeniería social para ingresar a un área física restringida mediante engaño:',
+      answer: 'Tailgating'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Complete: La Seguridad Informática protege la integridad y privacidad de los datos y equipos informáticos.',
+      answer: 'Seguridad Informática'
+    },
+    {
+      type: 'multiple-select',
+      question: '¿Cuáles son estados de los datos? (Elija 3)',
+      options: [
+        'Almacenamiento',
+        'UNICODE',
+        'Transmisión',
+        'Texto',
+        'Binario',
+        'ASCII',
+        'Procesamiento'
+      ],
+      answers: ['Almacenamiento', 'Transmisión', 'Procesamiento']
+    },
+    {
+      type: 'multiple_choice',
+      question:
+        '¿Cuál de las siguientes implementaciones de seguridad utiliza biometría? (Elija 2)',
+      options: [
+        'Tarjetas de crédito',
+        'Teléfono Inteligente',
+        'Token',
+        'Huella dactilar',
+        'Reconocimiento de voz'
+      ],
+      answers: ['Huella dactilar', 'Reconocimiento de voz']
+    },
+    {
+      type: 'true-false',
+      question:
+        'La informática forense no es una rama de la ciberseguridad y de las ciencias forenses.',
+      answer: 'Falso'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Técnica que consiste exclusivamente en el envío de SMS por parte de un ciberdelincuente, simulando ser una entidad legítima (banco, institución pública, etc.) con el objeto de robar información sensible:',
+      answer: 'Smishing'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Técnica de estafa de malware que utiliza alertas de seguridad emergentes y otros trucos de ingeniería social para asustar al usuario y hacer que pague por software falso disfrazado de protección de ciberseguridad real:',
+      answer: 'Scareware'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Para qué son útiles las habilidades desarrolladas por los profesionales de la ciberseguridad?',
+      options: [
+        'Los profesionales desarrollan habilidades que sólo pueden ser utilizadas para el bien',
+        'Ninguna de las respuestas es correcta',
+        'Los profesionales desarrollan habilidades que no pueden utilizarse para hacer daño',
+        'Los profesionales desarrollan habilidades que pueden ser utilizadas para hacer el bien o el mal',
+        'Los profesionales desarrollan habilidades que sólo pueden usarse para hacer daño'
+      ],
+      answer:
+        'Los profesionales desarrollan habilidades que pueden ser utilizadas para hacer el bien o el mal'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Cuál de las siguientes es un área de la ciberseguridad que se dedica al estudio de ocultar datos?',
+      options: [
+        'Criptografía',
+        'Esteganografía',
+        'Ingeniería Forense',
+        'Seguridad de la Información'
+      ],
+      answer: 'Esteganografía'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Se refiere a la penetración y ataque de los sistemas informáticos y las redes de un país con el objetivo de causar daños o interrumpir servicios básicos como electricidad o Internet:',
+      answer: 'Ciberterrorismo'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Nos ayuda a detectar capacidades o acciones cibernéticas para identificar amenazas:',
+      answer: 'Ciberinteligencia'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Siglas del ataque utilizado para tomar el control del dispositivo móvil de un usuario y exfiltrar información sensible:',
+      answer: 'MitMo'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Al conjunto de acciones dirigidas contra bases de datos y redes de comunicaciones con el objetivo de robar datos se lo conoce como:',
+      answer: 'Ciberataque'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Qué tecnología de seguridad crea un token que permite a un usuario iniciar sesión en una aplicación web utilizando las credenciales de un sitio web de redes sociales?',
+      options: [
+        'Navegación privada',
+        'Gestor de contraseñas',
+        'Autorización abierta',
+        'VPN',
+        'IPS'
+      ],
+      answer: 'Autorización abierta'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Cómo puede evitar que espíen el tráfico de la red cuando utiliza una computadora portátil en un punto de acceso Wi-Fi público?',
+      options: [
+        'Utilizando el cifrado WPA2',
+        'Desactivando el Bluetooth',
+        'Utilizando una VPN',
+        'Ninguna de las respuestas es correcta',
+        'Utilizando un gestor de contraseñas'
+      ],
+      answer: 'Utilizando una VPN'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Cómo se llama un software escrito para aprovechar una vulnerabilidad de seguridad conocida?',
+      options: ['Firewall', 'Exploit', 'Update', 'Antivirus'],
+      answer: 'Exploit'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Un perfil de usuario en una red social es un ejemplo de un dato:',
+      answer: 'Online'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Cuál de las siguientes es la principal diferencia entre un hacker y un profesional de la ciberseguridad?',
+      options: [
+        'Los hackers sólo operan dentro de los límites legales',
+        'Los hackers tienen habilidades especiales que los profesionales no tienen',
+        'Ninguna de las respuestas es correcta',
+        'Los profesionales de la ciberseguridad deben trabajar dentro de los límites legales',
+        'Los profesionales no deben tener las mismas habilidades que los hackers'
+      ],
+      answer:
+        'Los profesionales de la ciberseguridad deben trabajar dentro de los límites legales'
+    },
+    {
+      type: 'single-choice',
+      question:
+        "De acuerdo con el siguiente ejemplo, identifique el tipo de atacante: 'Mientras realizaba una investigación, este atacante se topó con una vulnerabilidad de seguridad en la red de la organización a la que está autorizado a acceder'",
+      options: [
+        'White Hat',
+        'Hacktivist',
+        'Gray Hat',
+        'Black Hat',
+        'Script Kiddie'
+      ],
+      answer: 'White Hat'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Técnica que consiste en dejar abandonado un dispositivo infectado con software malicioso (USB, CD o teléfono móvil) en algún lugar para tentar a una víctima:',
+      answer: 'Baiting'
+    },
+    {
+      type: 'multiple-select',
+      question:
+        '¿Cuáles de las siguientes actividades son típicas de un hacker ético? (Elija 3)',
+      options: [
+        'Analizar vulnerabilidades de software',
+        'Desarrollar exploits para mejorar la seguridad',
+        'Compartir información confidencial con terceros',
+        'Obtener acceso no autorizado a datos privados',
+        'Realizar pruebas de penetración'
+      ],
+      answers: [
+        'Realizar pruebas de penetración',
+        'Analizar vulnerabilidades de software',
+        'Desarrollar exploits para mejorar la seguridad'
+      ]
+    },
+    {
+      type: 'complete',
+      question:
+        '[______] son las siglas del ataque a la red que provoca interrupción del servicio de red a los usuarios, dispositivos o aplicaciones interconectadas.',
+      answer: 'DoS'
+    },
+    {
+      type: 'complete',
+      question:
+        'La seguridad [______] se encarga de la protección de los datos contra desastres naturales',
+      answer: 'Física'
+    },
+    {
+      type: 'multiple-select',
+      question:
+        '¿Cuál de las siguientes características describe a un gusano? (Elija 2)',
+      options: [
+        'Infecta los ordenadores mediante un software',
+        'Se ejecuta cuando el software se ejecuta en un ordenador',
+        'Se desplaza a nuevos ordenadores sin intervención ni conocimiento del usuario',
+        'Se autorreplica',
+        'Se esconde en estado pasivo'
+      ],
+      answers: [
+        'Se desplaza a nuevos ordenadores sin intervención ni conocimiento del usuario',
+        'Se autorreplica'
+      ]
+    },
+    {
+      type: 'open-text',
+      question:
+        'Un conjunto de cambios realizados en cualquier aplicación o sistema operativo con el objetivo de actualizarlo, arreglarlo o mejorarlo suele denominarse:',
+      answer: 'Parche'
+    },
+    {
+      type: 'single-choice',
+      question:
+        "De acuerdo con el siguiente ejemplo, identifique el tipo de atacante: 'Este atacante utiliza herramientas existentes en Internet para lanzar un ciberataque'",
+      options: [
+        'Gray Hat',
+        'Black Hat',
+        'Hacktivist',
+        'Script Kiddie',
+        'White Hat'
+      ],
+      answer: 'Script Kiddie'
+    },
+    {
+      type: 'single-choice',
+      question: 'Cuál de las siguientes áreas es parte de la ciberseguridad?',
+      options: [
+        'Seguridad Informática',
+        'Todas las respuestas son correctas',
+        'Ingeniería Social',
+        'Criptografía',
+        'Código Seguro'
+      ],
+      answer: 'Todas las respuestas son correctas'
+    },
+    {
+      type: 'multiple-select',
+      question:
+        '¿Cuáles son los principios fundamentales de la Seguridad de la Información? (Elija 3)',
+      options: [
+        'Disponibilidad',
+        'Confidencialidad',
+        'Seguridad',
+        'Integridad',
+        'Intervención',
+        'Escalabilidad',
+        'Acceso'
+      ],
+      answers: ['Integridad', 'Disponibilidad', 'Confidencialidad']
+    },
+    {
+      type: 'complete',
+      question:
+        'Al proceso de control de los tiempos y usuarios que han accedido a una aplicación, se lo conoce como [______]',
+      answer: 'archivos de registro'
+    },
+    {
+      type: 'true-false',
+      question:
+        'Un hacker ético debe obtener permiso antes de realizar pruebas en un sistema.',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'complete',
+      question:
+        '______ es el proceso que garantiza la identidad de un usuario que accede al sistema.',
+      answer: 'Autenticación'
+    },
+    {
+      type: 'single-choice',
+      question: '¿Cuál es el objetivo de la ciberseguridad?',
+      options: [
+        'Que personas no autorizadas accedan a los datos',
+        'Mantener la confidencialidad, integridad y disponibilidad de los datos que existen de manera digital',
+        'Ninguna de las respuestas es correcta',
+        'Evitar ser hackeado',
+        'Proteger todo tipo de dato'
+      ],
+      answer:
+        'Mantener la confidencialidad, integridad y disponibilidad de los datos que existen de manera digital'
+    },
+    {
+      type: 'multiple-select',
+      question:
+        '¿Cuál de los siguientes ejemplos se clasificarían como datos personales? (Elija 3)',
+      options: [
+        'Título universitario',
+        'Cargo en el trabajo',
+        'Número de cédula',
+        'Número de historia clínica',
+        'Fecha y lugar de nacimiento',
+        'Dirección IP'
+      ],
+      answers: [
+        'Número de cédula',
+        'Número de historia clínica',
+        'Fecha y lugar de nacimiento'
+      ]
+    },
+    {
+      type: 'matching',
+      question:
+        'Empareje las siguientes columnas relacionadas con evidencia digital:',
+      pairs: [
+        {
+          left: 'Evidencia digital',
+          answer:
+            'Datos almacenados en dispositivos electrónicos que pueden ser utilizados en un proceso legal'
+        },
+        {
+          left: 'Volcado de memoria',
+          answer:
+            'Técnica que permite capturar y analizar los datos de la RAM en un sistema'
+        },
+        {
+          left: 'Cadena de custodia',
+          answer:
+            'Proceso para preservar la integridad de los datos desde su recolección hasta su presentación en un tribunal'
+        },
+        {
+          left: 'Análisis forense',
+          answer:
+            'Proceso sistemático de examinar y extraer información relevante de dispositivos digitales'
+        },
+        {
+          left: 'Hashing',
+          answer:
+            'Método utilizado para generar una firma única de un archivo o dato digital'
+        }
+      ]
+    },
+    {
+      type: 'complete',
+      question:
+        'La seguridad ______ se encarga de la protección de los datos mediante el uso de técnicas criptográficas',
+      answer: 'Lógica'
+    },
+    {
+      type: 'matching',
+      question:
+        'Empareja cada término relacionado con hacking ético con su definición:',
+      pairs: [
+        {
+          left: 'Grupo especializado en probar la seguridad de manera ofensiva',
+          answer: 'Red Team'
+        },
+        {
+          left: 'Ataque simulado para evaluar la seguridad de un sistema',
+          answer: 'Pruebas de penetración'
+        },
+        {
+          left: 'Hacker ético que trabaja para mejorar la seguridad',
+          answer: 'White Hat'
+        },
+        {
+          left: 'Hacker con intenciones maliciosas que actúa ilegalmente',
+          answer: 'Black Hat'
+        },
+        {
+          left: 'Técnica de ingeniería social para obtener información confidencial',
+          answer: 'Phishing'
+        }
+      ]
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Cuál de los siguientes conceptos hace referencia a las buenas prácticas de seguridad en el desarrollo de aplicaciones seguras?',
+      options: [
+        'Análisis de malware',
+        'Todas las respuestas son correctas',
+        'Código seguro',
+        'Seguridad Informática',
+        'Ciberinteligencia'
+      ],
+      answer: 'Código seguro'
+    },
+    {
+      type: 'complete',
+      question:
+        'La cadena de ______ se encarga de preservar la integridad de una evidencia digital',
+      answer: 'custodia'
+    },
+    {
+      type: 'single-choice',
+      question:
+        "De acuerdo con el siguiente ejemplo, identifique el tipo de atacante: 'Este atacante transfirió 2 millones de dólares a su cuenta bancaria utilizando las credenciales de la cuenta y el PIN del cliente a las cuales tuvo acceso mediante las grabaciones del sistema de seguridad'",
+      options: [
+        'White Hat',
+        'Black Hat',
+        'Gray Hat',
+        'Script Kiddie',
+        'Hacktivist'
+      ],
+      answer: 'Black Hat'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Cuál de los siguientes conceptos tiene que ver con la identificación e investigación de las características del software malicioso?',
+      options: [
+        'Antivirus',
+        'Análisis de malware',
+        'Seguridad Informática',
+        'Ciberinteligencia'
+      ],
+      answer: 'Análisis de malware'
+    }
+  ],
+
+  Unidad_4: [
+    {
+      type: 'single-choice',
+      question: 'Una violación potencial de la seguridad es:',
+      options: ['Incidente de seguridad', 'Vulnerabilidad', 'Amenaza'],
+      answer: 'Amenaza'
+    },
+    {
+      type: 'matching',
+      question: 'Identifique el tipo de amenaza en cada caso:',
+      pairs: [
+        {
+          left: 'Un empleado fue engañado para entregar información confidencial por alguien que simuló ser su gerente',
+          answer: 'Amenaza Externa'
+        },
+        {
+          left: 'Un ex-empleado pudo descargar archivos de clientes accediendo de forma remota a la red',
+          answer: 'Amenaza Interna'
+        },
+        {
+          left: 'Un empleado hizo clic en un enlace de correo',
+          answer: 'Amenaza Interna'
+        },
+        {
+          left: 'Un empleado permitió el ingreso de un desconocido a la empresa',
+          answer: 'Amenaza Interna'
+        },
+        {
+          left: 'Un atacante logra ingresar a la red de la empresa',
+          answer: 'Amenaza Externa'
+        },
+        {
+          left: 'Un proveedor de servicios ingresó información incorrecta en la base de datos',
+          answer: 'Amenaza Interna'
+        },
+        {
+          left: 'Un empleado conectó un USB infectado en su computador portátil del trabajo',
+          answer: 'Amenaza Interna'
+        }
+      ]
+    },
+    {
+      type: 'true-false',
+      question:
+        'Según la ISO 27040 seguridad es la probabilidad de que un sistema falle de tal manera que cause un daño.',
+      answer: 'Falso'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Qué tecnología de seguridad utiliza comúnmente un trabajador remoto cuando accede a recursos de la red corporativa?',
+      options: ['IPS', 'Antivirus', 'VPN', 'Acceso biométrico', 'Honeypot'],
+      answer: 'VPN'
+    },
+    {
+      type: 'single-choice',
+      question:
+        'Un ataque que se centra en las personas y no en la tecnología es:',
+      options: ['Malware', 'Ingeniería Social', 'VPN', 'Acceso no autorizado'],
+      answer: 'Ingeniería Social'
+    },
+    {
+      type: 'true-false',
+      question:
+        'IPsec es un conjunto de protocolos cuya función es asegurar las comunicaciones sobre el TCP autenticando y/o cifrando cada paquete TCP.',
+      answer: 'Falso'
+    },
+    {
+      type: 'multiple-select',
+      question: 'La arquitectura de las tecnologías PKI tienen:',
+      options: [
+        'Controladores de dominio que pueden autenticar a los usuarios finales y computadoras cuando solicitan certificados',
+        'Ordenadores y usuarios clientes de dominio que solicitan, reciben y utilizan certificados',
+        'La información de identificación del sujeto como nombre y correo electrónico'
+      ],
+      answers: [
+        'Controladores de dominio que pueden autenticar a los usuarios finales y computadoras cuando solicitan certificados',
+        'Ordenadores y usuarios clientes de dominio que solicitan, reciben y utilizan certificados'
+      ]
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Qué requisito de seguridad abarca la configuración de acceso para requerir autenticación antes de acceder a páginas web?',
+      options: [
+        'Escalabilidad',
+        'Seguridad',
+        'Confidencialidad',
+        'Disponibilidad',
+        'Integridad'
+      ],
+      answer: 'Confidencialidad'
+    },
+    {
+      type: 'true-false',
+      question:
+        'Hay gastos ordinarios que tu compañía debe parar de pagar y renegociar como salarios y rentas.',
+      answer: 'Falso'
+    },
+    {
+      type: 'multiple-select',
+      question: 'Aspectos a considerar para el intercambio de información:',
+      options: [
+        'Acuerdos de confidencialidad y secreto',
+        'Mensajería electrónica',
+        'Acuerdos de intercambio',
+        'Transporte de activos'
+      ],
+      answers: [
+        'Acuerdos de confidencialidad y secreto',
+        'Mensajería electrónica',
+        'Acuerdos de intercambio'
+      ]
+    },
+    {
+      type: 'true-false',
+      question:
+        'Confidencialidad es la prevención de la retención no autorizada de información o recursos.',
+      answer: 'Falso'
+    },
+    {
+      type: 'true-false',
+      question:
+        'Evidencia digital es cualquier documento o dato contenido en un soporte informático susceptible de tratamiento digital.',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'multiple-select',
+      question:
+        '¿Cuáles políticas pertenecen al uso de los servicios de la red?',
+      options: [
+        'Control de Acceso',
+        'Uso de Servicios de la Red',
+        'Uso de la Red Inalámbrica (WIFI)',
+        'Uso del Correo Electrónico Institucional',
+        'Uso de Impresoras en Red'
+      ],
+      answers: [
+        'Control de Acceso',
+        'Uso de Servicios de la Red',
+        'Uso de la Red Inalámbrica (WIFI)',
+        'Uso del Correo Electrónico Institucional',
+        'Uso de Impresoras en Red'
+      ]
+    },
+    {
+      type: 'single-choice',
+      question:
+        'Diseñado para proporcionar una fuerte autenticación para aplicaciones cliente/servidor mediante criptografía de clave secreta:',
+      options: ['IPSec', 'Ninguna', 'VPN', 'Single Sign-On'],
+      answer: 'Ninguna'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Qué equipo pone a prueba éticamente los sistemas de seguridad de una empresa?',
+      options: [
+        'Red Team',
+        'Todas las respuestas son correctas',
+        'Blue Team',
+        'Dark Team'
+      ],
+      answer: 'Red Team'
+    },
+    {
+      type: 'single-choice',
+      question: '¿Cuál es el recurso más valioso de una organización?',
+      options: [
+        'Todas las respuestas son correctas',
+        'Clientes',
+        'Personal',
+        'Datos',
+        'Recursos financieros'
+      ],
+      answer: 'Datos'
+    },
+    {
+      type: 'single-choice',
+      question:
+        'Herramienta escrita en Python que permite capturar hashes de credenciales en la misma red:',
+      options: ['SAYCHEESE', 'STICKY KEYS', 'SEEKER', 'RESPONDER.PY'],
+      answer: 'RESPONDER.PY'
+    },
+    {
+      type: 'matching',
+      question: 'Relaciona los conceptos:',
+      pairs: [
+        {
+          left: 'Prueba y Certificación de los Planes BCP',
+          answer:
+            'La estrategia consiste en simular situaciones de contingencia'
+        },
+        {
+          left: 'Business Impact Analysis (BIA)',
+          answer: 'Identificación de procesos y funciones críticas'
+        },
+        {
+          left: 'Estrategias de Mitigación',
+          answer: 'Minimizar la probabilidad de interrupciones'
+        },
+        {
+          left: 'Desarrollo de Planes de Contingencia',
+          answer: 'Documento que incluye todas las unidades del negocio'
+        }
+      ]
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Qué término proporciona fuerte autenticación usando criptografía de clave secreta?',
+      options: ['VPN', 'Kerberos', 'IPSec', 'Single Sign-On'],
+      answer: 'Kerberos'
+    },
+    {
+      type: 'single-choice',
+      question: '¿Qué es hyperjacking?',
+      options: [
+        'Aumentar la velocidad de reloj de la red',
+        'Agregar software desactualizado a una máquina virtual',
+        'Usar procesadores de varias computadoras',
+        'Todas las respuestas son correctas',
+        'Tomar el control de un hipervisor de máquinas virtuales como parte de un ataque'
+      ],
+      answer:
+        'Tomar el control de un hipervisor de máquinas virtuales como parte de un ataque'
+    },
+    {
+      type: 'single-choice',
+      question: 'Cuál de las siguientes NO es una función del Blue Team?',
+      options: [
+        'Educar al personal sobre las políticas de seguridad',
+        'Documentar exactamente lo que debe proteger',
+        'Identificar fallos de seguridad y/o vulnerabilidades',
+        'Emular un ataque lo más realista y caótico posible',
+        'Llevar a cabo una evaluación de riesgos'
+      ],
+      answer: 'Emular un ataque lo más realista y caótico posible'
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Qué tecnología se utiliza para proteger, monitorear y administrar dispositivos móviles?',
+      options: [
+        'Ninguna de las respuestas es correcta',
+        'VPN',
+        'ASA Firewall',
+        'MDM',
+        'rootkit'
+      ],
+      answer: 'MDM'
+    },
+    {
+      type: 'true-false',
+      question:
+        'Un sistema PKI está basado en una información que el usuario conoce, como su contraseña, y un dispositivo externo que suele adoptar la forma de una tarjeta de crédito o una clave que el usuario puede tomar',
+      answer: 'Falso'
+    },
+    {
+      type: 'true-false',
+      question:
+        'Un objetivo específico de las políticas de seguridad es garantizar a los miembros de la comunidad de la Universidad Central que la información es debidamente asegurada',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'multiple-select',
+      question:
+        '¿Cómo proteger a los internos de las amenazas de la ingeniería social?',
+      options: [
+        'Los objetivos de un hacker de ingeniería social son similares a los de cualquier otro hacker: quieren el dinero, información o recursos...',
+        'Los hackers de ingeniería social explotan la credulidad, la pereza, los buenos modales o incluso el entusiasmo de su personal...',
+        'Si todos los procesos se ejecutaran con el menor conjunto de privilegios necesarios...'
+      ],
+      answers: [
+        'Para atacar a su organización, los hackers de ingeniería social explotan la credulidad, la pereza, los buenos modales o incluso el entusiasmo de su personal...',
+        'Los objetivos de un hacker de ingeniería social -alguien que intenta obtener acceso no autorizado a sus sistemas informáticos- son similares a los de cualquier otro hacker...'
+      ]
+    },
+    {
+      type: 'true-false',
+      question:
+        'En la etapa prematura de tu plan de recuperación, debes decidir dónde reanudarás las operaciones principales tu compañía. Una estrategia es no continuar en la zona perjudicada por el desastre',
+      answer: 'Falso'
+    },
+    {
+      type: 'single-choice',
+      question:
+        'A los usuarios no les gusta tener que autenticarse por separado en múltiples servidores y aplicaciones de red, por tanto utilizan',
+      options: [
+        'Single Sign-On',
+        'Una firma digital',
+        'Una autoridad de certificación',
+        'Infraestructura PKI'
+      ],
+      answer: 'Single Sign-On'
+    },
+    {
+      type: 'true-false',
+      question:
+        'En la política de seguridad de teletrabajo uno de los pasos del procedimiento dice que toda conexión que se genere en cualquier dispositivo debe estar asegurada por los administradores de la red mediante autenticación del perfil del trabajador',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'single-choice',
+      question:
+        'Capa de sockets seguros. Un protocolo desarrollado por Netscape Communications Corporation para garantizar la seguridad y la privacidad en las comunicaciones por Internet',
+      options: ['SSH', 'Ninguno', 'IPSec', 'SSL/TLS'],
+      answer: 'SSL/TLS'
+    },
+    {
+      type: 'single-choice',
+      question:
+        'Las políticas de seguridad de la información son de gran importancia... pues pongan en riesgo la:',
+      options: ['Integridad', 'Confiabilidad', 'Disponibiliad', 'TODAS'],
+      answer: 'TODAS'
+    },
+    {
+      type: 'multiple-select',
+      question:
+        'Para los traslados de soportes físicos, que procedimientos se debe seguir:',
+      options: [
+        'Mantener una lista de empresas de software autorizadas.',
+        'Inicialmente se deberá contar con un procedimiento de cifrado de ser necesario',
+        'Controlar los embalajes y las condiciones ambientales...',
+        'Controlar la identificación de las empresas de software',
+        'Registro de salida de los soportes para su cotejamiento con el transportista y lugar de destino...'
+      ],
+      answers: [
+        'Registro de salida de los soportes para su cotejamiento con el transportista y el lugar de destino, incluyendo un control de tiempos de transporte',
+        'Inicialmente se deberá contar con un procedimiento de cifrado de ser necesario',
+        'Controlar los embalajes y las condiciones ambientales (Humedad, temperatura, etc.) con las especificaciones del medio de información'
+      ]
+    },
+    {
+      type: 'true-false',
+      question:
+        'Un delito informático es un número ilimitado de actos contra la confidencialidad, la integridad y la disponibilidad de los datos o sistemas informáticos',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'multiple-select',
+      question: 'Principio del menor privilegio es:',
+      options: [
+        'Los hackers de ingeniería social explotan la credulidad, la pereza...',
+        'Si todos los procesos se ejecutaran con el menor conjunto de privilegios necesarios...',
+        "Cualquiera que haya sido víctima de malware apreciará el principio de seguridad del 'menor privilegio'"
+      ],
+      answers: [
+        "Cualquiera que haya sido víctima de virus, gusanos y otros programas maliciosos (malware) apreciará el principio de seguridad del 'menor privilegio'",
+        'Si todos los procesos se ejecutaran con el menor conjunto de privilegios necesarios para realizar las tareas del usuario, sería más difícil que el software malicioso y molesto infectara una máquina y se propagara a otras'
+      ]
+    },
+    {
+      type: 'multiple-select',
+      question: 'Servicio de Usuario de Autenticación Remota (RADIUS):',
+      options: [
+        'Originalmente desarrollado para el acceso remoto por marcación',
+        'Proporciona un mecanismo utilizado para conectar, buscar y modificar directorios de Internet',
+        'Soportado por servidores de VPN, puntos de acceso inalámbrico, autentificación de conmutadores...',
+        'Es un protocolo ampliamente utilizado que permite la autenticación, autorización y contabilidad centralizadas'
+      ],
+      answers: [
+        'Es un protocolo ampliamente utilizado que permite la autenticación, la autorización y la contabilidad centralizadas del acceso a la red',
+        'Originalmente desarrollado para el acceso remoto por marcación',
+        'Soportado por servidores de red privada virtual (VPN), puntos de acceso inalámbrico, autentificación de conmutadores Ethernet, acceso a línea de suscripción digital (DSL) y otros tipos de acceso a la red'
+      ]
+    },
+    {
+      type: 'true-false',
+      question:
+        'La zona local contiene sitios web que no están en su computadora o en su intranet local, o que no están ya asignados a otra zona. El nivel de seguridad predeterminado es medio',
+      answer: 'Falso'
+    },
+    {
+      type: 'matching',
+      question: 'Empareje según corresponda:',
+      pairs: [
+        {
+          left: 'Permite controlar quién ve la información del usuario y quién puede acceder al perfil o datos de la cuenta',
+          answer: 'Configuración de privacidad'
+        },
+        {
+          left: 'Describe lo que la empresa está haciendo para proteger los datos del usuario',
+          answer: 'Política de seguridad'
+        },
+        {
+          left: 'Describe cómo el proveedor de servicios recopilará, usará y compartirá los datos del usuario',
+          answer: 'Política de uso de datos'
+        }
+      ]
+    },
+    {
+      type: 'single-choice',
+      question:
+        'Esta herramienta permite obtener capturas de la cámara web de un celular, PC o laptop, que son enviadas a una víctima mediante un link y técnicas de ingeniería social',
+      options: ['SEEKER', 'SAYCHEESE', 'ADCPISHING'],
+      answer: 'SAYCHEESE'
+    },
+    {
+      type: 'multiple-select',
+      question: 'Una credencial electrónica',
+      options: [
+        'Emitido por una autoridad de certificación (CA)',
+        'Es como una compañía externa',
+        'Autentica a un usuario en la Internet e intranets',
+        'Proporciona la clave pública',
+        'Asegurar la transferencia legítima en línea de información confidencial, dinero...'
+      ],
+      answers: [
+        'Autentica a un usuario en la Internet e intranets',
+        'Emitido por una autoridad de certificación (CA)',
+        'Asegurar la transferencia legítima en línea de información confidencial, dinero u otros materiales sensibles por medio de la tecnología de codificación pública'
+      ]
+    },
+    {
+      type: 'true-false',
+      question:
+        '¿Es ético el comportamiento de un empleado que presta su tarjeta de identificación hasta que uno de sus compañeros pueda obtener una nueva en Recursos Humanos debido a que la perdió?',
+      answer: 'Falso'
+    },
+    {
+      type: 'multiple-select',
+      question:
+        'Para proteger la información en los puestos de trabajo, las personas deben:',
+      options: [
+        'Los usuarios deben resguardar periódicamente su información histórica en períodos no mayor a 24 horas',
+        'El equipo de seguridad no se encargará de cerrar de forma manual sesiones abiertas...',
+        'El oficial de tecnología no se encarga de monitorear que cada usuario administrativo guarde la información...',
+        'Notificar a cada funcionario que todos los equipos deben tener aplicado el cierre de sesión por inactividad en 5 min'
+      ],
+      answers: [
+        'Notificar a cada funcionario de la Universidad Central que todos los equipos de cómputo, dispositivos portátiles deben tener aplicado el cierre de sesión por inactividad en un tiempo máximo de 5 minutos',
+        'Los usuarios deben resguardar periódicamente su información histórica en períodos no mayor a 24 horas'
+      ]
+    },
+    {
+      type: 'true-false',
+      question:
+        'CCRYPT permite cifrar archivos tanto en Windows como Linux, para protegerlos de intrusiones no deseadas o de la filtración de los mismos, mediante un algoritmo de encripción y una clave predefinida',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'multiple-select',
+      question:
+        'Cuáles de las siguientes son funciones del Blue Team? (Elija 2)',
+      options: [
+        'Utilizar herramientas y técnicas utilizadas por los hackers',
+        'Identificar fallos de seguridad y/o vulnerabilidades',
+        'Emular ataques de la manera más realista posible',
+        'Trabajar en la mejora continua de la seguridad',
+        'Emular los comportamientos de un Black Team'
+      ],
+      answers: [
+        'Identificar fallos de seguridad y/o vulnerabilidades',
+        'Trabajar en la mejora continua de la seguridad'
+      ]
+    },
+    {
+      type: 'multiple-select',
+      question: 'Escoja 2 características del análisis forense',
+      options: [
+        'Preservar los datos',
+        'Identificar las amenazas',
+        'Analizar los datos',
+        'Buscar vulnerabilidades'
+      ],
+      answers: ['Preservar los datos', 'Analizar los datos']
+    },
+    {
+      type: 'multiple-select',
+      question: 'Según la ISO 27039:1 UN IDS es un conjunto de componentes de:',
+      options: ['Software', 'Firmware', 'Hardware', 'Cableado'],
+      answers: ['Hardware', 'Software']
+    },
+    {
+      type: 'multiple-select',
+      question:
+        'Cuáles de los siguientes datos de la empresa deberían compartirse en sus redes sociales personales? (Elija 2)',
+      options: [
+        'El nombre de la organización',
+        'La dirección de correo electrónico',
+        'El número de teléfono móvil',
+        'Los nombres y la información de contacto de sus colegas',
+        'El nombre y la información de contacto del gerente',
+        'La fecha de nacimiento',
+        'La foto de perfil'
+      ],
+      answers: ['La foto de perfil', 'El nombre de la organización']
+    },
+    {
+      type: 'multiple-select',
+      question:
+        'La comprensión del control interno se da a través de la indagación... mediante el empleo de los siguientes métodos:',
+      options: [
+        'Táctico',
+        'Cuestionarios',
+        'Gráfico',
+        'Descriptivo',
+        'Experiencial'
+      ],
+      answers: ['Descriptivo', 'Cuestionarios', 'Gráfico']
+    },
+    {
+      type: 'true-false',
+      question:
+        'La clave pública encripta los datos, y una clave secreta correspondiente los descifra',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'multiple-select',
+      question:
+        'La ISO 22301 es aplicable a todo tipo y tamaño de organización que desea:',
+      options: [
+        'Realizar una autodeterminación y autodeclaración con el estándar.',
+        'Buscar la certificación internacional',
+        'Demostrar conformidad a terceros',
+        'Asegurar conformidad con la política SGCN',
+        'Establecer, implementar, mantener y mejorar un SGCN'
+      ],
+      answers: [
+        'Establecer, implementar, mantener y mejorar un SGCN',
+        'Asegurar conformidad con la política SGCN',
+        'Demostrar conformidad a terceros',
+        'Buscar la certificación internacional',
+        'Realizar una autodeterminación y autodeclaración con el estándar.'
+      ]
+    },
+    {
+      type: 'multiple-select',
+      question:
+        'Los certificados normalmente contienen la siguiente información:',
+      options: [
+        'La firma digital del emisor',
+        'El valor de clave pública del sujeto',
+        'Información de identificación del emisor',
+        'La información de identificación del sujeto, como el nombre y la dirección de correo electrónico',
+        'El período de validez'
+      ],
+      answers: [
+        'El valor de clave pública del sujeto',
+        'La información de identificación del sujeto, como el nombre y la dirección de correo electrónico',
+        'El período de validez',
+        'Información de identificación del emisor',
+        'La firma digital del emisor'
+      ]
+    },
+    {
+      type: 'multiple-select',
+      question: '¿Cuáles son métodos de autentificación?',
+      options: ['Passwords', 'IPsec', 'VPN', 'Users ID', 'Equipos biométricos'],
+      answers: ['Passwords', 'Users ID', 'Equipos biométricos']
+    },
+    {
+      type: 'matching',
+      question: 'Empareje según corresponda:',
+      pairs: [
+        { left: 'Tipo de amenaza', answer: 'Ransomware y Errores de software' },
+        {
+          left: 'Castillos del mundo cibernético',
+          answer: 'Facebook, Amazon, Twitter'
+        },
+        {
+          left: 'Buena práctica de ciberseguridad',
+          answer: 'Educar a los usuarios'
+        },
+        {
+          left: 'Acción que tomar ante una brecha de seguridad',
+          answer: 'Comunicar inmediatamente el problema'
+        },
+        { left: 'Dispositivos de seguridad', answer: 'IPS, IDS, Honeypots' }
+      ]
+    },
+    {
+      type: 'complete',
+      question:
+        'Al Blue Team se lo considera como un defensor ______ desde el punto de vista de la ciberseguridad empresarial.',
+      answer: 'proactivo'
+    },
+    {
+      type: 'open-text',
+      question:
+        'Es imposible que una organización esté protegida al 100%, por lo tanto los riesgos deben:',
+      answer: 'Minimizarse'
+    },
+    {
+      type: 'matching',
+      question:
+        'Ordenar en forma descendente la jerarquía de los conceptos de seguridad de la información:',
+      pairs: [
+        { left: 'Primero', answer: 'CIA' },
+        { left: 'Segundo', answer: 'Políticas' },
+        { left: 'Tercero', answer: 'Planes' },
+        { left: 'Cuarto', answer: 'Procedimientos' },
+        { left: 'Quinto', answer: 'Tareas' },
+        { left: 'Sexto', answer: 'Registros' }
+      ]
+    },
+    {
+      type: 'multiple-select',
+      question: 'El LDAP (Lightweight Directory Access Protocol):',
+      options: [
+        'La función de LDAP es permitir el acceso a un directorio existente.',
+        'Es un protocolo de servicio de directorio que se ejecuta en una capa por encima de la pila TCP/IP.',
+        'Proporciona un mecanismo utilizado para conectar, buscar y modificar directorios de Internet.',
+        'El servicio de directorio LDAP se basa en un modelo cliente-servidor.'
+      ],
+      answers: [
+        'Es un protocolo de servicio de directorio que se ejecuta en una capa por encima de la pila TCP/IP.',
+        'Proporciona un mecanismo utilizado para conectar, buscar y modificar directorios de Internet.',
+        'El servicio de directorio LDAP se basa en un modelo cliente-servidor.',
+        'La función de LDAP es permitir el acceso a un directorio existente.'
+      ]
+    },
+    {
+      type: 'true-false',
+      question:
+        'DNS TUNNELING con esta herramienta se permite a través de tráfico del puerto DHCP ejecutar acciones, enviar archivos o navegar, este ataque será el único visible para un administrador de red',
+      answer: 'Falso'
+    },
+    {
+      type: 'multiple-select',
+      question:
+        'Al planificar como se realizará la auditoria, se debe determinar:',
+      options: [
+        '¿Cómo se evaluarán los resultados?',
+        '¿Quién será responsable?',
+        '¿Qué recursos se requerirán?',
+        '¿Cuándo se finalizará?',
+        '¿Qué se va a hacer?'
+      ],
+      answers: [
+        '¿Qué se va a hacer?',
+        '¿Qué recursos se requerirán?',
+        '¿Quién será responsable?',
+        '¿Cuándo se finalizará?',
+        '¿Cómo se evaluarán los resultados?'
+      ]
+    },
+    {
+      type: 'multiple-select',
+      question: 'Una autoridad de certificación:',
+      options: [
+        'Estas claves se utilizan para encriptar y desencriptar información sensible o confidencial entrante y saliente en línea',
+        "Proporciona y asigna las cadenas únicas de números que constituyen las 'claves' utilizadas en los certificados digitales para la autenticación",
+        'Puede ser una empresa emisora externa (como VeriSign)'
+      ],
+      answers: [
+        "Proporciona y asigna las cadenas únicas de números que constituyen las 'claves' utilizadas en los certificados digitales para la autenticación",
+        'Estas claves se utilizan para encriptar y desencriptar información sensible o confidencial entrante y saliente en línea',
+        'Puede ser una empresa emisora externa (como VeriSign)'
+      ]
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Cuál de las siguientes afirmaciones explica de forma correcta la evolución de las amenazas a la seguridad de la empresa?',
+      options: [
+        'Ninguna de las respuestas es correcta',
+        'Las amenazas internas pueden causar daños aún mayores que las amenazas externas',
+        'Los primeros usuarios de Internet frecuentemente participaban en actividades para ocasionar daño',
+        'Las amenazas son cada vez menos sofisticadas',
+        'Los arquitectos de red planearon la seguridad desde su diseño'
+      ],
+      answer:
+        'Las amenazas internas pueden causar daños aún mayores que las amenazas externas'
+    },
+    {
+      type: 'single-choice',
+      question:
+        'Cualquier código escrito con el propósito específico de causar daño, revelar información o violar la seguridad o la estabilidad de un sistema es:',
+      options: ['Malware', 'Autenticación', 'Amenaza Interna', 'Criptografía'],
+      answer: 'Malware'
+    },
+    {
+      type: 'true-false',
+      question:
+        'WAP utiliza una clave secreta compartida para cifrar los paquetes antes de su transmisión entre los dispositivos de LAN inalámbrica y monitoriza los paquetes en tránsito para detectar los intentos de modificación',
+      answer: 'Falso'
+    },
+    {
+      type: 'single-choice',
+      question:
+        'Esta herramienta permite generar un diccionario con datos obtenidos de una persona, ayuda con el ingreso de información personal del objetivo y obtiene todas las combinaciones posibles:',
+      options: ['SAYCHEESE', 'CUPP.PY', 'RESPONDER.PY', 'SEEKER'],
+      answer: 'CUPP.PY'
+    },
+    {
+      type: 'matching',
+      question:
+        'Ordenar en forma descendente la jerarquía de los conceptos de seguridad de la información:',
+      pairs: [
+        { left: 'Primero', answer: 'CIA' },
+        { left: 'Segundo', answer: 'Políticas' },
+        { left: 'Tercero', answer: 'Planes' },
+        { left: 'Cuarto', answer: 'Procedimientos' },
+        { left: 'Quinto', answer: 'Tareas' },
+        { left: 'Sexto', answer: 'Registros' }
+      ]
+    },
+    {
+      type: 'multiple-select',
+      question: 'El LDAP (Lightweight Directory Access Protocol):',
+      options: [
+        'La función de LDAP es permitir el acceso a un directorio existente.',
+        'Es un protocolo de servicio de directorio que se ejecuta en una capa por encima de la pila TCP/IP.',
+        'Proporciona un mecanismo utilizado para conectar, buscar y modificar directorios de Internet.',
+        'El servicio de directorio LDAP se basa en un modelo cliente-servidor.'
+      ],
+      answers: [
+        'Es un protocolo de servicio de directorio que se ejecuta en una capa por encima de la pila TCP/IP.',
+        'Proporciona un mecanismo utilizado para conectar, buscar y modificar directorios de Internet.',
+        'El servicio de directorio LDAP se basa en un modelo cliente-servidor.',
+        'La función de LDAP es permitir el acceso a un directorio existente.'
+      ]
+    },
+    {
+      type: 'true-false',
+      question:
+        'DNS TUNNELING con esta herramienta se permite a través de tráfico del puerto DHCP ejecutar acciones, enviar archivos o navegar, este ataque será el único visible para un administrador de red',
+      answer: 'Falso'
+    },
+    {
+      type: 'multiple-select',
+      question:
+        'Al planificar como se realizará la auditoria, se debe determinar:',
+      options: [
+        '¿Cómo se evaluarán los resultados?',
+        '¿Quién será responsable?',
+        '¿Qué recursos se requerirán?',
+        '¿Cuándo se finalizará?',
+        '¿Qué se va a hacer?'
+      ],
+      answers: [
+        '¿Qué se va a hacer?',
+        '¿Qué recursos se requerirán?',
+        '¿Quién será responsable?',
+        '¿Cuándo se finalizará?',
+        '¿Cómo se evaluarán los resultados?'
+      ]
+    },
+    {
+      type: 'multiple-select',
+      question: 'Una autoridad de certificación:',
+      options: [
+        'Estas claves se utilizan para encriptar y desencriptar información sensible o confidencial entrante y saliente en línea',
+        "Proporciona y asigna las cadenas únicas de números que constituyen las 'claves' utilizadas en los certificados digitales para la autenticación",
+        'Puede ser una empresa emisora externa (como VeriSign)'
+      ],
+      answers: [
+        "Proporciona y asigna las cadenas únicas de números que constituyen las 'claves' utilizadas en los certificados digitales para la autenticación",
+        'Estas claves se utilizan para encriptar y desencriptar información sensible o confidencial entrante y saliente en línea',
+        'Puede ser una empresa emisora externa (como VeriSign)'
+      ]
+    },
+    {
+      type: 'single-choice',
+      question:
+        '¿Cuál de las siguientes afirmaciones explica de forma correcta la evolución de las amenazas a la seguridad de la empresa?',
+      options: [
+        'Ninguna de las respuestas es correcta',
+        'Las amenazas internas pueden causar daños aún mayores que las amenazas externas',
+        'Los primeros usuarios de Internet frecuentemente participaban en actividades para ocasionar daño',
+        'Las amenazas son cada vez menos sofisticadas',
+        'Los arquitectos de red planearon la seguridad desde su diseño'
+      ],
+      answer:
+        'Las amenazas internas pueden causar daños aún mayores que las amenazas externas'
+    },
+    {
+      type: 'single-choice',
+      question:
+        'Cualquier código escrito con el propósito específico de causar daño, revelar información o violar la seguridad o la estabilidad de un sistema es:',
+      options: ['Malware', 'Autenticación', 'Amenaza Interna', 'Criptografía'],
+      answer: 'Malware'
+    },
+    {
+      type: 'true-false',
+      question:
+        'WAP utiliza una clave secreta compartida para cifrar los paquetes antes de su transmisión entre los dispositivos de LAN inalámbrica y monitoriza los paquetes en tránsito para detectar los intentos de modificación',
+      answer: 'Falso'
+    },
+    {
+      type: 'single-choice',
+      question:
+        'Esta herramienta permite generar un diccionario con datos obtenidos de una persona, ayuda con el ingreso de información personal del objetivo y obtiene todas las combinaciones posibles:',
+      options: ['SAYCHEESE', 'CUPP.PY', 'RESPONDER.PY', 'SEEKER'],
+      answer: 'CUPP.PY'
+    },
+    {
+      type: 'true-false',
+      question:
+        'Con base en los resultados de la evaluación, debes proteger y preservar los equipos de tu empresa. Por ejemplo, querrás implementar medidas para proteger tus equipos de nuevos daños y de los riesgos de robo',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'multiple-select',
+      question:
+        'Según la ISO 27035 las etapas claves de la gestión de incidentes son:',
+      options: [
+        'Aprender de las lecciones',
+        'Preparase para enfrentarse a los incidentes',
+        'Reconocer los incidentes de seguridad de la información',
+        'Dar respuesta a los incidentes, lo que quiere decir, investigarlos y resolverlos',
+        'Examinar los incidentes y tomar las decisiones sobre la forma en que se han llevado a cabo las cosas'
+      ],
+      answers: [
+        'Preparase para enfrentarse a los incidentes',
+        'Reconocer los incidentes de seguridad de la información',
+        'Examinar los incidentes y tomar las decisiones sobre la forma en que se han llevado a cabo las cosas',
+        'Dar respuesta a los incidentes, lo que quiere decir, investigarlos y resolverlos',
+        'Aprender de las lecciones'
+      ]
+    },
+    {
+      type: 'true-false',
+      question:
+        'Según la ISO 22301: Auditoría es el proceso para obtener evidencia y evaluarla objetivamente para determinar el grado en que requerimientos específicos han sido alcanzados',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'multiple-select',
+      question: 'El marco normativo de las normas de seguridad son:',
+      options: [
+        'Normas Ecuatorianas de Auditoría Gubernamental (NEAG).',
+        'Normas de Auditoria Generalmente Aceptadas (NAGAs).',
+        'COBIT',
+        'ITIL',
+        'Normas Internacionales de Auditoria y Aseguramiento (NIAAs).'
+      ],
+      answers: [
+        'Normas Internacionales de Auditoria y Aseguramiento (NIAAs).',
+        'Normas de Auditoria Generalmente Aceptadas (NAGAs).',
+        'Normas Ecuatorianas de Auditoría Gubernamental (NEAG).'
+      ]
+    },
+    {
+      type: 'true-false',
+      question:
+        'La política de auditoría interna verificar y monitorear de forma mensual la ejecución de las normas y los procedimientos de seguridad informática vigentes dentro de las instalaciones de la UCE',
+      answer: 'Falso'
+    },
+    {
+      type: 'true-false',
+      question:
+        'IPsec incluye protocolos para el establecimiento de claves de cifrado.',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'true-false',
+      question:
+        'La clave secreta encripta los datos, y una clave pública correspondiente los descifra',
+      answer: 'Falso'
+    },
+    {
+      type: 'true-false',
+      question:
+        'SHERLOCK para PowerShell permite realizar una búsqueda de amenazas (parches faltantes) de un equipo (servidor o endpoint) para posterior a esto elevar privilegios del mismo',
+      answer: 'Falso'
+    },
+    {
+      type: 'true-false',
+      question:
+        'Un cortafuegos es la parte de un sistema informático o una red informática que está diseñada para bloquear el acceso no autorizado',
+      answer: 'Verdadero'
+    },
+    {
+      type: 'single-choice',
+      question:
+        'El gerente de ventas viaja para encontrarse con un cliente. Se olvidó de descargar el contrato del servidor de la empresa. El tren tiene una red Wi-Fi abierta. ¿Qué debe hacer?',
+      options: [
+        'Esperar hasta llegar a la oficina del cliente y solicitar acceso a su red Wi-Fi privada...',
+        'Olvidarse del contrato y ponerse al día con otros pendientes...',
+        'Ninguna de las respuestas es correcta',
+        'Usar la conexión 4G en su teléfono móvil para conectarse a la red Wi-Fi abierta',
+        'Acceder a la red Wi-Fi abierta y conectarse a los servidores de la empresa usando una conexión VPN en su computador portátil'
+      ],
+      answer:
+        'Acceder a la red Wi-Fi abierta y conectarse a los servidores de la empresa usando una conexión VPN en su computador portátil'
+    }
+  ]
+}
