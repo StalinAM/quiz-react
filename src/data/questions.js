@@ -499,13 +499,7 @@ export const questions = {
       type: 'multiple-select',
       question:
         '¿Cuáles de los siguientes componentes pertenecen a la categoría de componentes avanzados interactivos? (Elija 2)',
-      options: [
-        'A. Breadcrumbs',
-        'B. Drag & Drop',
-        'C. Toasts',
-        'D. Tabla',
-        'E. Button'
-      ],
+      options: ['Breadcrumbs', 'Drag & Drop', 'Toasts', 'Tabla', 'Button'],
       answers: ['Drag & Drop', 'Tabla']
     },
     {
@@ -595,12 +589,12 @@ export const questions = {
       question:
         '¿Cuál de los siguientes principios de diseño asegura que una aplicación sea susceptible de mejora contínua?',
       options: [
-        'a. Consistencia',
-        'b. Usabilidad heurística',
-        'c. Diseño responsivo',
-        'd. Facilidad de uso',
-        'e. Atractivo visual',
-        'f. Retroalimentación'
+        'Consistencia',
+        'Usabilidad heurística',
+        'Diseño responsivo',
+        'Facilidad de uso',
+        'Atractivo visual',
+        'Retroalimentación'
       ],
       answer: 'Retroalimentación'
     },
@@ -679,6 +673,20 @@ export const questions = {
     {
       type: 'single-choice',
       question:
+        '¿Cuál de los siguientes componentes permite integrar flujos de datos reactivos en aplicaciones móviles utilizando Kotlin?',
+      options: [
+        'RecyclerView',
+        'LiveData',
+        'ConstraintLayout',
+        'Room Database',
+        'Navigation Component',
+        'ViewPager'
+      ],
+      answer: 'LiveData'
+    },
+    {
+      type: 'single-choice',
+      question:
         '¿Cuál de los siguientes componentes se utiliza para capturar texto ingresado por el usuario en una aplicación móvil?',
       options: [
         'Button',
@@ -689,12 +697,6 @@ export const questions = {
         'TextField'
       ],
       answer: 'TextField'
-    },
-    {
-      type: 'true-false',
-      question:
-        'Un TextView le permite al usuario modificar directamente el texto que se muestra en la pantalla?',
-      answer: 'Falso'
     },
     {
       type: 'single-choice',
@@ -1056,11 +1058,11 @@ export const questions = {
       type: 'single-choice',
       question: '¿Cuál es una característica principal del formato JSON?',
       options: [
-        'a. Requiere un esquema para funcionar',
-        'b. Está basado en una estructura de clave-valor',
-        'c. Es más difícil de leer para los humanos que XML',
-        'd. Utiliza etiquetas para definir los datos',
-        'e. No puede representar datos jerárquicos'
+        'Requiere un esquema para funcionar',
+        'Está basado en una estructura de clave-valor',
+        'Es más difícil de leer para los humanos que XML',
+        'Utiliza etiquetas para definir los datos',
+        'No puede representar datos jerárquicos'
       ],
       answer: 'Está basado en una estructura de clave-valor'
     },
