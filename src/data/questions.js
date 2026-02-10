@@ -540,11 +540,11 @@ export const questions = {
       question:
         '¿Qué clase de Android se utiliza para representar una unidad de interacción de usuario?',
       options: [
-        'a. BroadcastReceiver',
-        'b. ContentProvider',
-        'c. Fragment',
-        'd. Service',
-        'e. Activity'
+        'BroadcastReceiver',
+        'ContentProvider',
+        'Fragment',
+        'Service',
+        'Activity'
       ],
       answer: 'Activity'
     },
@@ -580,13 +580,13 @@ export const questions = {
       question:
         '¿Cuáles son ejemplos de componentes básicos en el desarrollo de Apps? (Elija 3)',
       options: [
-        'A. Button',
-        'B. TextField',
-        'C. AlertDialog',
-        'D. Menu',
-        'E. RecyclerView',
-        'F. CheckBox',
-        'G. Snackbar'
+        'Button',
+        'TextField',
+        'AlertDialog',
+        'Menu',
+        'RecyclerView',
+        'CheckBox',
+        'Snackbar'
       ],
       answers: ['Button', 'TextField', 'CheckBox']
     },
@@ -627,12 +627,12 @@ export const questions = {
       question:
         '¿Cuál es el propósito del componente WorkManager en una App Android?',
       options: [
-        'a. Controlar la navegación entre pantallas.',
-        'b. Administrar eventos del ciclo de vida de la aplicación.',
-        'c. Coordinar tareas recurrentes y en segundo plano.',
-        'd. Gestionar gráficos complejos.',
-        'e. Manejar las tareas en primer plano.',
-        'f. Proporcionar almacenamiento en caché.'
+        'Controlar la navegación entre pantallas.',
+        'Administrar eventos del ciclo de vida de la aplicación.',
+        'Coordinar tareas recurrentes y en segundo plano.',
+        'Gestionar gráficos complejos.',
+        'Manejar las tareas en primer plano.',
+        'Proporcionar almacenamiento en caché.'
       ],
       answer: 'Coordinar tareas recurrentes y en segundo plano.'
     },
@@ -664,11 +664,11 @@ export const questions = {
       question:
         '¿Cuáles de las siguientes características de las metodologías de desarrollo de aplicaciones móviles son las más importantes? (Elija 3)',
       options: [
-        'A. Uso de fases secuenciales y estructuradas',
-        'B. Documentación del proceso',
-        'C. Flexibilidad para adaptarse a cambios',
-        'D. Enfoque en objetivos informales',
-        'E. Rechazo a la retroalimentación de los clientes'
+        'Uso de fases secuenciales y estructuradas',
+        'Documentación del proceso',
+        'Flexibilidad para adaptarse a cambios',
+        'Enfoque en objetivos informales',
+        'Rechazo a la retroalimentación de los clientes'
       ],
       answers: [
         'Uso de fases secuenciales y estructuradas',
@@ -681,12 +681,12 @@ export const questions = {
       question:
         '¿Cuál de los siguientes componentes se utiliza para capturar texto ingresado por el usuario en una aplicación móvil?',
       options: [
-        'a. Button',
-        'b. Spinner',
-        'c. ListView',
-        'd. ImageView',
-        'e. ProgressBar',
-        'f. TextField'
+        'Button',
+        'Spinner',
+        'ListView',
+        'ImageView',
+        'ProgressBar',
+        'TextField'
       ],
       answer: 'TextField'
     },
@@ -701,135 +701,16 @@ export const questions = {
       question:
         '¿Cuál es el principal objetivo del diseño responsivo en una aplicación móvil?',
       options: [
-        'a. Crear experiencias personalizadas para cada usuario.',
-        'b. Aumentar la accesibilidad para usuarios con discapacidades.',
-        'c. Optimizar animaciones.',
-        'd. Garantizar que la interfaz se adapte a diferentes tamaños de pantalla',
-        'e. Simplificar el código del backend.',
-        'f. Mejorar la velocidad de carga de la aplicación.'
+        'Crear experiencias personalizadas para cada usuario.',
+        'Aumentar la accesibilidad para usuarios con discapacidades.',
+        'Optimizar animaciones.',
+        'Garantizar que la interfaz se adapte a diferentes tamaños de pantalla',
+        'Simplificar el código del backend.',
+        'Mejorar la velocidad de carga de la aplicación.'
       ],
       answer:
         'Garantizar que la interfaz se adapte a diferentes tamaños de pantalla'
     },
-    {
-      type: 'single-choice',
-      question:
-        '¿Cuál de los siguientes componentes permite integrar flujos de datos reactivos en aplicaciones móviles utilizando Kotlin?',
-      options: [
-        'a. RecyclerView',
-        'b. LiveData',
-        'c. ConstraintLayout',
-        'd. Room Database',
-        'e. Navigation Component',
-        'f. ViewPager'
-      ],
-      answer: 'LiveData'
-    },
-    {
-      type: 'multiple-select',
-      question:
-        '¿Qué características son típicas de un componente de navegación? (Elija 3)',
-      options: [
-        'Facilidad de manejo',
-        'Gestión de destinos',
-        'Compatibilidad con paso de datos',
-        'Manejo de la pila de navegación',
-        'Implementación de modelos relacionales',
-        'Integración con la interfaz'
-      ],
-      answers: [
-        'Gestión de destinos',
-        'Compatibilidad con paso de datos',
-        'Manejo de la pila de navegación'
-      ]
-    },
-    {
-      type: 'single-choice',
-      question:
-        '¿Cuál es el propósito principal del componente RecyclerView en Android?',
-      options: [
-        'Gestionar la navegación',
-        'Mostrar imágenes estáticas',
-        'Proporcionar una vista en formato de lista con mejor rendimiento',
-        'Manejar formularios'
-      ],
-      answer:
-        'Proporcionar una vista en formato de lista con mejor rendimiento.'
-    },
-    {
-      type: 'open-text',
-      question: 'El componente ______ sirve para mostrar imágenes en Android.',
-      answer: 'ImageView'
-    },
-    {
-      type: 'true-false',
-      question:
-        'El método onCreate() se utiliza para inicializar componentes esenciales al crear una actividad?',
-      answer: 'Verdadero'
-    },
-    {
-      type: 'multiple-select',
-      question:
-        '¿Seleccione 3 elementos clave para un diseño de interfaz de usuario accesible?',
-      options: [
-        'Evitar texto en imágenes',
-        'Contraste de colores adecuado',
-        'Elementos táctiles grandes',
-        'Animaciones complejas',
-        'Etiquetas semánticas claras',
-        'Diseño minimalista'
-      ],
-      answers: [
-        'Contraste de colores adecuado',
-        'Etiquetas semánticas claras',
-        'Elementos táctiles grandes'
-      ]
-    },
-    {
-      type: 'open-text',
-      question:
-        'El componente utilizado para crear listas dinámicas con scroll optimizado en Android es:',
-      answer: 'RecyclerView'
-    },
-    {
-      type: 'open-text',
-      question:
-        '¿Cómo se llama el componente que permite seleccionar un valor dentro de un rango?',
-      answer: 'Slider'
-    },
-    {
-      type: 'single-choice',
-      question:
-        '¿Cuál de las siguientes características es clave en un componente de navegación?',
-      options: [
-        'Gestión de memoria',
-        'Definición de rutas',
-        'Personalización de colores',
-        'Manejo de eventos táctiles',
-        'Control de rendimiento gráfico'
-      ],
-      answer: 'Definición de rutas'
-    },
-    // multiple-select
-    {
-      type: 'multiple-select',
-      question:
-        'Elija 3 características clave del Navigation Component en Android:',
-      options: [
-        'Mejora el rendimiento gráfico de la aplicación',
-        'Soporta navegaciones declarativas usando un archivo XML',
-        'Proporciona un controlador para el botón de retroceso',
-        'Simplifica la navegación en la app',
-        'Especifica permisos dinámicos en la aplicación'
-      ],
-      answers: [
-        'Soporta navegaciones declarativas usando un archivo XML',
-        'Proporciona un controlador para el botón de retroceso',
-        'Simplifica la navegación en la app'
-      ]
-    },
-
-    // single-choice
     {
       type: 'single-choice',
       question:
@@ -842,8 +723,6 @@ export const questions = {
       ],
       answer: 'Definición de rutas'
     },
-
-    // matching
     {
       type: 'matching',
       question: 'Empareja cada término de diseño con su definición:',
@@ -934,11 +813,11 @@ export const questions = {
       question:
         '¿Cuáles de las siguientes características son aplicables a los servicios SOAP? (Marca todas las correctas)',
       options: [
-        'a. Es más adecuado para sistemas con restricciones de recursos',
-        'b. Es independiente del protocolo subyacente (puede usar HTTP, SMTP, etc.)',
-        'c. Utiliza XML para la comunicación',
-        'd. Es compatible con los estándares WS-* (como WS-Security)',
-        'e. Tiene una estructura más ligera y flexible'
+        'Es más adecuado para sistemas con restricciones de recursos',
+        'Es independiente del protocolo subyacente (puede usar HTTP, SMTP, etc.)',
+        'Utiliza XML para la comunicación',
+        'Es compatible con los estándares WS-* (como WS-Security)',
+        'Tiene una estructura más ligera y flexible'
       ],
       answers: [
         'Utiliza XML para la comunicación',
@@ -956,7 +835,7 @@ export const questions = {
       type: 'multiple-select',
       question:
         '¿Cuáles de los siguientes tipos de archivo almacenan datos de forma estructurada?',
-      options: ['1. HTML', '2. XML', '3. PNG', '4. CSV', '5. JSON'],
+      options: ['HTML', 'XML', 'PNG', 'CSV', 'JSON'],
       answers: ['JSON', 'CSV', 'XML']
     },
     {
@@ -970,11 +849,11 @@ export const questions = {
       question:
         '¿Cuál es la categoria más alta de tipo de persistencia en dispositivos móviles?',
       options: [
-        '1. Persistencia en caché',
-        '2. Persistencia en almacenamiento externo',
-        '3. Persistencia en preferencias compartidas',
-        '4. Persistencia en base de datos',
-        '5. Persistencia en almacenamiento interno'
+        'Persistencia en caché',
+        'Persistencia en almacenamiento externo',
+        'Persistencia en preferencias compartidas',
+        'Persistencia en base de datos',
+        'Persistencia en almacenamiento interno'
       ],
       answer: 'Persistencia en base de datos'
     },
@@ -982,7 +861,7 @@ export const questions = {
       type: 'single-choice',
       question:
         '¿Cuál de los siguientes formatos de datos es más comúnmente utilizado por los servicios REST para intercambiar información?',
-      options: ['a. SOAP', 'b. JSON', 'c. CSV', 'd. XML', 'e. HTML'],
+      options: ['SOAP', 'JSON', 'CSV', 'XML', 'HTML'],
       answer: 'JSON'
     },
     {
@@ -1034,11 +913,11 @@ export const questions = {
       question:
         '¿Cuáles de las siguientes son ventajas del formato JSON frente al formato XML?',
       options: [
-        'a. Utiliza etiquetas para estructurar los datos',
-        'b. Es más fácil de leer y escribir para los humanos',
-        'c. Requiere menos espacio al serializar datos',
-        'd. Es compatible con la mayoría de los lenguajes de programación modernos',
-        'e. Soporta datos jerárquicos y estructuras complejas'
+        'Utiliza etiquetas para estructurar los datos',
+        'Es más fácil de leer y escribir para los humanos',
+        'Requiere menos espacio al serializar datos',
+        'Es compatible con la mayoría de los lenguajes de programación modernos',
+        'Soporta datos jerárquicos y estructuras complejas'
       ],
       answers: [
         'Es más fácil de leer y escribir para los humanos',
@@ -1057,11 +936,11 @@ export const questions = {
       question:
         '¿Cuál de las siguientes opciones describe mejor una característica clave de las bases de datos móviles?',
       options: [
-        'a. Están diseñadas para manejar grandes cantidades de datos transaccionales, sin necesidad de conectividad a Internet.',
-        'b. Utilizan servidores dedicados exclusivamente para la sincronización de datos en tiempo real.',
-        'c. Están optimizadas para almacenar datos en la nube y requieren una conexión constante a Internet.',
-        'd. Son bases de datos de solo lectura que no permiten actualizaciones de datos por parte del usuario.',
-        'e. Permiten almacenar y acceder a datos localmente en dispositivos móviles, a menudo con capacidades de sincronización cuando hay conexión.'
+        'Están diseñadas para manejar grandes cantidades de datos transaccionales, sin necesidad de conectividad a Internet.',
+        'Utilizan servidores dedicados exclusivamente para la sincronización de datos en tiempo real.',
+        'Están optimizadas para almacenar datos en la nube y requieren una conexión constante a Internet.',
+        'Son bases de datos de solo lectura que no permiten actualizaciones de datos por parte del usuario.',
+        'Permiten almacenar y acceder a datos localmente en dispositivos móviles, a menudo con capacidades de sincronización cuando hay conexión.'
       ],
       answer:
         'Permiten almacenar y acceder a datos localmente en dispositivos móviles, a menudo con capacidades de sincronización cuando hay conexión.'
@@ -1134,11 +1013,11 @@ export const questions = {
       question:
         '¿Cuáles de las siguientes características son comunes en las bases de datos móviles? (Selecciona 3 respuestas)',
       options: [
-        'a. Están diseñadas principalmente para manejar grandes volúmenes de datos transaccionales en tiempo real.',
-        'b. Requieren una conexión constante a Internet para funcionar correctamente.',
-        'c. Pueden sincronizar datos entre el dispositivo móvil y un servidor remoto cuando hay conexión.',
-        'd. Permiten almacenamiento local de datos en el dispositivo móvil.',
-        'e. Son ligeras y están optimizadas para el rendimiento en dispositivos con recursos limitados.'
+        'Están diseñadas principalmente para manejar grandes volúmenes de datos transaccionales en tiempo real.',
+        'Requieren una conexión constante a Internet para funcionar correctamente.',
+        'Pueden sincronizar datos entre el dispositivo móvil y un servidor remoto cuando hay conexión.',
+        'Permiten almacenamiento local de datos en el dispositivo móvil.',
+        'Son ligeras y están optimizadas para el rendimiento en dispositivos con recursos limitados.'
       ],
       answers: [
         'Permiten almacenamiento local de datos en el dispositivo móvil.',
@@ -1199,7 +1078,7 @@ export const questions = {
       type: 'single-choice',
       question:
         '¿Cuál de los siguientes sensores permite detectar la orientación del dispositivo?',
-      options: ['Sensor de proximidad', 'Acelerometro', 'Sensor de luz'],
+      options: ['Sensor de proximidad', 'Acelerómetro', 'Sensor de luz'],
       answer: 'Acelerómetro'
     },
     {
@@ -1568,28 +1447,7 @@ export const questions = {
       question:
         'El ........................... mide la humedad del aire y se utiliza en aplicaciones meteorológicas y científicas.',
       answer: 'higrómetro'
-    },
-    // multiple-select
-    {
-      type: 'multiple-select',
-      question:
-        '¿Cuáles de las siguientes afirmaciones sobre el estado en Jetpack Compose son correctas?',
-      options: [
-        'Nunca puede sobrevivir a la recreación de una actividad',
-        'Se utiliza solo dentro de una Activity',
-        'Se puede elevar para que el llamador controle el estado',
-        'Compose recompone automáticamente cuando un State<T> cambia'
-      ],
-      answers: [
-        'Se puede elevar para que el llamador controle el estado',
-        'Compose recompone automáticamente cuando un State<T> cambia'
-      ]
-    }, // complete
-    {
-      type: 'complete',
-      question:
-        '¿Qué protocolo se utiliza comúnmente para enviar notificaciones push a dispositivos móviles?',
-      answer: 'SMTP'
     }
   ]
+  // ...existing code...
 }
